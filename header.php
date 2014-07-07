@@ -20,15 +20,26 @@
 <body <?php body_class(); ?>>
 	<div id="wrap">
 		<header id="header" role="banner" class="clearfix container">
-			<a href="/" class="logo-container">
+			<a href="/" class="logo-container span two">
 				<img src="<?php bloginfo( 'template_url' ); ?>/images/logos/header.png" alt="<?php bloginfo( 'title' ); ?>" title="<?php bloginfo( 'title' ); ?>">
 			</a>
-			<div class="navigation-container">
+			<div class="navigation-container span eight">
+				<div class="information">
+					<p>For friendly advice or technical support, call: <span>01622 769692</span></p>
+					<div class="buttons">
+						<a href="" class="get-in-touch">
+							<?php _e('Get in touch'); ?>
+						</a>
+						<a href="" class="live-chat">
+							<?php _e('Live chat'); ?>
+						</a>
+					</div>
+				</div>
 				<nav class="top-navigation">
 
 					<?php wp_nav_menu( array( 'theme_location' => 'secondary_header', 'menu_class' => 'clearfix menu', 'container' => false ) ); ?>
 					<form role="search" method="get" id="searchform" class="searchform" action="<?php bloginfo('url'); ?>">
-							<input type="text" value="" name="s" id="s" placeholder="Search for:">
+							<input type="text" value="" name="s" id="s" placeholder="Search...">
 							<input type="submit" id="searchsubmit" value="Search">
 					</form>					
 

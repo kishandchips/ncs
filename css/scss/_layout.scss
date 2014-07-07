@@ -22,11 +22,72 @@ body {
 	.logo-container {
 		width:20%;
 		float: left;
+
+		img {
+			margin: 18px 0;
+		}
 	}
 
 	.navigation-container {
 		width: 79%;
 		float: right;
+
+		.information {
+			@extend .clearfix;
+
+			p {
+				float: left;
+				@include font-size(14);
+				color: #44425A;
+
+				span {
+					color: #3178CC;
+					@include opensans-light;
+					@include font-size(28);
+				}
+			}
+
+			.buttons {
+				float: right;
+				margin-top:9px;
+
+				a {
+					@include opensans;
+					color: #FFF;
+					@include font-size(15);
+					padding: 11px 50px;
+					@include border_radius_bottom(5px);
+					margin-left: 11px;
+
+					&:before {
+						@extend [class*="icon-"];
+					}
+
+					&.get-in-touch {
+						background: #8EC555;
+						@include vertical-gradient(#8EC555, #78AF3F);
+						&:before {
+							@extend .icon-bubble:before;
+						}
+
+						&:hover {
+							@include vertical-gradient(#78AF3F, #8EC555);
+						}						
+					}
+
+					&.live-chat {
+						@include vertical-gradient(#EC9D0A, #EE8803);
+						&:before {
+							@extend .icon-chat:before;
+						}
+
+						&:hover {
+							@include vertical-gradient(#EE8803, #EC9D0A);
+						}
+					}					
+				}
+			}
+		}
 	}
 
 
@@ -39,6 +100,7 @@ body {
 		ul {
 			float: left;
 			list-style-type: none;
+			padding: 0;
 
 
 			>li {
@@ -46,14 +108,14 @@ body {
 				position: relative;
 				@include transition(all 0.3s ease);
 				zoom: 0;
-				margin: 0 0 0 2em;	
 
 			 	> a {
 			 		display: inline-block;
 					padding: 0 0;
-			 		@include font-size(12);
+			 		@include font-size(18);
 				 	position: relative;
 			 		line-height: 1;
+			 		margin-right: 38px;
 			 	}
 
 			 	> a:hover,
@@ -102,6 +164,27 @@ body {
 				 	}
 			 	}						
 			}
+		}
+
+		#searchform {
+			float: left;
+
+			&:before {
+				@extend [class*="icon-"];
+				@extend .icon-search:before;
+				color: #3178CC;
+			}
+
+			#s {
+				border: none;
+				@include font-size(18);
+				color: #4A4A4A;
+				padding-left: 2px;
+			}
+
+			#searchsubmit {
+				display: none;
+			}
 		}			
 
 		.woo-nav {
@@ -109,6 +192,17 @@ body {
 
 			li {
 				@extend [class*="icon-"];
+
+				&:before {
+					color: #3178CC;
+					@include transition(all 0.3s ease);
+				}
+
+				&:hover {
+					&:before, a {
+						color: #9BCC6B;
+					}
+				}
 
 				&.logout:before {
 					@extend .icon-logout:before;
