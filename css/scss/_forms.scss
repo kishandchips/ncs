@@ -1,0 +1,336 @@
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=password], 
+textarea,
+select {
+	@include box-sizing(border-box);
+	color: #666;
+	border: none;
+	@include font-size(15);
+
+	&:focus {
+		outline: none;
+	}
+}
+
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=tel],
+input[type=number],
+input[type=password],
+textarea {	
+	@include border-radius(0);
+	background: #FFF;
+	border: 1px solid #b0b0b0;
+	padding: 0.6em;
+	max-width: 100%;
+}
+
+select {
+	@include border-radius(0);
+	-webkit-appearance: none;
+	display: inline-block;
+	border: 1px solid #b0b0b0;
+	padding: 0.6em;
+	@include font-size(15);
+	background: #f4f4f4;
+	position: relative;
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		padding-right: 40px;
+	}
+}
+
+textarea {
+	height: 200px;
+}
+
+input[type=submit],
+input[type=reset] {
+
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="radio"]::-moz-focus-inner,
+option::-moz-focus-inner,
+select::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+	border: none !important;
+	outline: none !important;
+}
+
+label {
+	margin: 0 0 0.3em 0;
+	@include font-size(13);
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+/* =============================================================================
+   Gravity
+   ========================================================================== */
+
+.gform_wrapper {
+	max-width: 100% !important;
+ 	margin: 0 !important;
+
+ 	&.gf_browser_chrome {
+ 		.gfield_checkbox li input[type=checkbox],
+ 		.gfield_radio li input[type=radio],
+ 		.gfield_checkbox li input {
+ 			margin-left: 1px;
+ 		}
+
+ 	}
+ 	form {
+		.gform_heading {
+			margin-bottom: 0;
+			.gform_title {
+				font-weight: normal;
+				@include font-size(20);
+				margin-bottom: 10px;
+			}
+		}
+
+		div.validation_error {
+			text-align: center;
+			@include font-size(12);
+			font-weight: normal;
+			margin: 2em 0 0 0;
+		}
+
+	 	.gform_body {
+
+	// 		margin: 20px 0;
+	// 		font-family: Arial, Helvetica, sans-serif;
+
+	// 		font-size: 11px;
+
+			.gform_fields {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				@extend .clearfix;
+
+				&.top_label {
+					.gfield_label {
+						margin: 0.5em 0;
+					}
+				}
+
+	 			.gfield {
+	 				margin: 2em 0;
+					padding: 0;
+					&.gfield_error {
+						border: none;
+						background: none;
+	//					@include background(rgba(#a40000, 0.4));
+						label {
+							color: #333;
+						}
+					}
+
+					&.gsection {
+						border-bottom: 1px solid #ececec;
+					}
+
+					&.hide-label {
+						.gfield_label {
+							display: none;
+						}
+					}
+					&.gf_left_half,
+					&.gf_right_half {
+						margin-bottom: 0;
+
+						@include device-width(5) {
+							width: auto;
+							float: none;
+						}
+					}
+
+					.ginput_container {
+						input[type=text],
+						input[type=email],
+						input[type=url],
+						input[type=tel],
+						input[type=number],
+						input[type=password], 
+						textarea,
+						select {
+							@include font-size(15);
+							padding: 0.4em;
+						}
+					}
+
+					.gfield_description {
+						&.validation_message {
+							padding: 0 !important;
+							margin: 0;
+							color: #df5206;
+						}
+					}
+	 			}
+	 		}
+	 	}
+
+	 	.gform_footer {
+	 		margin: 1em 0;
+	 		padding: 0 1em 0 0;
+	 		@extend .clearfix;
+
+	 		.button {
+	 			float: right;
+	 		}
+	 	}
+	}
+}
+
+.postcode_wrapper {
+	.postcode {
+		.gform_heading {
+			text-align: center;
+		}
+
+		.gform_description {
+		}
+
+		.validation_error {
+			background: #ececec;
+			color: #012c55;
+			padding: 2em 10%;
+			@include font-size(16);
+			border-top: 1px solid #022d55;
+			border-bottom: 1px solid #022d55;
+		}
+
+		.gform_body {
+
+			.gform_fields {
+
+				.gfield {
+					margin: 1em 0;
+					padding: 0 4em;
+					text-align: center;
+
+					// &.label-above {
+					// 	.gfield_label {
+					// 		float: none;
+					// 		display: block;
+					// 		text-align: center;
+					// 		@include font-size(16);
+					// 		margin: 0 0 0.5em 0;
+					// 	}
+					// }
+
+					&.gfield_error {
+
+						label {
+							color: #FFF;
+						}
+						
+						.gfield_label {
+							margin-top: 0;
+						}
+					}
+
+					.gfield_label {
+					}
+
+					.gfield_checkbox li input,
+					.gfield_radio li input {
+						margin-top: 2px;
+					} 
+
+					.ginput_container {
+						margin: 0;
+
+						input[type=text],
+						input[type=email],
+						input[type=url],
+						input[type=tel],
+						input[type=number],
+						input[type=password], 
+						textarea,
+						select {
+							border: 1px solid #1e5182;
+							@include border-radius(3px);
+						}
+					}
+
+					.gfield_description {
+						width: auto;
+						text-align: center;
+						color: #012c55;
+						margin: 0.3em 0 0 0;
+
+						&.validation_message {
+							margin: 0.3em 0 0 0;
+							color: #012c55;
+						}
+					}
+				}
+
+				&.left_label,
+				&.right_label {
+
+					.gfield_label {
+						width: auto;
+						display: inline-block;
+						float: none;
+						vertical-align: top;
+					}
+
+					ul.gfield_checkbox,
+					ul.gfield_radio {
+						@extend .clearfix;
+
+						li {
+							float: left;
+							margin: 0 10px 0 0;
+							label {
+								margin-left: 18px;
+							}
+
+						}
+					}
+
+					.ginput_container {
+						display: inline-block;
+
+						input.medium {
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+
+		.gform_footer {
+			padding: 0;
+			margin: 0 0 1em 0;
+			text-align: center;
+
+			&.left_label {
+				padding: 0;
+			}
+
+			.button {
+				float: none;
+			}
+		}
+	}
+}
