@@ -10,6 +10,10 @@
 				return false;
 			});
 
+			
+			$("#footer .carousel" ).clone().appendTo( "#menu-secondary-header-nav .news .sub-menu");
+			$( "#menu-secondary-header-nav .news .sub-menu li" ).wrapAll( "<div class='nav' />");
+
 			$.fn.simpleSlider = function(options) {
 						
 				var defaults = {

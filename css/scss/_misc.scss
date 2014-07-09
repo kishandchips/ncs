@@ -263,113 +263,155 @@ hr {
    Widgets
    ========================================================================== */
 
-   	.carousel {
+.carousel {
+	display: block;
+	position: relative;
+	width: 100%;
+
+	.carousel-container {
 		display: block;
-		position: relative;
+		overflow: hidden;
 		width: 100%;
+		margin: 0 auto;
+		@include box-sizing(border-box);
+		padding: 0 25px;
 
-		.carousel-container {
-			display: block;
+		.carousel-wrapper, .carousel-wrapper2 {
+			clear: both;
+			height: auto;
 			overflow: hidden;
-			width: 100%;
-			margin: 0 auto;
-			@include box-sizing(border-box);
-			padding: 0 25px;
+			margin: 0;
 
-			.carousel-wrapper, .carousel-wrapper2 {
-				clear: both;
-				height: auto;
-				overflow: hidden;
-				margin: 0;
+			.carousel-element {
+					width: 100%;
+					float: left;
+					margin: 0;
+					background: #FFF;
+					@include box-sizing(border-box);
 
-				.carousel-element {
-						width: 100%;
-						float: left;
-						margin: 0;
-						background: #FFF;
-						@include box-sizing(border-box);
+				.ce-inner {
+					padding: 20px;
+					border-right: 1px solid #C0C0C0;
+					display: block;
+					line-height: 1.5;
+					color: #666;
 
-					.ce-inner {
-						padding: 20px;
-						border-right: 1px solid #C0C0C0;
+					a {
+						color: #1656A1;
+						@include font-size(18);
+						@include opensans-light;
 						display: block;
-						line-height: 1.5;
-						color: #666;
 
+						@include device-width(9) {
+							@include font-size(14);
+						}						
+
+						&:hover {
+							color: #0A2D57;
+						}
+					}	
+
+					@include device-width(5) {
 						a {
-							color: #1656A1;
-							@include font-size(18);
-							@include opensans-light;
-							display: block;
-
-							@include device-width(9) {
-								@include font-size(14);
-							}						
-
-							&:hover {
-								color: #0A2D57;
-							}
-						}	
-
-						@include device-width(5) {
-							a {
-								@include font-size(12);	
-							}
-							
-							p {
-								display: none;
-							}
-						}											
-					}
+							@include font-size(12);	
+						}
+						
+						p {
+							display: none;
+						}
+					}											
 				}
 			}
 		}
-
-		.carousel-nav, .carousel-index {
-			display: block;
-			margin: 0 auto;
-		}
-
-		.nav {
-			position: absolute;
-			width: 31px;
-			background: #4A90E2;
-			color: #FFF;
-			height: 100px;
-			display: block;
-			height: 100%;
-			top: 0px;
-			text-align: center;			
-
-			&:hover {
-				text-decoration: none;
-			}
-		}
-
-		.prev {
-			left: 0px;
-
-			&:before {
-				position: absolute;
-				top: 45%;
-				left: 8px;
-				@extend [class*="icon-"];
-				@extend .icon-arrow-left:before;
-			}
-		}	
-
-		.next {
-			right: 0px;
-
-			&:before {
-				position: absolute;
-				top: 45%;
-				left: 8px;
-				@extend [class*="icon-"];
-				@extend .icon-arrow-right:before;				
-			}			
-		}				
 	}
+
+	.carousel-nav, .carousel-index {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.nav {
+		position: absolute;
+		width: 31px;
+		background: #4A90E2;
+		color: #FFF;
+		height: 100px;
+		display: block;
+		height: 100%;
+		top: 0px;
+		text-align: center;			
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	.prev {
+		left: 0px;
+
+		&:before {
+			position: absolute;
+			top: 45%;
+			left: 8px;
+			@extend [class*="icon-"];
+			@extend .icon-arrow-left:before;
+		}
+	}	
+
+	.next {
+		right: 0px;
+
+		&:before {
+			position: absolute;
+			top: 45%;
+			left: 8px;
+			@extend [class*="icon-"];
+			@extend .icon-arrow-right:before;				
+		}			
+	}				
+}
+
+
+
+.ui-autocomplete {
+	z-index: 100;
+
+	&:before {
+		width: 0; 
+		height: 0; 
+		border-left: 5px solid transparent;
+		border-right: 5px solid transparent;	
+		border-bottom: 5px solid #4E4E4E;
+	}
+
+
+}
+
+.ui-widget-content {
+	border:1px solid #C1C1C1;
+	border-top: 8px solid #4E4E4E;
+	@include box-shadow(#363636 0 3px 4px);
+
+	li.ui-menu-item {
+		margin: 0;
+		padding: 0;
+		@include transition(none);
+
+		a {
+			color: #4A90E2;
+			padding: 0.8em 1.5em;
+			@include opensans;
+			@include font-size(14);
+			@include transition(none);
+
+			// &:hover {
+			// 	background: none;
+			// 	border: none;
+			// 	color: #0C305A;
+			// }
+		}
+	}
+}
 
 
    /* =============================================================================

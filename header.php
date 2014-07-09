@@ -25,7 +25,6 @@
 			</a>
 			<div class="navigation-container span eight">
 				<div class="information">
-					<p>For friendly advice or technical support, call: <span>01622 769692</span></p>
 					<div class="buttons">
 						<a href="" class="get-in-touch">
 							<?php _e('Get in touch'); ?>
@@ -33,7 +32,8 @@
 						<a href="" class="live-chat">
 							<?php _e('Live chat'); ?>
 						</a>
-					</div>
+					</div>				
+					<p><?php _e('For friendly advice or technical support, call: ') ?><span><?php _e('01622 769692') ?></span></p>
 				</div>
 				<nav class="top-navigation">
 

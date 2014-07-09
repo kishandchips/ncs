@@ -123,9 +123,14 @@ body {
 			 		margin-right: 5px;
 			 		color: #4A4A4A;
 			 		padding: 15px 17px;
+			 		@include border-radius(3px);
 			 	}
 
-			 	> a:hover,
+			 	&:hover > a {
+			 		color: #FFF !important;
+			 		background: #4E4E4E !important;
+			 	}			 	
+
 			 	&.current_page_parent > a,
 			 	&.current-menu-item > a,
 			 	&.current-category-ancestor > a,
@@ -134,9 +139,8 @@ body {
 			 	&.current-menu-parent > a,
 			 	&.current-post-parent > a,
 			 	&.current > a {
-			 		color: #FFF;
-			 		background: #4E4E4E;
-					@include border-radius(3px);			 		
+			 		color: #4A4A4A;
+			 		background: #EAEAEA;
 			 	}
 
 			 	.sub-menu {
@@ -157,6 +161,8 @@ body {
 
 				    li {
 				    	display: block;
+		 				margin: 5px 0;
+
 				    	a {
 				    		display: block;
 				    		@include font-size(16);
@@ -172,10 +178,11 @@ body {
 						top:76%;
 						left:0;
 
-					 	@include device-width(6) {
-					 		
+					 	@include device-width(7) {
+					 		opacity: 0;
+						    top:-99999px;
+						    left:0;					 		
 					 	}
-
 				 	}
 			 	}
 
@@ -186,7 +193,6 @@ body {
 			 			li {
 			 				width: 49%;
 			 				float: left;
-			 				margin: 5px 0;
 			 			}
 			 		}
 			 	}				
@@ -194,6 +200,29 @@ body {
 			 	&.news {
 			 		ul {
 			 			width: 100%;
+
+			 			> div.nav {
+			 				width: 30%;
+			 				float: left;
+			 			}
+
+			 			.carousel {
+			 				width: 70%;
+			 				float: right;
+
+			 				.nav {
+			 					display: none;
+			 				}
+
+			 				.ce-inner {
+			 					padding: 0 20px;
+			 				}
+
+			 				.carousel-container {
+			 					padding: 0;
+			 					border-left: 1px solid #C0C0C0;
+			 				}
+			 			}
 			 		}
 			 	}	
 			}
@@ -224,7 +253,7 @@ body {
 
 		.woo-nav {
 			float: right;
-			padding: 1em 0;
+			padding: 0.9em 0;
 
 			ul {
 				padding: 0;
@@ -236,11 +265,14 @@ body {
 				@extend [class*="icon-"];
 				float: left;
 				margin-left: 35px;
+				line-height: 22px;
 
 				&:before {
 					color: #3178CC;
 					@include transition(all 0.3s ease);
-					margin-right: 0.3em;
+					margin-right: 0.5em;
+					margin-top: 0.2em;
+					float: left;
 				}
 
 				&:hover {
@@ -267,6 +299,7 @@ body {
 
 				a {
 					@include font-size(16);
+					@include inline-block;
 				}
 
 			}
@@ -321,19 +354,30 @@ body {
 			 		padding: 1em 0;
 			 		@include border-radius(5px);
 					@include vertical-gradient(#00817F, #006867);
+					@include transition(none);
 
-
+					&:hover {
+						@include vertical-gradient(#006867, #00817F);
+					}
 			 	}
 
 				&.commercial a {
-					@include vertical-gradient(#4A90E2, #2F77CC);						
+					@include vertical-gradient(#4A90E2, #2F77CC);
+
+					&:hover {
+						@include vertical-gradient(#2F77CC, #4A90E2);
+					}						
 				} 
 
 				&.products a {
-					@include vertical-gradient(#44425A, #322F4F);						
+					@include vertical-gradient(#44425A, #322F4F);	
+
+					&:hover {
+						@include vertical-gradient(#322F4F, #44425A);	
+					}					
 				} 				
 
-			 	> a:hover,
+			 	&:hover a,
 			 	&.current_page_parent > a,
 			 	&.current-menu-item > a,
 			 	&.current-category-ancestor > a,
@@ -342,12 +386,8 @@ body {
 			 	&.current-menu-parent > a,
 			 	&.current-post-parent > a,
 			 	&.current > a {
-			 		color: #eeb111;
-
-			 		@include device-width(12) {
-			 			background: #326ba1;
-			 			color: #FFF;
-			 		}
+					@include border_radius_bottom(0px);
+					padding-bottom: 35px;
 			 	}
 
 			 	.sub-menu {
@@ -378,6 +418,11 @@ body {
 			 	}		
 
 			 	&:hover {
+					
+					> a {
+						
+					}
+
 				 	.sub-menu {
 						opacity: 1;
 						position:absolute;
@@ -395,6 +440,20 @@ body {
 	background: #0C305A;
 	position: relative;
 	z-index: 1;
+
+	.page-commercial & {
+
+	}
+
+	.page-education & {
+		background: #002928;
+		
+	}
+
+	.woocommerce-page & {
+		background: #242239; 
+	}
+
 
 	#parent-title, #page-title {
 		@include opensans-light;

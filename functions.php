@@ -162,3 +162,15 @@ function excerpt($num) {
 }
 
 if(function_exists('acf_add_options_page')) acf_add_options_page();
+
+//Top level Page Slug to Body Class
+function add_slug_body_class( $classes ) {
+	global $post;
+	if ( isset( $post ) ) {
+		$parent = array_reverse(get_post_ancestors($post->ID));
+		$first_parent = get_page($parent[0]);
+		$classes[] = $post->post_type . '-' . $first_parent->post_name;
+	}
+	return $classes;
+}
+add_filter( 'body_class', 'add_slug_body_class' );
