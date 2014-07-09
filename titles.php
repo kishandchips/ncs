@@ -20,7 +20,7 @@
 			$page_title = '';
 		}
 
-		if (is_single()) {
+		if (is_single() || is_category()) {
 			$top_parent_title = 'News';
 		}
 	 ?>	
