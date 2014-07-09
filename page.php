@@ -15,9 +15,6 @@ get_header(); ?>
 
 <div id="page" class="container">
 	<div id="sidebar" class="span two break-on-mobile">
-		<!-- Auto List Child pages of Top level page-->
-		<?php top_level_childrens(); ?>
-
 		<!-- Sidebar Selector-->
 		<?php 
 			$value = get_field_object('choose_sidebar');

@@ -1,5 +1,9 @@
 <?php
 
+require( get_template_directory() . '/inc/widgets/support.php' );
+
+require( get_template_directory() . '/inc/widgets/auto_childrens.php' );
+
 // Custom Actions
 
 // Custom Filters
@@ -124,34 +128,6 @@ function custom_styles() {
 
 add_action('wp_enqueue_scripts', 'custom_styles');
 
-
-function top_level_childrens() {
-	$parent = array_reverse(get_post_ancestors($post->ID));
-	$first_parent = get_page($parent[0]);
-	$top_parent =  $first_parent->ID;
-	$top_parent_title = $first_parent->post_title;
-	$current = get_the_id();
-
-		$args = array(
-		    'post_type'      => 'page',
-		    'posts_per_page' => -1,
-		    'post_parent'    => $top_parent,
-		    'orderby'        => 'menu_order'
-		 );
-		
-	$parent = new WP_Query( $args );
-
-	if ( $parent->have_posts() ) : 
-		echo '<ul class="childpages">';
-		    while ( $parent->have_posts() ) : $parent->the_post(); ?>
-		    	<li <?php if ($current == get_the_id()) {echo 'class="current"';} ?>>
-
-					<a href="<?php the_permalink(); ?>"><?php the_title(); ?> </a>
-				<?php echo '</li>';
-		    endwhile;
-		echo '</ul>';
-	endif; wp_reset_query();
-}
 
 function excerpt($num) {
     $limit = $num+1;
