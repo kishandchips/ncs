@@ -33,7 +33,7 @@
 							<?php _e('Live chat'); ?>
 						</a>
 					</div>				
-					<p><?php _e('For friendly advice or technical support, call: ') ?><span><?php _e('01622 769692') ?></span></p>
+					<p><?php _e('For friendly advice or technical support, call: ') ?><span><?php the_field('phone_number', 'option'); ?></span></p>
 				</div>
 				<nav class="top-navigation">
 

@@ -1,8 +1,18 @@
 <?php
 
+// Custom Widgets
+
 require( get_template_directory() . '/inc/widgets/support.php' );
 
+require( get_template_directory() . '/inc/widgets/help.php' );
+
 require( get_template_directory() . '/inc/widgets/auto_childrens.php' );
+
+require( get_template_directory() . '/inc/widgets/wp_nav_menu_thumbnails.php' );
+
+require( get_template_directory() . '/inc/widgets/menu_separator.php' );
+
+require( get_template_directory() . '/inc/widgets/woocommerce_cats_with_thumbnail.php');
 
 // Custom Actions
 
@@ -28,6 +38,7 @@ function custom_setup_theme() {
 	add_image_size( 'frontpage', 283, 210, true);
 	add_image_size( 'small-thumbnail', 100, 100, true);
 	add_image_size( 'custom-medium', 330, 330, true);
+	add_image_size( 'custom-navigation', 106, 67, true);
 }
 add_action( 'init', 'custom_setup_theme' );	
 
@@ -123,28 +134,39 @@ function custom_styles() {
 
 	$wp_styles->add_data('ie7', 'conditional', 'lt IE 8');
 }
-
 add_action('wp_enqueue_scripts', 'custom_styles');
 
 
+if ( ! function_exists( 'excerpt' )) {
 function excerpt($num) {
-    $limit = $num+1;
-    $excerpt = explode(' ', get_the_excerpt(), $limit);
-    array_pop($excerpt);
-    $excerpt = implode(" ",$excerpt)."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)";
-    echo $excerpt;
+	    $limit = $num+1;
+	    $excerpt = explode(' ', get_the_excerpt(), $limit);
+	    array_pop($excerpt);
+	    $excerpt = implode(" ",$excerpt)."... (<a href='" .get_permalink($post->ID) ." '>Read more</a>)";
+	    echo $excerpt;
+	}
 }
 
 if(function_exists('acf_add_options_page')) acf_add_options_page();
 
+
 //Top level Page Slug to Body Class
-function add_slug_body_class( $classes ) {
-	global $post;
-	if ( isset( $post ) ) {
-		$parent = array_reverse(get_post_ancestors($post->ID));
-		$first_parent = get_page($parent[0]);
-		$classes[] = $post->post_type . '-' . $first_parent->post_name;
+if ( ! function_exists( 'add_slug_body_class' )) {
+	function add_slug_body_class( $classes ) {
+		global $post;
+		if ( isset( $post ) ) {
+			$parent = array_reverse(get_post_ancestors($post->ID));
+			$first_parent = get_page($parent[0]);
+			$classes[] = $post->post_type . '-' . $first_parent->post_name;
+		}
+		return $classes;
 	}
-	return $classes;
+	add_filter( 'body_class', 'add_slug_body_class' );
 }
-add_filter( 'body_class', 'add_slug_body_class' );
+
+function wpb_first_and_last_menu_class($items) {
+    $items[1]->classes[] = 'first';
+    $items[count($items)]->classes[] = 'last';
+    return $items;
+}
+add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');

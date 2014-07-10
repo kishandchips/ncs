@@ -34,6 +34,7 @@ get_header(); ?>
 							<div class="title">
 								<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>	
 							</div>
+							
 						</a>
 					</article>
 

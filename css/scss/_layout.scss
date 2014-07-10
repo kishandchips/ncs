@@ -94,9 +94,9 @@ body {
 	}
 
 
-/****************************/
-/* TOP NAVIGATION 			*/
-/****************************/
+/***************************************************************************************/
+/* TOP NAVIGATION 																	   */
+/***************************************************************************************/
 	.top-navigation {
 		@extend .clearfix;
 		position: relative;
@@ -326,9 +326,10 @@ body {
 	}
 	
 
-/****************************/
-/* MAIN NAVIGATION 			*/
-/****************************/
+/***************************************************************************************/
+/* MAIN NAVIGATION 																	   */
+/***************************************************************************************/
+
 	.main-navigation {
 		@extend .clearfix;
 
@@ -340,12 +341,14 @@ body {
 			
 			> li {
 				float: left;
-				width: 32%;
+				width: 32.666666%;
 				margin-right: 1%;
-
-				
-				@include transition(all 0.3s ease);
+				@include transition(none);
 				zoom: 0;
+
+				&.last {
+					margin-right: 0;
+				}
 
 			 	> a {
 					padding: 0 0;
@@ -360,62 +363,216 @@ body {
 					@include transition(none);
 			 	}
 
+			 	> ul {
+	 				list-style-type: none;
+
+					.widget-nav-menu {
+	 					width: 100%;
+	 					@extend .clearfix;
+
+	 					ul.menu {
+	 						padding: 0;
+	 						margin:0;
+
+	 						li {
+	 							float: left;
+	 							width: 32%;
+	 							list-style: none;
+	 							@include borderbox;
+	 							margin: 0.5%;
+								
+
+								a {
+									padding: 1.5em;
+									@include border-radius(3px);
+									@include vertical-gradient(#00817F, #006867);
+									@include font-size(14);
+									color: #FFF;
+									display: block;
+									@include transition(none);
+
+									&:hover {
+										background: #004848;
+
+									}
+								}
+	 						}
+	 					}
+	 				}
+
+					.menu_thumb {
+						margin: 0;
+						padding: 0;
+						width: 100%;
+						@extend .clearfix;
+						list-style-type: none;
+
+						li {
+							float: left;
+							width: 240px;
+							margin: 0 9px 19px 10px;
+
+							a {
+								@extend .clearfix;
+								padding: 0;
+								@include border-radius(3px);
+								@include vertical-gradient(#00817F, #006867);
+								@include font-size(14);
+								color: #FFF;
+								display: block;
+								@include transition(none);
+								height: 67px;
+								overflow: hidden;
+
+								span {
+									padding: 0.8em 1em;
+									display: block;
+									float: left;
+									width: 89px;
+								}
+
+								img {
+									float: right;
+									max-height: 100%;
+									width: auto;
+								}
+
+								&:hover {
+									background: #004848;
+
+								}									
+							}
+						}
+					}			 		
+			 	}
+
 			 	&.education {
 
 			 		> a {
-		 			@include vertical-gradient(#00817F, #006867);
-
-			 			&:hover {
-			 				@include vertical-gradient(#006867, #00817F);
-			 			}
-
+		 				@include vertical-gradient(#00817F, #006867);
 		 			}
 
-		 			> ul {
-		 				background: url(../images/backgrounds/education-drop-bg.jpg) left top no-repeat;
-		 				list-style-type: none;
+					&:hover, &.current-page-ancestor {
+						> a {
+							background: #004848;
+						}
+		 			}
 
-		 				.widget-nav-menu {
-		 					width: 100%;
 
-		 					ul#menu-education-dropdown-secondary {
-		 						padding: 0;
-		 						margin:0;
-
-		 						li {
-		 							float: left;
-		 							width: 30%;
-		 							list-style: none;
-		 							padding: 25px;
-		 							@include borderbox;
-		 							margin: 1%;
-
-									@include border-radius(3px);
-									@include vertical-gradient(#00817F, #006867);		 							
-		 						}
-		 					}
-
-		 					
-		 				}
-
+		 			> .sub-menu {
+		 				border-top: 8px solid #004848;
+		 				background: url(../images/backgrounds/education-drop-bg.jpg) left top repeat;
 		 			}		 			
 
 			 	}
 
-				&.commercial > a {
-					@include vertical-gradient(#4A90E2, #2F77CC);
+				&.commercial {
 
-					&:hover {
-						@include vertical-gradient(#2F77CC, #4A90E2);
+					> a {
+						@include vertical-gradient(#4A90E2, #2F77CC);						
+					}
+
+					&:hover, &.current-page-ancestor {
+						a {
+							background: #00459C;
+						}
+						
+					}					
+					
+					> .sub-menu {
+						border-top: 8px solid #00459C;
+						background: url(../images/backgrounds/commercial-drop-bg.jpg) left top repeat;
+
+						.widget-nav-menu {
+							ul.menu {
+								a {
+									@include vertical-gradient(#4A90E2, #2F77CC);							
+
+									&:hover {
+										background: #00459C;
+									}									
+								}
+							}
+						}
+
+						.menu_thumb {
+							a {
+								@include vertical-gradient(#4A90E2, #2F77CC);	
+
+								&:hover {
+									background: #00459C;
+								}									
+							}							
+						}
 					}						
 				} 
 
-				&.products > a {
-					@include vertical-gradient(#44425A, #322F4F);	
+				&.products {
+					> a {
+						@include vertical-gradient(#44425A, #322F4F);	
 
-					&:hover {
-						@include vertical-gradient(#322F4F, #44425A);	
-					}					
+						&:hover, &.current-page-ancestor {
+
+							a {
+								background: #292550;	
+							}
+							
+						}						
+					}
+
+					> .sub-menu {
+						border-top: 8px solid #292550;
+						background: url(../images/backgrounds/products-drop-bg.jpg) left top repeat;
+
+						.widget-product-cats-with-thumb {
+							width: 100%;
+
+							ul {
+								list-style-type: none;
+								padding: 0;
+								margin: 0;
+							}
+
+
+							li {
+								float: left;
+								width: 240px;
+								margin: 0 9px 19px 10px;
+
+								a {
+									@extend .clearfix;
+									padding: 0;
+									@include border-radius(3px);									
+									@include vertical-gradient(#9692C5, #494989);
+									@include font-size(14);
+									color: #FFF;
+									display: block;
+									@include transition(none);
+									height: 67px;
+									overflow: hidden;
+
+									span {
+										padding: 0.8em 1em;
+										display: block;
+										float: left;
+										width: 89px;
+									}
+
+									img {
+										float: right;
+										max-height: 100%;
+										width: auto;
+									}
+
+									&:hover {
+										background: #292550;
+
+									}									
+								}
+							}
+						}
+					}						
+					
 				} 				
 
 			 	&:hover a,
@@ -429,6 +586,7 @@ body {
 			 	&.current > a {
 					@include border_radius_bottom(0px);
 					padding-bottom: 35px;
+
 			 	}
 
 			 	.sub-menu {
@@ -436,7 +594,7 @@ body {
 				    top:-99999px;
 				    left:0; 
 				    opacity: 0;
-			        @include transition(opacity .4s ease-in-out);
+			        @include transition(opacity .2s ease-in-out);
 				    z-index:497;
 				    background:#333;
 				    padding: 2px;
@@ -467,8 +625,12 @@ body {
 				 	.sub-menu {
 						opacity: 1;
 						position:absolute;
-						top:99%;
+						top:89%;
 						left:0;
+
+						@include device-width(9) {
+							opacity: 0;
+						}
 				 	}
 			 	}			 	
 			}
@@ -476,6 +638,11 @@ body {
 	}
 
 }
+
+/***************************************************************************************/
+/* PAGE HEADER 																		   */
+/***************************************************************************************/
+
 
 #page-header {
 	background: #0C305A;
@@ -509,7 +676,11 @@ body {
 	}
 }
 		
-			
+
+/***************************************************************************************/
+/* MAIN 																			   */
+/***************************************************************************************/
+		
 #main {
 
 	#content {
@@ -526,6 +697,11 @@ body {
 	}
 
 }
+
+/***************************************************************************************/
+/* SIDEBAR: 	 																	   */
+/***************************************************************************************/
+
 		
 #sidebar {
 	padding: 46px 0;
@@ -642,6 +818,38 @@ body {
 	
 }
 
+.widget-megamenuseparator {
+	.separator {
+		width: 100%;
+		display: block;
+		@include border-radius(3px);
+		border: 1px dashed #979797;		
+		padding: 0 1.5em;
+		margin: 2em 0;
+		line-height: 5.5em;
+		@include borderbox;
+
+		span {
+			@include font-size(17);
+			color: #FFF;
+		}
+
+		a.button {
+			float: right;
+			@include border-radius(3px !important);
+			@include vertical-gradient(#86B555, #5B8E26 );
+			@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
+			padding: 20px 35px !important;
+			line-height: 1;
+			margin-top: 10px;
+
+			&:hover {
+				@include vertical-gradient(#5B8E26, #86B555 );
+			}
+		}
+	}
+}
+
 
 /****************************/
 /* FOOTER::;				*/
@@ -649,6 +857,8 @@ body {
 #footer {
 	background: #0A2D57;
 	color: #FFF;
+	position: relative;
+	z-index: 1;
 
 	.container {
 		padding: 3em 0;
@@ -867,6 +1077,10 @@ body {
 /* =============================================================================
    Pages
    ========================================================================== */
+
+#page {
+	z-index: 1;
+}
 
 /****************************/
 /* Woocommerce;				*/

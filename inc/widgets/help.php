@@ -2,12 +2,12 @@
 /**
  * Example Widget Class
  */
-class Support_Widget extends WP_Widget {
+class Help_Box_Widget extends WP_Widget {
  
  
     /** constructor -- name this the same as the class above */
-    function Support_Widget() {
-        parent::WP_Widget(false, $name = 'Support Boxes Widget');	
+    function Help_Box_Widget() {
+        parent::WP_Widget(false, $name = 'Help Box Widget');	
     }
  
     /** @see WP_Widget::widget -- do not rename this */
@@ -18,16 +18,19 @@ class Support_Widget extends WP_Widget {
               <?php echo $before_widget; ?>
                   <?php if ( $title )
                         echo $before_title . $title . $after_title; ?>
-							<div class="call-me-back">
-							<p><?php _e('For Friendly Technical support or Product Advice, please call:') ?></p>
-							<p><span><?php the_field('phone_number', 'option'); ?></span></p>
-							<a href="#" class="live-chat">
-								<?php _e('Call Me Back') ?>
-							</a>								
+							<div class="help-box">
+                                <div class="span six">
+                    				<p class="title"><?php _e('Need help finding the right product?') ?></p>
+                                    <p><?php _e('Our expert team can advise you on the latest advancements in technology and recommend affordable products that will best suit your needs. Contact us to find out more.
+                                ') ?></p>
+                                </div>
+                                <div class="span four">
+        							<p><span><?php the_field('phone_number', 'option'); ?></span></p>
+        							<a href="#" class="live-chat">
+        								<?php _e('Call Me Back') ?>
+        							</a>								
+                                </div>
 							</div>
-							<a href="#" class="live-chat">
-								<?php _e('Live Chat') ?>
-							</a>
               <?php echo $after_widget; ?>
         <?php
     }
@@ -50,8 +53,6 @@ class Support_Widget extends WP_Widget {
         </p>
         <?php 
     }
- 
- 
-} // end class Support_Widget
-add_action('widgets_init', create_function('', 'return register_widget("Support_Widget");'));
+} // end class Help_Box_Widget
+add_action('widgets_init', create_function('', 'return register_widget("Help_Box_Widget");'));
 ?>
