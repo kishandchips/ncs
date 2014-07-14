@@ -16,6 +16,8 @@ require( get_template_directory() . '/inc/widgets/woocommerce_cats_with_thumbnai
 
 // Custom Actions
 
+add_action( 'init', 'custom_init');
+
 // Custom Filters
 
 //Custom Shortcodes
@@ -170,3 +172,35 @@ function wpb_first_and_last_menu_class($items) {
     return $items;
 }
 add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');
+
+function custom_init(){
+	
+	require( get_template_directory() . '/inc/classes/custom-post-type.php' );
+	$testimonial = new Custom_Post_Type( 'Testimonial', 
+ 		array(
+ 			'rewrite' => array( 'with_front' => false, 'slug' => 'testimonials' ),
+ 			'capability_type' => 'post',
+ 		 	'publicly_queryable' => true,
+   			'has_archive' => true, 
+    		'hierarchical' => false,
+    		'exclude_from_search' => true,
+    		'menu_position' => null,
+    		'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
+    		'plural' => 'Testimonials'
+   		)
+   	);
+
+	$service = new Custom_Post_Type( 'Service', 
+ 		array(
+ 			'rewrite' => array( 'with_front' => false, 'slug' => 'services' ),
+ 			'capability_type' => 'page',
+ 		 	'publicly_queryable' => true,
+   			'has_archive' => true, 
+    		'hierarchical' => false,
+    		'exclude_from_search' => true,
+    		'menu_position' => null,
+    		'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
+    		'plural' => 'Services'
+   		)
+   	);   	
+}

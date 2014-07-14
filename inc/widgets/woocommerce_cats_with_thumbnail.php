@@ -22,13 +22,13 @@ class Product_Cats_With_Thumb extends WP_Widget {
                 <?php
                   global $post;
                   $args = array(
-                    'orderby'            => 'name',
+                    'orderby'            => 'ASC',
                     'parent'             => 0,
                     'order'              => 'ASC',
-                    'taxonomy'           => 'product_cat',
+                    'hide_empty' => 0,
                 );  ?>
 
-                <?php $catTerms = get_terms('product_cat', array('hide_empty' => 0, 'orderby' => 'ASC', 'parent' => 0 )); ?>
+                <?php $catTerms = get_terms('product_cat', $args); ?>
 
                 <?php foreach($catTerms as $catTerm) : ?>
                   <?php echo $catTerm->description ; ?>

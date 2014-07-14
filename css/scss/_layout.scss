@@ -473,7 +473,7 @@ body {
 					}
 
 					&:hover, &.current-page-ancestor {
-						a {
+						> a {
 							background: #00459C;
 						}
 						
@@ -525,6 +525,7 @@ body {
 						background: url(../images/backgrounds/products-drop-bg.jpg) left top repeat;
 
 						.widget-product-cats-with-thumb {
+							@extend .clearfix;
 							width: 100%;
 
 							ul {
@@ -538,6 +539,15 @@ body {
 								float: left;
 								width: 240px;
 								margin: 0 9px 19px 10px;
+
+								@include device-width(14) {
+									width: 31%;
+									margin: 1%;
+								}
+
+								@include device-width(11) {
+									width: 48%;
+								}
 
 								a {
 									@extend .clearfix;
@@ -575,7 +585,7 @@ body {
 					
 				} 				
 
-			 	&:hover a,
+			 	&:hover > a,
 			 	&.current_page_parent > a,
 			 	&.current-menu-item > a,
 			 	&.current-category-ancestor > a,
@@ -628,7 +638,7 @@ body {
 						top:89%;
 						left:0;
 
-						@include device-width(9) {
+						@include device-width(8) {
 							opacity: 0;
 						}
 				 	}
@@ -714,7 +724,7 @@ body {
 		}
 	}
 
-	.childpages, .widget_categories ul {
+	.childpages, .widget_nav_menu ul, .widget_categories ul {
 		list-style-type: none;
 		padding: 0;
 		margin: 0;
@@ -749,67 +759,6 @@ body {
 		}
 	}
 
-	.widget_support_widget {
-
-		.call-me-back {
-			@include border-radius(10px);
-			background: #759950;
-			color: #FFF;
-			padding: 1.8em 1.2em;
-			@include opensans-light;
-			@include font-size(17);
-
-			p {
-				margin-top: 0;
-
-				span {
-					@include font-size(28);
-				}
-			}
-
-			a {
-				@include vertical-gradient(#86B555, #5B8E26);
-				@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
-				margin: 0;
-
-				&:hover {
-					@include vertical-gradient(#5B8E26, #86B555);
-				}
-
-				&:before {
-					@extend [class*="icon-"];
-					@extend .icon-bubble:before;
-				}			
-			}
-		}
-
-		a {
-			@include border-radius(4px);
-			@include font-size(17);
-			padding: 1em 0;
-			width: 100%;	
-			text-align: center;	
-			color: #FFF;
-			display: block;		
-		}
-
-		.live-chat {
-			margin: 15px 0;
-			@include vertical-gradient(#EC9D0A, #EE8803);
-
-			&:hover {
-				@include vertical-gradient(#EE8803, #EC9D0A);				
-			}
-
-			&:before {
-				@extend [class*="icon-"];
-				@extend .icon-chat:before;
-				margin-right: 5px;
-			}				
-
-		}
-	}
-
 	.widget-title {
 		@include font-size(25);
 		border-bottom: 1px solid #D6D5CE;
@@ -818,42 +767,9 @@ body {
 	
 }
 
-.widget-megamenuseparator {
-	.separator {
-		width: 100%;
-		display: block;
-		@include border-radius(3px);
-		border: 1px dashed #979797;		
-		padding: 0 1.5em;
-		margin: 2em 0;
-		line-height: 5.5em;
-		@include borderbox;
-
-		span {
-			@include font-size(17);
-			color: #FFF;
-		}
-
-		a.button {
-			float: right;
-			@include border-radius(3px !important);
-			@include vertical-gradient(#86B555, #5B8E26 );
-			@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
-			padding: 20px 35px !important;
-			line-height: 1;
-			margin-top: 10px;
-
-			&:hover {
-				@include vertical-gradient(#5B8E26, #86B555 );
-			}
-		}
-	}
-}
-
-
 /****************************/
 /* FOOTER::;				*/
-/****************************/	
+/****************************/
 #footer {
 	background: #0A2D57;
 	color: #FFF;

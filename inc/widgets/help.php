@@ -20,13 +20,14 @@ class Help_Box_Widget extends WP_Widget {
                         echo $before_title . $title . $after_title; ?>
 							<div class="help-box">
                                 <div class="span six">
+                                    <img class="profile" src="<?php bloginfo( 'template_url' ); ?>/images/misc/help_profile.jpg" alt="">
                     				<p class="title"><?php _e('Need help finding the right product?') ?></p>
                                     <p><?php _e('Our expert team can advise you on the latest advancements in technology and recommend affordable products that will best suit your needs. Contact us to find out more.
                                 ') ?></p>
                                 </div>
                                 <div class="span four">
-        							<p><span><?php the_field('phone_number', 'option'); ?></span></p>
-        							<a href="#" class="live-chat">
+        							<div class="phone"><span><?php the_field('phone_number', 'option'); ?></span></div>
+        							<a href="#" class="call-me-back">
         								<?php _e('Call Me Back') ?>
         							</a>								
                                 </div>
