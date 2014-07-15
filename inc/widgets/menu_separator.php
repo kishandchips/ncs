@@ -55,7 +55,7 @@ class MegaMenuSeparator extends WP_Widget {
         </p>
         <p>
           <label for="<?php echo $this->get_field_id('buttontext'); ?>"><?php _e('Button Text:'); ?></label> 
-          <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo $link; ?>" />
+          <input class="widefat" id="<?php echo $this->get_field_id('buttontext'); ?>" name="<?php echo $this->get_field_name('buttontext'); ?>" type="text" value="<?php echo $buttontext; ?>" />
         </p>        
         <?php 
     }

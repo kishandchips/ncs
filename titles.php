@@ -27,10 +27,12 @@
 
 	<div id="page-header" class="clearfix">
 		<div class="container">
-			<div id="parent-title" class="span two break-on-mobile">
+			<div id="parent-title" class="span two">
 				<h2><?php echo $top_parent_title; ?></h2>	
 			</div>
-			<div id="page-title" class="span eight break-on-mobile">
+			<div id="page-title" class="span eight">
+				<a class="nav-btn" id="nav-open-btn" href="#nav"><span></span></a>
+				<a class="nav-btn" id="nav-close-btn" href="#nav">Close</a>
 				<h1><?php echo $page_title; ?></h1>
 			</div>
 		</div>

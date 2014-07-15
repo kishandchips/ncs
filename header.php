@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
@@ -36,7 +36,6 @@
 					<p><?php _e('For friendly advice or technical support, call: ') ?><span><?php the_field('phone_number', 'option'); ?></span></p>
 				</div>
 				<nav class="top-navigation">
-
 					<?php wp_nav_menu( array( 'theme_location' => 'secondary_header', 'menu_class' => 'clearfix menu', 'container' => false ) ); ?>
 					<form role="search" method="get" id="searchform" class="searchform" action="<?php bloginfo('url'); ?>">
 							<input type="text" value="" name="s" id="s" placeholder="Search...">

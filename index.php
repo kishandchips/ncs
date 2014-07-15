@@ -14,10 +14,10 @@
 get_header(); ?>
 
 <div id="page" class="container">
-	<div id="sidebar" class="span two break-on-mobile">
+	<div id="sidebar" class="span two">
 		<?php dynamic_sidebar( 'news-sidebar' ); ?>
 	</div>
-	<div id="content" class="span eight break-on-mobile">
+	<div id="content" class="span eight">
 		<div id="news">
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>

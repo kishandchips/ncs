@@ -9,7 +9,6 @@ body {
 	min-width: 250px;
 	background: #FFF;
 	@include opensans;
-
 	 -webkit-font-smoothing: antialiased !important;
 }
 
@@ -37,6 +36,10 @@ body {
 			border-bottom: 1px solid #EBEBEB;
 			padding-bottom: 0.9em;
 
+			@include device-width(6) {
+				display: none;
+			}
+
 			p {
 				float: left;
 				@include font-size(14);
@@ -48,6 +51,31 @@ body {
 					@include opensans-light;
 					@include font-size(28);
 				}
+
+				@include device-width(12) {
+					@include font-size(10);
+					margin-top: 0.5em;
+
+					span {
+						@include font-size(21);
+					}
+				}
+
+				@include device-width(10) {
+					@include font-size(14);
+					margin-top: 1em;
+
+					span {
+						@include font-size(28);
+					}
+				}
+
+				@include device-width(7) {
+
+					span {
+						@include font-size(20);
+					}
+				}				
 			}
 
 			.buttons {
@@ -181,10 +209,17 @@ body {
 					 	@include device-width(7) {
 					 		opacity: 0;
 						    top:-99999px;
-						    left:0;					 		
+						    left:0;	
+						    display: none;				 		
 					 	}
 				 	}
 			 	}
+
+			 	@include device-width(8) {
+			 		.sub-menu {
+			 			display: none;
+			 		}
+			 	}				 	
 
 			 	&.about {
 			 		ul {
@@ -200,6 +235,7 @@ body {
 			 	&.news {
 			 		ul {
 			 			width: 100%;
+			 			@include borderbox;
 
 			 			> div.nav {
 			 				width: 30%;
@@ -248,6 +284,11 @@ body {
 				@include font-size(18);
 				color: #4A4A4A;
 				padding-left: 2px;
+				width: 200px;
+
+				@include device-width(6) {
+					width: 160px;
+				}
 			}
 
 			#searchsubmit {
@@ -597,6 +638,10 @@ body {
 					@include border_radius_bottom(0px);
 					padding-bottom: 35px;
 
+					@include device-width(8) {
+						padding-bottom: 25px;
+					}
+
 			 	}
 
 			 	.sub-menu {
@@ -642,30 +687,123 @@ body {
 							opacity: 0;
 						}
 				 	}
+			 	}
+
+			 	@include device-width(8) {
+			 		.sub-menu {
+			 			display: none;
+			 		}
 			 	}			 	
 			}
 		} 
 	}
-
 }
+
+/* =============================================================================
+   Nav Animations
+   ========================================================================== */
+$nav-off-canvas-width: 70%;
+
+@include device-width(9) {
+
+    .js-ready {
+
+        #sidebar {
+            width: $nav-off-canvas-width;
+        }
+    }
+
+
+    .js-ready {
+
+        #sidebar {
+            left: (0 - $nav-off-canvas-width);          
+        }
+
+        #content {
+            left: 0;
+        }
+    }
+
+    .js-nav {
+
+        #content {
+            left: $nav-off-canvas-width;           
+        }
+    }
+
+
+    .csstransforms3d.csstransitions.js-ready {
+
+        #sidebar {
+            left: 0;
+            @include transform(translate3d(-100%,0,0));
+            @include backface-visibility(hidden);
+        }
+
+        #content {
+            left: 0 !important;
+            @include transform(translate3d(0,0,0));
+            @include transition(transform 500ms ease);
+            @include backface-visibility(hidden);
+        }
+    }
+
+    .csstransforms3d.csstransitions.js-nav {
+
+        #content {
+            @include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
+
+            @include device-width(4) {
+                @include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
+
+            }
+        }
+    }
+
+
+    .csstransforms3d.csstransitions.js-ready {
+
+        #sidebar {
+            @include opacity(0.7);
+            @include transition(opacity 300ms 100ms ease, transform 500ms ease);            
+        }
+    }
+
+    .csstransforms3d.csstransitions.js-nav {
+
+        #sidebar {
+            @include opacity(1);
+            @include transform(translate3d(0,0,0));
+        }
+    }
+}
+
 
 /***************************************************************************************/
 /* PAGE HEADER 																		   */
 /***************************************************************************************/
 
 
-#page-header {
+#page-header {	
 	background: #0C305A;
 	position: relative;
 	z-index: 1;
 
+	&.fixed {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 10;
+	}
+
 	.page-commercial & {
-		background: #143A65;
+		background: #143A65;	
 	}
 
 	.page-education & {
 		background: #002928;
-		
 	}
 
 	.woocommerce-page & {
@@ -678,11 +816,101 @@ body {
 		color: #FFF;
 		@include font-size(35);
 		padding: 55px 0 55px 50px;
+		@include borderbox;
+
+		@include device-width(12) {
+			padding: 35px 0 35px 30px;
+		}
+
+		@include device-width(5) {
+			padding: 20px 0 20px 15px;
+		}
 	}
 
 	#parent-title {
-		opacity: 0.5;
-		border-right: 1px solid #FFF;
+		border-right: 1px solid #949494;
+
+		h2 {
+			opacity: 0.5;
+
+			@include device-width(12) {
+				@include font-size(25);
+				line-height: 1.5;
+			}			
+		}
+
+		@include device-width(9) {
+			display: none;
+		}
+	}
+
+	#page-title {
+		@include device-width(9) {
+			width: 100%;		
+		}
+
+		.nav-btn {
+			display: none;
+
+			@include device-width(9) {
+				&#nav-open-btn {
+					display: block;	
+					float:left;
+					margin:0.5em 0.5em 0 0;		
+					cursor: pointer;
+					padding: 10px 35px 16px 0px;
+
+					@include device-width(6) {
+						margin: 0 0.5em 0 0;	
+					}					
+
+					span, span:before, span:after {
+					  cursor: pointer;
+					  border-radius: 1px;
+					  height: 5px;
+					  width: 35px;
+					  background: white;
+					  position: absolute;
+					  display: block;
+					  content: '';
+					  transition: all 100ms ease-in-out;
+					}
+
+					span:before {
+					  top: -10px; 
+					}
+					
+					span:after {
+					  bottom: -10px;
+					}
+
+					&.active span {
+					  background-color: transparent;
+					}
+
+					&.active span:before, &.active span:after {
+					  top: 0;
+					}
+
+					&.active span:before {
+						@include rotate(45deg);
+					}
+
+					&.active span:after {
+						@include transform(translateY(-10px) rotate(-45deg));
+						top: 10px;
+					}									
+				}			
+			}
+		}
+
+		h1 {
+			@include font-size(40);
+
+			@include device-width(6) {
+				@include font-size(20);
+			}
+		}		
 	}
 }
 		
@@ -696,6 +924,14 @@ body {
 	#content {
 		border-left: 1px solid #D6D5CE;
 		padding: 3em;
+		background: #FFF;
+		height: 100%;
+
+		@include device-width(9) {
+			padding: 1em;
+			width: 100%;
+			@include box-shadow(0 5px 10px rgba(0, 0, 0, 0.4));
+		}		
 
 		@include device-width(6) {
 			padding: 1em;
@@ -703,6 +939,7 @@ body {
 	}
 
 	#page {
+		overflow-x: hidden;
 		
 	}
 
@@ -716,11 +953,28 @@ body {
 #sidebar {
 	padding: 46px 0;
 
+	@include device-width(9) {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: $nav-off-canvas-width;
+	}
+
+	.widget-title {
+		@include font-size(25);
+		border-bottom: 1px solid #D6D5CE;
+		line-height: 1.5;
+	}	
+
 	.widget {
 		margin: 0 1.2em 2.8em;
 
-		&.widget_auto_childs, &.widget_categories ul {
+		&.widget_auto_childs, &.widget_categories ul, &.widget_nav_menu {
 			margin: 0 0 2.8em;
+
+			.widget-title {
+				padding-left: 10px;
+			}
 		}
 	}
 
@@ -758,13 +1012,6 @@ body {
 			}			
 		}
 	}
-
-	.widget-title {
-		@include font-size(25);
-		border-bottom: 1px solid #D6D5CE;
-		line-height: 1.5;
-	}
-	
 }
 
 /****************************/

@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <div id="page" class="container">
-	<div id="sidebar" class="span two break-on-mobile">
+	<div id="sidebar" class="span two">
 		<!-- Sidebar Selector-->
 		<?php 
 			$value = get_field_object('choose_sidebar');
@@ -18,7 +18,7 @@ get_header(); ?>
 		 	<?php dynamic_sidebar( 'education-sidebar' ); ?>
 		 <?php endif; ?>
 	</div>
-	<div id="content" class="span eight break-on-mobile">
+	<div id="content" class="span eight">
 
 	<?php 
 		$parent = array_reverse(get_post_ancestors($post->ID));

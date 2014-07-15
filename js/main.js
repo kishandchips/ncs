@@ -196,6 +196,11 @@
 			}
 		},
 
+		containerHeight: function() {
+			var highestCol = Math.max($('#sidebar').height(),$('#content').height());
+			$('#page').height(highestCol);
+		},
+
 		productNav: function() {
 			var container = $('#sidebar ul.product-categories'),
 				parent = $('.cat-parent', container),
@@ -222,8 +227,23 @@
 				});
 			}
 
-		},	
+		},
 
+		fixedNav: function() {
+			var fixed = $('#page-title').offset().top,
+				header = $('#page-header');
+
+			$(window).scroll(function(){    
+			    if ($(this).scrollTop() > fixed){ 
+			    	console.log('larger');
+			        header.addClass('fixed'); 
+			    }
+			    else{
+			    	console.log('smaller');
+			        header.removeClass('fixed');
+			    }
+			});
+		},
 
 		setBoxSizing: function(){
 			if( $('html').hasClass('no-boxsizing') ){
@@ -242,6 +262,10 @@
 		
 		resize: function(){
 			main.equalHeight();	
+
+			if ($(window).width() < 900) {
+			   main.containerHeight();
+			}			
 		}
 	}
 
@@ -253,6 +277,12 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
+
+		if ($(window).width() < 900) {
+		   main.containerHeight();
+		   main.fixedNav();
+		}
+		
 	});
 
 })(jQuery);

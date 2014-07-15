@@ -14,7 +14,7 @@
 get_header(); ?>
 
 <div id="page" class="container">
-	<div id="sidebar" class="span two break-on-mobile">
+	<div id="sidebar" class="span two">
 		<!-- Sidebar Selector-->
 		<?php 
 			$value = get_field_object('choose_sidebar');
@@ -27,7 +27,7 @@ get_header(); ?>
 		 <?php endif; ?>
 		
 	</div>
-	<div id="content" class="span eight break-on-mobile">
+	<div id="content" class="span eight">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php if(!$post->post_content == ''): ?>
 			<div class="page-content">

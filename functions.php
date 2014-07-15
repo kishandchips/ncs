@@ -48,6 +48,7 @@ function custom_scripts() {
 	
 	wp_deregister_script('jquery');
 	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/libs/modernizr.min.js');
+	wp_enqueue_script('mobile_nav', get_template_directory_uri().'/js/nav.js', '', '', true);
 	wp_enqueue_script('jquery',  get_template_directory_uri().'/js/libs/jquery.min.js');
 	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '', true);
 }
