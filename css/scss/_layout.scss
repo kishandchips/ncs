@@ -813,60 +813,16 @@ body {
 	position: relative;
 	z-index: 1;
 
-	&.fixed {
-		position: fixed;
-		width: 100%;
-		top: 0;
-		left: 0;
-		z-index: 10;
-	}
-
 	.page-commercial & {
 		background: #143A65;
-
-		@include device-width(9) {
-			background: none;
-
-			#parent-title {
-				display: none;
-			}
-
-			#page-title {
-				background: #143A65;
-			}
-		}	
 	}
 
 	.page-education & {
-		background: #002928;
-
-		@include device-width(9) {
-			background: none;
-
-			#parent-title {
-				display: none;
-			}
-			
-			#page-title {
-				background: #002928;
-			}
-		}		
+		background: #002928;	
 	}
 
 	.woocommerce-page & {
 		background: #242239; 
-
-		@include device-width(9) {
-			background: none;
-
-			#parent-title {
-				display: none;
-			}
-			
-			#page-title {
-				background: #242239;
-			}
-		}	
 	}
 
 
