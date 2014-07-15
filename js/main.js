@@ -261,7 +261,8 @@
 		},		
 		
 		resize: function(){
-			main.equalHeight();	
+			main.equalHeight();
+			main.fixedNav();
 
 			if ($(window).width() < 900) {
 			   main.containerHeight();

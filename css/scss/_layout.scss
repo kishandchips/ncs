@@ -1,3 +1,5 @@
+$nav-off-canvas-width: 70%;
+
 html {
 	font-size: 62.5%;
 }
@@ -17,6 +19,7 @@ body {
 }
 
 #header {
+	overflow: hidden;
 
 	.logo-container {
 		width:20%;
@@ -25,11 +28,22 @@ body {
 		img {
 			margin: 1.1em 0;
 		}
+
+		@include device-width(9) {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: $nav-off-canvas-width;
+		}		
 	}
 
 	.navigation-container {
 		width: 79%;
 		float: right;
+
+		@include device-width(9) {
+			width: 100%;
+		}
 
 		.information {
 			@extend .clearfix;
@@ -312,39 +326,44 @@ body {
 				margin-left: 35px;
 				line-height: 22px;
 
-				&:before {
+				a:before {
 					color: #3178CC;
 					@include transition(all 0.3s ease);
 					margin-right: 0.5em;
-					margin-top: 0.2em;
 					float: left;
 				}
 
 				&:hover {
-					&:before, a {
+					a:before, a {
 						color: #9BCC6B;
 					}
 				}
 
-				&.logout:before {
+				&.logout a:before {
 					@extend .icon-logout:before;
 				}
 
-				&.account:before {
+				&.account a:before {
 					@extend .icon-profile:before;
 				}
 
-				&.login:before {
+				&.login a:before {
 					@extend .icon-login:before;
 				}
 
-				&.cart:before {
+				&.cart a:before {
 					@extend .icon-basket:before;
 				}				
 
 				a {
 					@include font-size(16);
 					@include inline-block;
+
+					@include device-width(5) {
+						span {
+							display: none;
+						}
+					}
 				}
 
 			}
@@ -402,6 +421,10 @@ body {
 			 		padding: 1em 0;
 			 		@include border-radius(5px);
 					@include transition(none);
+
+					@include device-width(5) {
+						@include font-size(16);
+					}
 			 	}
 
 			 	> ul {
@@ -702,13 +725,13 @@ body {
 /* =============================================================================
    Nav Animations
    ========================================================================== */
-$nav-off-canvas-width: 70%;
+
 
 @include device-width(9) {
 
     .js-ready {
 
-        #sidebar {
+        #sidebar, #parent-title, .logo-container {
             width: $nav-off-canvas-width;
         }
     }
@@ -716,18 +739,18 @@ $nav-off-canvas-width: 70%;
 
     .js-ready {
 
-        #sidebar {
+        #sidebar, #parent-title, .logo-container {
             left: (0 - $nav-off-canvas-width);          
         }
 
-        #content {
+        #content, #page-title, .navigation-container {
             left: 0;
         }
     }
 
     .js-nav {
 
-        #content {
+        #content, #page-title {
             left: $nav-off-canvas-width;           
         }
     }
@@ -735,13 +758,13 @@ $nav-off-canvas-width: 70%;
 
     .csstransforms3d.csstransitions.js-ready {
 
-        #sidebar {
+        #sidebar, #parent-title, .logo-container {
             left: 0;
             @include transform(translate3d(-100%,0,0));
             @include backface-visibility(hidden);
         }
 
-        #content {
+        #content , #page-title, .navigation-container {
             left: 0 !important;
             @include transform(translate3d(0,0,0));
             @include transition(transform 500ms ease);
@@ -751,7 +774,7 @@ $nav-off-canvas-width: 70%;
 
     .csstransforms3d.csstransitions.js-nav {
 
-        #content {
+        #content, #page-title, .navigation-container {
             @include transform(translate3d($nav-off-canvas-width,0,0) scale3d(1,1,1));
 
             @include device-width(4) {
@@ -764,7 +787,7 @@ $nav-off-canvas-width: 70%;
 
     .csstransforms3d.csstransitions.js-ready {
 
-        #sidebar {
+        #sidebar, #parent-title, .logo-container {
             @include opacity(0.7);
             @include transition(opacity 300ms 100ms ease, transform 500ms ease);            
         }
@@ -772,7 +795,7 @@ $nav-off-canvas-width: 70%;
 
     .csstransforms3d.csstransitions.js-nav {
 
-        #sidebar {
+        #sidebar, #parent-title, .logo-container {
             @include opacity(1);
             @include transform(translate3d(0,0,0));
         }
@@ -799,15 +822,51 @@ $nav-off-canvas-width: 70%;
 	}
 
 	.page-commercial & {
-		background: #143A65;	
+		background: #143A65;
+
+		@include device-width(9) {
+			background: none;
+
+			#parent-title {
+				display: none;
+			}
+
+			#page-title {
+				background: #143A65;
+			}
+		}	
 	}
 
 	.page-education & {
 		background: #002928;
+
+		@include device-width(9) {
+			background: none;
+
+			#parent-title {
+				display: none;
+			}
+			
+			#page-title {
+				background: #002928;
+			}
+		}		
 	}
 
 	.woocommerce-page & {
 		background: #242239; 
+
+		@include device-width(9) {
+			background: none;
+
+			#parent-title {
+				display: none;
+			}
+			
+			#page-title {
+				background: #242239;
+			}
+		}	
 	}
 
 
@@ -840,7 +899,10 @@ $nav-off-canvas-width: 70%;
 		}
 
 		@include device-width(9) {
-			display: none;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: $nav-off-canvas-width;			
 		}
 	}
 
@@ -920,6 +982,7 @@ $nav-off-canvas-width: 70%;
 /***************************************************************************************/
 		
 #main {
+	overflow: hidden;
 
 	#content {
 		border-left: 1px solid #D6D5CE;
@@ -939,7 +1002,6 @@ $nav-off-canvas-width: 70%;
 	}
 
 	#page {
-		overflow-x: hidden;
 		
 	}
 

@@ -47,20 +47,20 @@
 						<?php if ( is_user_logged_in() ): ?>
 							<li class="logout">
 								<?php $redirect_url = (isset($post->ID)) ? get_permalink($post->ID) : home_url(); ?>
-								<a class="btn logout-btn" href="<?php echo wp_logout_url($redirect_url); ?>"><?php _e("Logout", 'ivip'); ?></a>
+								<a class="btn logout-btn" href="<?php echo wp_logout_url($redirect_url); ?>"><span><?php _e("Logout", 'ivip'); ?></span></a>
 							</li>
 							<li class="account">
-								<a class="btn account-btn" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"><?php _e("My Account", 'ivip'); ?></a>
+								<a class="btn account-btn" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"><span><?php _e("My Account", 'ivip'); ?></span></a>
 							</li>
 							<?php else: ?>
 							<li class="login">
-								<a class="btn logout-btn" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"><?php _e("Login", 'ivip'); ?></a>	
+								<a class="btn logout-btn" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>"><span><?php _e("Login", 'ivip'); ?></span></a>	
 							</li>
 						<?php endif; ?>						
 						<?php global $woocommerce; ?> 
 							<li class="cart">
-								<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>">
-									<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?>
+								<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><span>
+									<?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?></span>
 								</a>
 							</li>
 						</ul>
