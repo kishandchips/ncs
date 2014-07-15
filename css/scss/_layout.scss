@@ -15,11 +15,11 @@ body {
 }
 
 #wrap {
-
+	max-width: 100%;
+	overflow: hidden;
 }
 
 #header {
-	overflow: hidden;
 
 	.logo-container {
 		width:20%;
@@ -34,6 +34,7 @@ body {
 		    top: 0;
 		    left: 0;
 		    width: $nav-off-canvas-width;
+		    text-align: center;
 		}		
 	}
 
@@ -812,6 +813,7 @@ body {
 	background: #0C305A;
 	position: relative;
 	z-index: 1;
+	overflow: hidden;
 
 	.page-commercial & {
 		background: #143A65;
@@ -851,7 +853,13 @@ body {
 			@include device-width(12) {
 				@include font-size(25);
 				line-height: 1.5;
-			}			
+			}		
+
+			@include device-width(6) {
+				@include font-size(20);	
+				line-height: 0.9;		
+				margin: 0.4em;
+			}				
 		}
 
 		@include device-width(9) {
@@ -860,6 +868,8 @@ body {
 		    left: 0;
 		    width: $nav-off-canvas-width;			
 		}
+
+
 	}
 
 	#page-title {
@@ -976,6 +986,7 @@ body {
 	    top: 0;
 	    left: 0;
 	    width: $nav-off-canvas-width;
+	    background: #ECECEC;
 	}
 
 	.widget-title {
@@ -1149,7 +1160,7 @@ body {
 #follow {
 	background: #0A2D57;
 	color: #FFF;
-	padding: 2em 0 1.7em;
+	padding: 2em 1em 1.7em;
 	border-top: 1px solid #979797;
 
 	.title {
