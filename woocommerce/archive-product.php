@@ -17,7 +17,7 @@ get_header( 'shop' ); ?>
 	<div id="sidebar" class="span two break-on-mobile">
 		<?php dynamic_sidebar( 'product-sidebar' ); ?>
 	</div>	
-	<div id="content" class="span eight break-on-mobile">
+	<div id="content" class="span eight break-on-mobile content-inner">
 		<div class="breadcrumb">
 			<?php
 				do_action( 'woocommerce_before_main_content' );

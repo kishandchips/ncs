@@ -2,6 +2,7 @@
 <section id="front-page" class="clearfix container">
 <div id="main" role="main" class="clearfix">
 <div id="front-page">
+front-page
 	<div id="page" class="container">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">
@@ -11,7 +12,7 @@
 				<?php the_content(); ?>
 			</div>
 			<?php endif; ?>
-			<?php if ( get_field('content')):?>
+			<?php if ( get_field('section')):?>
 				<?php get_template_part('inc/content'); ?>
 			<?php endif; ?>
 						

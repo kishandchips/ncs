@@ -124,7 +124,7 @@
             document.addEventListener('click', function(e)
             {
                 if (nav_open && !hasParent(e.target, 'nav')) {
-                    // e.preventDefault();
+                    //e.preventDefault();
                     app.closeNav();
                 }
             },

@@ -236,6 +236,25 @@ hr {
 
 }
 
+/* =============================================================================
+   Colors
+   ========================================================================== */
+
+.green-bg {
+	@include vertical-gradient(#5B8E26, #86B555);
+}
+
+.dark-green-bg {
+	@include vertical-gradient(#006867, #00817F);
+}
+
+.orange-bg {
+	@include vertical-gradient(#EE8803, #EC9D0A);
+}
+
+.blue-bg {
+	@include vertical-gradient(#4F88CB, #72ACF0);
+}
 
 
 
@@ -269,6 +288,10 @@ a.call-me-back {
 	margin: 0;
 	padding: 1em 3em;
 	@include border-radius(4px);
+	color: #FFF;
+	@include inline-block;
+	text-align: center;
+	@include borderbox;
 
 	&:hover {
 		@include vertical-gradient(#5B8E26, #86B555);
@@ -278,6 +301,42 @@ a.call-me-back {
 		@extend [class*="icon-"];
 		@extend .icon-bubble:before;
 	}			
+}
+
+.bubble {
+	position: relative;
+	@include font-size(13);
+	color: #4A4A4A;
+	display: block;
+	background: #FAFAFA;
+	border: 1px solid #E3E3E3;
+	@include borderbox;
+	padding: 17px;
+	@include border-radius(5px);
+
+	&:after, &:before {
+		bottom: 100%;
+		left: 20%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:after {
+		border-color: rgba(250, 250, 250, 0);
+		border-bottom-color: #FAFAFA;
+		border-width: 14px;
+		margin-left: -14px;
+	}
+	&:before {
+		border-color: rgba(227, 227, 227, 0);
+		border-bottom-color: #E3E3E3;
+		border-width: 15px;
+		margin-left: -15px;
+	}	
 }
 
 /* =============================================================================

@@ -19,31 +19,38 @@ get_header(); ?>
 		 <?php endif; ?>
 	</div>
 	<div id="content" class="span eight">
-
-	<?php 
-		$parent = array_reverse(get_post_ancestors($post->ID));
-		$first_parent = get_page($parent[0]);
-		$slug =  $first_parent->post_name;
-	 ?>
-	<?php query_posts( array ( 'category_name' => $slug, 'posts_per_page' => -1 ) ); ?>
-		<?php if ( have_posts() ) : ?>
+		<div id="news">
+			<?php 
+				$parent = array_reverse(get_post_ancestors($post->ID));
+				$first_parent = get_page($parent[0]);
+				$slug =  $first_parent->post_name;
+			 ?>
+			<?php query_posts( array ( 'category_name' => $slug, 'posts_per_page' => -1 ) ); ?>
+			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-					<article id="<?php echo $post->ID; ?>" class="post">
+						<article id="<?php echo $post->ID; ?>" class="post span third equal-height break-on-mobile">
 						<a href="<?php the_permalink(); ?>">
-							<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+							<?php
+								if ( has_post_thumbnail() ) {
+									the_post_thumbnail('custom-medium');
+								}
+								else {
+									echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/misc/thumbnail-default.jpg" />';
+								}
+							?>
+							<div class="title">
+								<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>	
+							</div>
+							
 						</a>
-						<?php the_excerpt(); ?>
 					</article>
-
 				<?php endwhile; ?>
 				<?php get_template_part('inc/pagination'); ?>	
-
 			<?php else : ?>
-				<!-- If no content, include the "No posts found" template.
-				//get_template_part( 'content', 'none' ); -->
-
+					<!-- If no content, include the "No posts found" template.
+					//get_template_part( 'content', 'none' ); -->
 			<?php endif; ?>
-
+		</div>
 	</div>
 </div><!-- #page -->
 <?php get_footer(); ?>

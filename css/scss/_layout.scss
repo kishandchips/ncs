@@ -41,6 +41,7 @@ body {
 	.navigation-container {
 		width: 79%;
 		float: right;
+		background: #FFF;
 
 		@include device-width(9) {
 			width: 100%;
@@ -210,6 +211,11 @@ body {
 				    		display: block;
 				    		@include font-size(16);
 				    		color: #4A90E2;
+
+				    		&:hover {
+				    			color: #4E4E4E;#
+				    			text-decoration: underline;
+				    		}
 				    	}
 				    }
 			 	}		
@@ -422,6 +428,10 @@ body {
 			 		padding: 1em 0;
 			 		@include border-radius(5px);
 					@include transition(none);
+
+					@include device-width(8) {
+						margin-bottom: 7px;
+					}					
 
 					@include device-width(5) {
 						@include font-size(16);
@@ -664,6 +674,7 @@ body {
 
 					@include device-width(8) {
 						padding-bottom: 25px;
+						margin-bottom: 0;
 					}
 
 			 	}
@@ -815,15 +826,19 @@ body {
 	z-index: 1;
 	overflow: hidden;
 
-	.page-commercial & {
+	.span {
+		background: #0C305A;
+	}
+
+	.page-commercial &, .page-commercial & .span {
 		background: #143A65;
 	}
 
-	.page-education & {
+	.page-education &, .page-education & .span {
 		background: #002928;	
 	}
 
-	.woocommerce-page & {
+	.woocommerce-page &, .woocommerce-page & .span {
 		background: #242239; 
 	}
 
@@ -845,7 +860,17 @@ body {
 	}
 
 	#parent-title {
-		border-right: 1px solid #949494;
+		position: relative;
+
+		&:after {
+			content: ' ';
+			position: absolute;
+			right: 0px;
+			top: 0;
+			height: 250%;
+			width: 1px;
+			background: #949494;
+		}
 
 		h2 {
 			opacity: 0.5;
@@ -933,6 +958,7 @@ body {
 		}
 
 		h1 {
+			overflow: hidden;
 			@include font-size(40);
 
 			@include device-width(6) {
@@ -971,6 +997,74 @@ body {
 		
 	}
 
+	#single {
+		@extend .clearfix;
+
+		.sidebar {
+			float:right;
+
+			@include device-width(6) {
+				width: 100%;
+
+				.support-box {
+					display: none;
+				}
+			}
+		}
+
+		.content-inner {
+			@include device-width(6) {
+				width: 100%;
+			}			
+		}
+
+		.support-box {
+			margin: 5% 0 5% 25%;
+
+			@include device-width(14) {
+				margin: 5% 0;
+			}
+
+			p {
+				@include opensans-light;
+				@include font-size(18);
+				color: #4A90E2;
+			}
+
+			.call-me-back {
+				margin: 24px 0;
+				width: 100%;
+			}
+
+
+			.phone {
+				@include opensans-light;
+				@include font-size(30);
+				color: #4B4B4B;
+
+				@include device-width(11) {
+					@include font-size(23);
+				}
+
+				&:before {
+					@extend [class*="icon-"];
+					@extend .icon-phone:before;							
+					color: #4A90E2;
+					background: #EFEFEF;
+					padding: 10px;
+					@include border-radius(50%);
+					width: 35px;
+					height: 35px;
+					@include inline-block;
+					@include font-size(28);
+					line-height: 35px;
+					text-align: center;
+					margin-right: 20px;
+				}
+			}		
+		}
+	}
+
 }
 
 /***************************************************************************************/
@@ -998,7 +1092,7 @@ body {
 	.widget {
 		margin: 0 1.2em 2.8em;
 
-		&.widget_auto_childs, &.widget_categories ul, &.widget_nav_menu {
+		&.widget_auto_childs, &.widget_categories ul, &.widget_nav_menu, &.widget_product_categories {
 			margin: 0 0 2.8em;
 
 			.widget-title {
@@ -1273,6 +1367,119 @@ body {
 #page {
 	z-index: 1;
 }
+
+/****************************/
+/* Front-Page;				*/
+/****************************/	
+
+#front-page {
+
+	#content {
+
+		section {
+			float: left;
+			width: 100%;
+			margin: 50px 0;
+
+			.section-inner {
+				float: left;
+				width: 100%;
+				margin: -50px 0;
+			}
+
+			.title {
+				color: #FFF;
+				@include opensans-light;
+				@include font-size(40);
+			}
+
+			.row {
+				color: #FFF;
+				margin: 13px 0;
+
+				.span {
+					position: relative;
+
+					a {
+						position: absolute;
+						width: 98%;
+						@include border-radius(5px);
+						overflow: hidden;	
+						height: 98%;
+						margin: 1%;
+						background-size: cover;				
+					}
+
+					&.two {
+						padding-bottom: 20%;
+					}
+
+					&.four {
+						padding-bottom: 40%;
+					}
+
+					&.half {
+						padding-bottom: 20%;
+						
+						 a {
+							height: 100%;
+						}						
+
+					}					
+
+					&.half.valign-bottom a {
+						height: 50%;
+						top: 50%;
+					}					
+
+					.title {
+						background: #000;
+						color: #FFF;
+						position: absolute;	
+						@include opensans-light;
+						@include font-size(24);									
+					}
+
+					.left .title {
+						left: 0;
+						width: 50%;
+						height: 100;
+						float: none;
+						height: 100%;						
+					}
+
+					.right .title {
+						right: 0;
+						top: 0;
+						width: 50%;
+						height: 100;
+						float: none;
+						height: 100%;						
+					}	
+
+					.top .title {
+						top: 0;
+						width: 100%;
+					}	
+
+					.bottom .title {
+						bottom: 0;
+						width: 100%;
+						left: 0;
+					}
+
+					.full .title {
+						width: 100%;
+						height: 100%;
+					}					
+				}
+
+			}
+		}
+
+	}
+}
+
 
 /****************************/
 /* Woocommerce;				*/

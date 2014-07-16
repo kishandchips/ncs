@@ -34,7 +34,7 @@
 						marginTop: 0
 					},  { 
 						queue:false, 
-						duration:opts.speed 
+						duration:optionss.speed 
 					});
 				}
 				
@@ -197,17 +197,14 @@
 		},
 
 		containerHeight: function() {
-			var highestCol = Math.max($('#sidebar').height(),$('#content').height());
-			$('#page').height(highestCol);
+			var highestCol = Math.max($('#sidebar').outerHeight(true), $('#content').outerHeight(true));
+			$('#page, #sidebar, #content').height(highestCol);
 		},
 
 		productNav: function() {
 			var container = $('#sidebar ul.product-categories'),
 				parent = $('.cat-parent', container),
 				current = $('.current-cat, .current-cat-parent', container);
-
-				console.log(current);
-
 
 			$.each(parent, function() {
 				 $(this).prepend('<span></span>');
@@ -229,22 +226,6 @@
 
 		},
 
-		// fixedNav: function() {
-		// 	var fixed = $('#page-title').offset().top,
-		// 		header = $('#page-header');
-
-		// 	$(window).scroll(function(){    
-		// 	    if ($(this).scrollTop() > fixed){ 
-		// 	    	console.log('larger');
-		// 	        header.addClass('fixed'); 
-		// 	    }
-		// 	    else{
-		// 	    	console.log('smaller');
-		// 	        header.removeClass('fixed');
-		// 	    }
-		// 	});
-		// },
-
 		setBoxSizing: function(){
 			if( $('html').hasClass('no-boxsizing') ){
 		        $('.span:visible').each(function(){
@@ -262,7 +243,6 @@
 		
 		resize: function(){
 			main.equalHeight();
-			// main.fixedNav();
 
 			if ($(window).width() < 900) {
 			   main.containerHeight();
@@ -278,10 +258,10 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
+		main.containerHeight();
 
 		if ($(window).width() < 900) {
-		   main.containerHeight();
-		   // main.fixedNav();
+			//responsive stuff here
 		}
 		
 	});
