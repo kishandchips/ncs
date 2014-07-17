@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?fbx94j');
-	src:url('fonts/icons.eot?#iefixfbx94j') format('embedded-opentype'),
-		url('fonts/icons.woff?fbx94j') format('woff'),
-		url('fonts/icons.ttf?fbx94j') format('truetype'),
-		url('fonts/icons.svg?fbx94j#icons') format('svg');
+	src:url('fonts/icons.eot?-jicpp9');
+	src:url('fonts/icons.eot?#iefix-jicpp9') format('embedded-opentype'),
+		url('fonts/icons.woff?-jicpp9') format('woff'),
+		url('fonts/icons.ttf?-jicpp9') format('truetype'),
+		url('fonts/icons.svg?-jicpp9#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,9 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-quote:before {
+	content: "\e610";
+}
 .icon-phone:before {
 	content: "\e60f";
 }

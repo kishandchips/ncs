@@ -237,7 +237,7 @@ hr {
 }
 
 /* =============================================================================
-   Colors
+   Colors / Backgrounds
    ========================================================================== */
 
 .green-bg {
@@ -254,6 +254,25 @@ hr {
 
 .blue-bg {
 	@include vertical-gradient(#4F88CB, #72ACF0);
+}
+
+.dark-blue-bg {
+	@include vertical-gradient(#3E6A9E, #5179A8);
+}
+
+.solid-green-bg {
+	background: #007573;
+}
+.solid-orange-bg {
+	background: #EC9708;
+}
+
+.solid-blue-bg {
+	background: #4389DC;
+}
+
+.solid-red {
+	background: #DD4459;
 }
 
 
@@ -345,7 +364,7 @@ a.call-me-back {
 
 .widget_support_widget {
 
-	.call-me-back {
+	.support {
 		@include border-radius(10px);
 		background: #759950;
 		color: #FFF;

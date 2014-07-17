@@ -2,13 +2,11 @@
 <section id="front-page" class="clearfix container">
 <div id="main" role="main" class="clearfix">
 <div id="front-page">
-front-page
 	<div id="page" class="container">
 		<?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">
 			<?php if(!$post->post_content == ''): ?>
 			<div class="page-content">
-				<h1 class="page-title"><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 			</div>
 			<?php endif; ?>
