@@ -1,13 +1,13 @@
 <?php
 /**
- * Example Widget Class
+ * Technical Support Widget Class
  */
 class Support_Widget extends WP_Widget {
  
  
     /** constructor -- name this the same as the class above */
     function Support_Widget() {
-        parent::WP_Widget(false, $name = 'Support Boxes Widget');	
+        parent::WP_Widget(false, $name = 'Technical Support Widget');	
     }
  
     /** @see WP_Widget::widget -- do not rename this */

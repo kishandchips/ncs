@@ -505,6 +505,52 @@ a.call-me-back {
 		}		
 	}
 }
+
+.support-box {
+	margin: 5% 0 5% 25%;
+
+	@include device-width(14) {
+		margin: 5% 0;
+	}
+
+	p {
+		@include opensans-light;
+		@include font-size(18);
+		color: #4A90E2;
+	}
+
+	.call-me-back {
+		margin: 24px 0;
+		width: 100%;
+	}
+
+
+	.phone {
+		@include opensans-light;
+		@include font-size(30);
+		color: #4B4B4B;
+
+		@include device-width(11) {
+			@include font-size(23);
+		}
+
+		&:before {
+			@extend [class*="icon-"];
+			@extend .icon-phone:before;							
+			color: #4A90E2;
+			background: #EFEFEF;
+			padding: 10px;
+			@include border-radius(50%);
+			width: 35px;
+			height: 35px;
+			@include inline-block;
+			@include font-size(28);
+			line-height: 35px;
+			text-align: center;
+			margin-right: 20px;
+		}
+	}		
+}
 /* =============================================================================
    Widgets
    ========================================================================== */

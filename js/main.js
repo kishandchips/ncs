@@ -245,7 +245,7 @@
 			main.equalHeight();
 
 			if ($(window).width() < 900) {
-			   main.containerHeight();
+			   //main.containerHeight();
 			}			
 		}
 	}

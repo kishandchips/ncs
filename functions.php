@@ -2,7 +2,9 @@
 
 // Custom Widgets
 
-require( get_template_directory() . '/inc/widgets/support.php' );
+require( get_template_directory() . '/inc/widgets/technical-support.php' );
+
+require( get_template_directory() . '/inc/widgets/how-we-can-help.php' );
 
 require( get_template_directory() . '/inc/widgets/help.php' );
 
@@ -132,7 +134,17 @@ function custom_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title"><span>',
 		'after_title'   => '</span></h1>',
-	));					
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Get in Touch', 'ncs' ),
+		'id'            => 'get-in-touch',
+		'description'   => __( 'Sidebar that appears on the Get in Touch Page.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));						
 
 }
 add_action( 'widgets_init', 'custom_widgets_init' );
