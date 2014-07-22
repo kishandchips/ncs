@@ -73,18 +73,6 @@ blockquote {
 	display: none;
 }
 
-.hide-on-tablet {
-	@include device-width(8) {
-		display: none !important;
-	}
-}
-
-.hide-on-mobile {
-	@include device-width(4) {
-		display: none !important;
-	}
-}
-
 .show,
 .block {
 	display: block;

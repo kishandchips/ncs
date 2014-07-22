@@ -95,6 +95,18 @@ $i: 1;
 	}
 }
 
+.hide-on-tablet {
+	@include device-width(8) {
+		display: none !important;
+	}
+}
+
+.hide-on-mobile {
+	@include device-width(5) {
+		display: none !important;
+	}
+}
+
 .left, .alignleft {
 	float: left;
 }

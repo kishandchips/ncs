@@ -412,6 +412,11 @@ body {
 				margin-right: 1%;
 				@include transition(none);
 				zoom: 0;
+				margin-bottom:25px;
+
+				&:hover {
+					margin-bottom:0;
+				}
 
 				&.last {
 					margin-right: 0;
@@ -585,15 +590,15 @@ body {
 				&.products {
 					> a {
 						@include vertical-gradient(#44425A, #322F4F);	
-
-						&:hover, &.current-page-ancestor {
-
-							a {
-								background: #292550;	
-							}
-							
-						}						
 					}
+
+					&:hover, &.current-page-ancestor {
+
+						a {
+							background: #292550;	
+						}
+						
+					}						
 
 					> .sub-menu {
 						border-top: 8px solid #292550;
@@ -673,10 +678,10 @@ body {
 					padding-bottom: 35px;
 
 					@include device-width(8) {
-						padding-bottom: 25px;
+						padding-bottom: 18px;
+						@include border-radius(5px);
 						margin-bottom: 0;
 					}
-
 			 	}
 
 			 	.sub-menu {
@@ -1144,6 +1149,75 @@ body {
 /****************************/
 /* FOOTER::;				*/
 /****************************/
+#newsletter {
+	background: #F6F6F6;
+	border-top: 6px solid #e5e5e5;
+	padding: 45px 0;
+
+	.container {
+		max-width: 40%;
+
+		@include device-width(9) {
+			max-width: 80%;
+		}
+	}
+
+	.gform_wrapper {
+
+		.validation_error {
+			margin-bottom: 1em;
+		}
+		
+		.gform_body {
+			margin: 0;
+			padding: 0;
+			float: left;
+			width: 70%;
+			@include borderbox;
+
+			.gfield {
+				margin: 0;
+				padding: 0 !important;
+				width: 100%;
+
+				.gfield_label {
+					margin: 0;
+					padding: 0;
+					display: none;
+				}
+
+				.ginput_container {
+					margin: 0;
+					max-width: 100%;
+
+					input {
+						@include border_radius_right(0px);
+						width: 100%;
+					}					
+				}
+			}
+		}
+
+		.gform_footer {
+			margin: 0;
+			padding: 0;
+			float: left;
+			width: 30%;
+			@include borderbox;
+			clear: none;
+
+
+			.button {
+				@include border_radius_left(0px);
+				padding: 0;
+				width: 100%;
+				margin: 0;
+			}
+
+		}
+	}
+}
+
 #footer {
 	background: #0A2D57;
 	color: #FFF;
@@ -1383,6 +1457,20 @@ body {
 		.page-content {
 			@extend .clearfix;
 
+			.break-on-mobile {
+				@include device-width(7) {
+					width: 100% !important;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+
+			.hide-on-mobile {
+				@include device-width(7) {
+					display: none !important;
+				}
+			}			
+
 			.seven {
 				background: #042143;
 				color: #FFF;
@@ -1407,12 +1495,12 @@ body {
 		section {
 			float: left;
 			width: 100%;
-			margin: 8% 0;
+			margin: 6% 0;
 
 			.section-inner {
 				float: left;
 				width: 99%;
-				margin: -50px 0;
+				margin: -40px 0;
 				position: relative;				
 
 				.section-title {
@@ -1474,6 +1562,18 @@ body {
 				@include device-width(8) {
 					width: 50%;
 					margin: 0 !important;
+					padding-bottom: 40% !important;
+
+					a {
+						margin: 1% !important;
+					}
+
+					&.half.valign-bottom {
+						a {
+							top: 0%;
+							height: 96%;
+						}
+					}
 				}
 
 				@include device-width(6) {
@@ -1486,10 +1586,15 @@ body {
 					position: absolute;	
 					@include opensans-light;	
 					@include borderbox;
-					padding: 15px;	
+					padding: 4%;	
 
 					h1 {
 						@include font-size(24);	
+						line-height: 1.3;
+
+						@include device-width(11) {
+							font-size: 2rem !important;								
+						}
 					}
 
 					p {
@@ -1537,30 +1642,48 @@ body {
 		}
 
 		section.offers {
+			margin: 4% 0;
+
+			.section-inner {
+				margin: 0;
+			}
 
 			.title {
 				width: 50%;
 				margin-bottom: 4em;
 
-				@include device-width(6) {
-					width: 100%;
+				h1 {
+					@include font-size(48);
 				}
 			}
 
 			.span {
+
+				@include device-width(8) {
+					width: 50%;
+				}	
+
+				@include device-width(4) {
+					width: 100%;
+					padding-bottom: 60% !important;
+				}				
 
 				&.third {
 					padding-bottom: 20.7%;
 					
 
 					&.large {
-						padding-bottom: 66.666%;
+						padding-bottom: 42%;
 					}
 				}
 
 				a {
 					@include border-radius(0);
 					padding: 0;
+					
+					@include device-width(4) {
+						background-size: cover;
+					}
 
 					.offer-title {
 						width: auto;
@@ -1569,10 +1692,20 @@ body {
 						@include font-size(20);
 						@include inline-block;
 						color: #FFF;
+						@include transition(all 0.3s ease);
+
+						@include device-width(4) {
+							@include font-size(15);
+							width: 89%;
+						}						
 
 						p {
 							margin: 0;
 						}
+					}
+
+					&:hover .offer-title {
+						background: #00459C;
 					}
 				}
 
@@ -1686,6 +1819,7 @@ body {
 #front-page {
 	#content {
 		border: none;
+		@include borderbox;
 	}
 }
 

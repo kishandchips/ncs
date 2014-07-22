@@ -25,6 +25,8 @@
 		}
 	 ?>	
 
+	 <?php // the_field('section_page', 'category_' . ); ?>
+
 	<div id="page-header" class="clearfix">
 		<div class="container">
 			<div id="parent-title" class="span two">

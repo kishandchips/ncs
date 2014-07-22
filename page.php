@@ -37,6 +37,7 @@ get_header(); ?>
 			<?php if ( get_field('content')):?>
 				<?php get_template_part('inc/content'); ?>
 			<?php endif; ?>
+
 		<?php endwhile; // end of the loop. ?>
 	</div>
 </div><!-- #page -->

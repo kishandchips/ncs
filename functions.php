@@ -50,7 +50,12 @@ function custom_scripts() {
 	
 	wp_deregister_script('jquery');
 	wp_enqueue_script('modernizr', get_template_directory_uri().'/js/libs/modernizr.min.js');
-	wp_enqueue_script('mobile_nav', get_template_directory_uri().'/js/nav.js', '', '', true);
+
+	if (!is_front_page()) {
+		wp_enqueue_script('mobile_nav', get_template_directory_uri().'/js/nav.js', '', '', true);	
+	}
+	
+
 	wp_enqueue_script('jquery',  get_template_directory_uri().'/js/libs/jquery.min.js');
 	wp_enqueue_script('magnific', get_template_directory_uri().'/js/plugins/magnific_popup.min.js', array('jquery'), '', true);
 	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '', true);
@@ -206,5 +211,57 @@ function custom_init(){
     		'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
     		'plural' => 'Services'
    		)
-   	);   	
+   	);  
+
+	$press = new Custom_Post_Type( 'Press', 
+ 		array(
+ 			'rewrite' => array( 'with_front' => false, 'slug' => 'press' ),
+ 			'capability_type' => 'post',
+ 		 	'publicly_queryable' => true,
+   			'has_archive' => true, 
+    		'hierarchical' => false,
+    		'exclude_from_search' => true,
+    		'menu_position' => null,
+    		'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
+    		'plural' => 'Press'
+   		)
+   	);     		
+}
+
+
+add_action("gform_field_standard_settings", "custom_gform_standard_settings", 10, 2);
+function custom_gform_standard_settings($position, $form_id){
+    if($position == 25){
+    	?>
+        <li style="display: list-item; ">
+            <label for="field_placeholder">Placeholder Text</label>
+            <input type="text" id="field_placeholder" size="35" onkeyup="SetFieldProperty('placeholder', this.value);">
+        </li>
+        <?php
+    }
+}
+// disable gforms tabindex
+add_filter("gform_tabindex", "gform_tabindexer");
+function gform_tabindexer() {
+    $starting_index = 1000; // if you need a higher tabindex, update this number
+    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
+}
+
+add_action('gform_enqueue_scripts',"custom_gform_enqueue_scripts", 10, 2);
+function custom_gform_enqueue_scripts($form, $is_ajax=false){
+    ?>
+<script>
+    jQuery(function(){
+        <?php
+        foreach($form['fields'] as $i=>$field){
+            if(isset($field['placeholder']) && !empty($field['placeholder'])){
+                ?>
+                jQuery('#input_<?php echo $form['id']?>_<?php echo $field['id']?>').attr('placeholder','<?php echo $field['placeholder']?>');
+                <?php
+            }
+        }
+        ?>
+    });
+    </script>
+    <?php
 }

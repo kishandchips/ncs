@@ -34,7 +34,7 @@
 						marginTop: 0
 					},  { 
 						queue:false, 
-						duration:optionss.speed 
+						duration:options.speed 
 					});
 				}
 				
@@ -258,7 +258,7 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
-		main.containerHeight();
+		//main.containerHeight();
 
         $('.popup-youtube').magnificPopup({
           disableOn: 700,
