@@ -21,6 +21,7 @@
 
 		if (is_single() || is_category()) {
 			$top_parent_title = 'News';
+			$page_title = 'Articles';
 		}
 	 ?>	
 

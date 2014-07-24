@@ -993,13 +993,29 @@ body {
 		}		
 
 		@include device-width(6) {
-			padding: 1em;
+			padding: 2em 1em 3em;
 		}
 	}
 
 	#page {
+		z-index: 1;
 
-		#page-content {
+		#content {
+
+			.content-inner {
+				float: left;
+				color: #4A4A4A;
+
+
+			}
+
+			.sidebar {
+				float: right;
+
+				.widget-title {
+					@include font-size(20);
+				}
+			}
 
 		}
 		
@@ -1061,7 +1077,11 @@ body {
 	.widget {
 		margin: 0 1.2em 2.8em;
 
-		&.widget_auto_childs, &.widget_categories ul, &.widget_nav_menu, &.widget_product_categories {
+		&.widget_auto_childs,
+		&.widget_categories ul,
+		&.widget_nav_menu,
+		&.widget_product_categories,
+		&.widget_categories {
 			margin: 0 0 2.8em;
 
 			.widget-title {
@@ -1100,6 +1120,12 @@ body {
 						float: right;
 						margin: 7px -15px 0 0;						
 					}					
+				}
+
+				.page-education & {
+					a {
+						background: #004848;
+					}
 				}
 			}			
 		}
@@ -1428,9 +1454,6 @@ body {
    Pages
    ========================================================================== */
 
-#page {
-	z-index: 1;
-}
 
 /****************************/
 /* Front-Page;				*/
@@ -1877,6 +1900,141 @@ body {
 	}
 }
 
+/****************************/
+/* Case Studies;			*/
+/****************************/	
+
+#case-studies {
+	
+	.span {
+		&:nth-child(6n+3), &:nth-child(6n+4) {
+			width: 50%;
+		}
+
+		&:nth-child(6n+4) {
+			clear: left;
+		}
+	}
+
+	.study {
+		overflow: hidden;
+		margin-bottom: 1.5em;
+
+		&.span {
+			@include device-width(8) {
+				width: 50%;
+			}
+		}
+
+		a {
+			height: 100%;
+			display: block;
+			@include border_radius(10px);
+			@include vertical-gradient(#032E61, #1656A1);	
+
+			&:hover {
+				@include vertical-gradient(#1656A1, #032E61);	
+			}
+		}
+
+		&:nth-child(6n+2), &:nth-child(6n+6) {
+			a {
+				@include vertical-gradient(#02499E, #1F79E2);	
+
+				&:hover {
+					@include vertical-gradient(#1F79E2, #02499E);	
+				}
+			}
+		}
+
+		img {
+			display: block;
+			@include border_radius_top(10px);
+
+			@include device-width(8) {
+				width: 100%;
+			}
+		}
+
+		.title {			
+			padding: 2.8em 1.7em 5.5em;
+			@include opensans-light;			
+			
+			.entry-title {
+				margin: 0;
+				color: #FFF;
+				@include font-size(22);
+				line-height: 1.2;
+
+				@include device-width(10) {
+					@include font-size(18);
+				}				
+
+				@include device-width(8) {
+					@include font-size(16);
+				}				
+			}		
+		}
+
+		.readmore {
+			position: absolute;
+			bottom: 15px;
+			color: #FFF;
+			left: 33px;
+			@include opensans-bold;
+			@include font-size(16);
+		}
+	}	
+}
+
+
+/****************************/
+/* Error / 404				*/
+/****************************/	
+
+#error {
+    background-color: #C9E5F0;
+    background-size: 100% auto;
+
+    #content {
+    	border: none;
+    	@extend .container;
+    }
+	
+	h1 {
+	    color: #0E76BC;
+	    font-size: 10em;
+	}
+	
+	h2 {
+	    color: #437496;
+		font-size: 2em;
+    	margin: 0 0 0 8em;
+
+    	@include device-width(7) {
+    		margin: 0 0 0 3em;
+    	}
+
+    	@include device-width(5) {
+    		margin: 0 0 0 0;
+    	}
+
+	}
+
+	p {
+		@include opensans-light;
+	    color: #072C44;
+	    font-size: 1.4em;
+	    margin-top: 10%;
+	}
+	
+	span {
+	    color: #B7DEE7;
+	    float: right;
+	    font-size: 7em;
+	}
+}
+
 
 /****************************/
 /* Woocommerce;				*/
@@ -2007,6 +2165,10 @@ body {
 		img {
 			display: block;
 			@include border_radius_top(10px);
+
+			@include device-width(8) {
+				width: 100%;
+			}
 		}
 
 		.title {			

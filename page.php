@@ -22,17 +22,26 @@ get_header(); ?>
 		
 	</div>
 	<div id="content" class="span eight">
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php if(!$post->post_content == ''): ?>
-			<div class="page-content">
-				<?php the_content(); ?>
-			</div>
-			<?php endif; ?>
-			<?php if ( get_field('content')):?>
-				<?php get_template_part('inc/content'); ?>
-			<?php endif; ?>
+		<div class="span four break-on-mobile sidebar">
+			<?php if(has_post_thumbnail()) :?>
+				<?php the_post_thumbnail(); ?>
+			<?php endif;?>
 
-		<?php endwhile; // end of the loop. ?>
+			<?php dynamic_sidebar( 'pages' ); ?>
+		</div>		
+		<div class="span six break-on-mobile content-inner">
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if(!$post->post_content == ''): ?>
+				<div class="page-content">
+					<?php the_content(); ?>
+				</div>
+				<?php endif; ?>
+				<?php if ( get_field('content')):?>
+					<?php get_template_part('inc/content'); ?>
+				<?php endif; ?>
+
+			<?php endwhile; // end of the loop. ?>
+		</div>
 	</div>
 </div><!-- #page -->
 <?php get_footer(); ?>

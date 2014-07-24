@@ -2,6 +2,8 @@
 
 // Custom Widgets
 
+require_once( get_template_directory() . '/inc/classes/BFI_Thumb.php' );
+
 require( get_template_directory() . '/inc/widgets/technical-support.php' );
 
 require( get_template_directory() . '/inc/widgets/how-we-can-help.php' );
@@ -166,7 +168,17 @@ function custom_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title"><span>',
 		'after_title'   => '</span></h1>',
-	));							
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Pages Sidebar', 'ncs' ),
+		'id'            => 'pages',
+		'description'   => __( 'Sidebar that appears on Pages.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));								
 
 }
 add_action( 'widgets_init', 'custom_widgets_init' );
@@ -252,9 +264,33 @@ function custom_init(){
 			'rewrite' => array( 'with_front' => false, 'slug' => 'testimonial-category' )
 		),
 		array(
-			'plural' => "Testimonial Categories"
+			'plural' => "Categories"
 		)
 	);   	
+
+	$case_study = new Custom_Post_Type( 'Case Study', 
+ 		array(
+ 			'rewrite' => array( 'with_front' => false, 'slug' => 'case-study' ),
+ 			'capability_type' => 'post',
+ 		 	'publicly_queryable' => true,
+   			'has_archive' => true, 
+    		'hierarchical' => false,
+    		'exclude_from_search' => true,
+    		'menu_position' => null,
+    		'supports' => array('title', 'editor', 'page-attributes', 'thumbnail'),
+    		'plural' => 'Case Studies'
+   		)
+   	);
+
+	$case_study->add_taxonomy("Case Study Category",
+		array(
+			'hierarchical' => true,
+			'rewrite' => array( 'with_front' => false, 'slug' => 'case-study-category' )
+		),
+		array(
+			'plural' => "Categories"
+		)
+	);  	
 
 	$service = new Custom_Post_Type( 'Service', 
  		array(
@@ -322,3 +358,4 @@ function custom_gform_enqueue_scripts($form, $is_ajax=false){
     </script>
     <?php
 }
+

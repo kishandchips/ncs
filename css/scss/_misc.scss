@@ -362,6 +362,7 @@ a.call-me-back {
 
 		p {
 			margin-top: 0;
+			font-size: 1.7rem !important;
 
 			span {
 				@include font-size(28);
@@ -701,6 +702,18 @@ a.call-me-back {
 }
 
 .widget-easy-twitter-feed-widget-kamn {
+
+	.widget-title {
+		&:before {
+			@extend [class*="icon-"];
+			@extend .icon-twitter:before;
+			display: block;
+			width: 100%;
+			color: #D8D8D8;
+			margin-bottom: 0.5em;
+		}
+	}
+
 	iframe {
 		width: 100% !important;
 	}
@@ -714,23 +727,32 @@ a.call-me-back {
  .pagination {
 	text-align: center;
 	text-transform: lowercase;
+	margin-top: 4em;
+	
 	a {
 		&:hover {
 
 			.no-touch & {
 				color: #000;
-				background: #FFF;				
+				background: #FFF;	
+				border: 1px solid transparent;
+				@include vertical-gradient(#DFDFDF, #D4D4D4);
+				@include box-shadow(0px 1px 2px 0px rgba(0,0,0,0.46));
 			}
 		}
 	}
+
 	.page-numbers {
 		display: inline-block;
 		height: 34px;
 		line-height: 34px;
-		color: #FFF;
-		background: #000;
-		padding: 0 10px;
-		border: 1px solid #000;
+		color: #BBBBBB;
+		background: #FFF;
+		padding: 0 1em;
+		border: 1px solid #D8D8D8;
+		margin: 0 1em;
+		@include opensans-bold;
+		@include border-radius(6px);
 
 		&.dots {
 			color: #000;
@@ -741,66 +763,6 @@ a.call-me-back {
 		&.current {
 			color: #000;
 			background: #FFF;
-		}
-
-		&.next,
-		&.prev, {
-			position: relative;
-			&:after,
-			&:before {
-				content: '';
-				position: absolute;
-				width: 0;
-				height: 0;
-				top: -1px;
-			}
-
-			&:after {
-				@include transition(all 0.3s ease);
-			}
-
-			&:hover {
-				&:after {
-
-					.no-touch & {
-						border-left-color: #FFF;
-						border-right-color: #FFF;						
-					}
-				}
-			}
-		}
-
-		&.next {
-			&:before {
-				border-top: 18px solid transparent;
-				border-bottom: 18px solid transparent;
-				border-left: 17px solid #000;
-				right: -18px;
-			}
-
-			&:after {
-				border-top: 18px solid transparent;
-				border-bottom: 18px solid transparent;
-				border-left: 17px solid #000;
-				right: -17px;
-			}
-
-		}
-
-		&.prev {
-			&:before {
-				border-top: 18px solid transparent;
-				border-bottom: 18px solid transparent;
-				border-right: 17px solid #000;
-				left: -18px;
-			}
-
-			&:after {
-				border-top: 18px solid transparent;
-				border-bottom: 18px solid transparent;
-				border-right: 17px solid #000;
-				left: -17px;
-			}
 		}
 	}
 }
