@@ -507,11 +507,6 @@ a.call-me-back {
 }
 
 .support-box {
-	margin: 5% 0 5% 25%;
-
-	@include device-width(14) {
-		margin: 5% 0;
-	}
 
 	p {
 		@include opensans-light;
@@ -702,6 +697,12 @@ a.call-me-back {
 			// 	color: #0C305A;
 			// }
 		}
+	}
+}
+
+.widget-easy-twitter-feed-widget-kamn {
+	iframe {
+		width: 100% !important;
 	}
 }
 

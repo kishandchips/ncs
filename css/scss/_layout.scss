@@ -1005,11 +1005,19 @@ body {
 		
 	}
 
-	#single {
+	#single, #get-in-touch {
 		@extend .clearfix;
 
 		.sidebar {
 			float:right;
+
+			aside {
+				margin: 5% 0 5% 25%;
+
+				@include device-width(9) {
+					margin: 5% 0;
+				}
+			}			
 
 			@include device-width(6) {
 				width: 100%;
@@ -1026,7 +1034,6 @@ body {
 			}			
 		}
 	}
-
 }
 
 /***************************************************************************************/
@@ -1741,6 +1748,129 @@ body {
 					&:hover .offer-title {
 						background: #00459C;
 					}
+				}
+			}
+		}
+	}
+}
+
+/****************************/
+/* Testimonials				*/
+/****************************/	
+
+#testimonials {
+
+	.content-inner {
+
+		.span {
+
+			@include device-width(8) {
+				width: 100%;
+			}
+
+			&.imageless {
+				float: left;
+			}
+
+			&.image {
+				float: right;
+			}
+		}
+
+		.testimonial {
+			margin-bottom: 4em;
+			padding-right: 3em;
+
+			&:nth-child(3n+1) {
+				color: #5E9129;
+			}
+
+			&:nth-child(3n+2) {
+				color: #4A90E2;
+			}	
+
+			&:nth-child(3n+3) {
+				color: #00817F;
+			}					
+
+			.quote {
+				@include opensans-light;
+				@include font-size(20);
+				margin-bottom: 1em;
+
+				@include device-width(4) {
+					@include font-size(15);
+				}
+
+				&:before {
+					@extend [class*="icon-"];
+					@extend .icon-quote:before;
+					display: block;
+					width: 100%;
+					@include font-size(30);
+					margin-bottom: 0.3em;
+				}
+			}
+
+			.meta {
+				color: #4A4A4A;
+				@include font-size(14);			
+
+				.author {
+					@include opensans-bold;
+					width: 100%;
+					display: block;						
+
+				}
+
+				.position {
+					@include opensans-light;
+				}
+			}
+
+			&.box {
+				color: #FFF;
+				padding-right: 0;
+
+				.image {
+
+					img {
+						display: block;	
+						width: 100%;
+						height: auto;
+					}
+					
+				}
+
+				.copy {
+					position: relative;
+					padding: 2em;
+				}
+
+				&:nth-child(odd) {
+					.copy {
+						@include vertical-gradient(#5B8E26, #86B555);
+					}
+				}
+
+				&:nth-child(even) {
+
+					.copy {
+						@include vertical-gradient(#006867, #00817F);
+					}
+				}	
+
+				.author-image {
+					position: absolute;
+					right: 5%;
+					top: -20%;
+					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
+					@include border-radius(50%);
+					border: 4px solid #FFFFFF;
+				}
+
+				.meta {
+					color: #FFF;
 				}
 			}
 		}

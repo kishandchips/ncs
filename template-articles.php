@@ -25,7 +25,10 @@ get_header(); ?>
 				$first_parent = get_page($parent[0]);
 				$slug =  $first_parent->post_name;
 			 ?>
-			<?php query_posts( array ( 'category_name' => $slug, 'posts_per_page' => -1 ) ); ?>
+			<?php 
+				global $query_string;
+				query_posts( array ( 'category_name' => $slug, 'posts_per_page' => -1 ) ); 
+			?>
 			<?php if ( have_posts() ) : ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 						<article id="<?php echo $post->ID; ?>" class="post span third equal-height break-on-mobile">

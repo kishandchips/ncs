@@ -64,6 +64,8 @@ function custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'custom_scripts');
 
+//Custom Sidebards
+
 function custom_widgets_init() {
 
 	register_sidebar( array(
@@ -137,14 +139,34 @@ function custom_widgets_init() {
 	));	
 
 	register_sidebar( array(
-		'name'          => __( 'Get in Touch', 'ncs' ),
+		'name'          => __( 'Get in Touch Sidebar', 'ncs' ),
 		'id'            => 'get-in-touch',
 		'description'   => __( 'Sidebar that appears on the Get in Touch Page.', 'ncs' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title"><span>',
 		'after_title'   => '</span></h1>',
-	));						
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Articles Sidebar', 'ncs' ),
+		'id'            => 'articles',
+		'description'   => __( 'Sidebar that appears on the Article pages.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Testimonials Sidebar', 'ncs' ),
+		'id'            => 'testimonials',
+		'description'   => __( 'Sidebar that appears on the Testimonials pages.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));							
 
 }
 add_action( 'widgets_init', 'custom_widgets_init' );
@@ -187,6 +209,18 @@ if ( ! function_exists( 'add_slug_body_class' )) {
 	add_filter( 'body_class', 'add_slug_body_class' );
 }
 
+if ( ! function_exists( 'single_cat_body_class' ))  {
+	function single_cat_body_class( $classes ) {
+		if (is_single()) {
+			$category = get_the_category();
+			$cat_name = $category[0]->slug;
+			$classes[] = 'page-'. $cat_name;
+		}
+		return $classes;	
+	}
+	add_filter( 'body_class', 'single_cat_body_class' );
+}
+
 function wpb_first_and_last_menu_class($items) {
     $items[1]->classes[] = 'first';
     $items[count($items)]->classes[] = 'last';
@@ -194,6 +228,7 @@ function wpb_first_and_last_menu_class($items) {
 }
 add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');
 
+//Custom Post types
 function custom_init(){
 	
 	require( get_template_directory() . '/inc/classes/custom-post-type.php' );
@@ -210,6 +245,16 @@ function custom_init(){
     		'plural' => 'Testimonials'
    		)
    	);
+
+	$testimonial->add_taxonomy("Testimonial Category",
+		array(
+			'hierarchical' => true,
+			'rewrite' => array( 'with_front' => false, 'slug' => 'testimonial-category' )
+		),
+		array(
+			'plural' => "Testimonial Categories"
+		)
+	);   	
 
 	$service = new Custom_Post_Type( 'Service', 
  		array(

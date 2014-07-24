@@ -8,7 +8,6 @@
 
 		if (is_woocommerce()) {
 			$top_parent_title = 'Products';
-
 		} 
 		if ( is_product_category() ) {
 			$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
@@ -24,8 +23,6 @@
 			$top_parent_title = 'News';
 		}
 	 ?>	
-
-	 <?php // the_field('section_page', 'category_' . ); ?>
 
 	<div id="page-header" class="clearfix">
 		<div class="container">

@@ -1,20 +1,12 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package fantrac
- * @since fantrac 1.0
+ * Template Name: Get In Touch
  */
 
 get_header(); ?>
 
 <div id="page" class="container">
-	<div id="single">
+	<div id="get-in-touch">
 		<div id="sidebar" class="span two">
 			<?php dynamic_sidebar( 'news-sidebar' ); ?>
 		</div>

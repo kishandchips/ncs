@@ -18,17 +18,7 @@ get_header(); ?>
 					<?php the_post_thumbnail(); ?>
 				<?php endif;?>
 
-				<div class="support-box">
-					<p><?php _e('How can we help your business? Please feel free to contact us at:') ?></p>
-					<div class="phone"><span><?php the_field('phone_number', 'option'); ?></span></div>
-					<a href="#" class="call-me-back">
-						<?php _e('Call Me Back') ?>
-					</a>
-					<div class="bubble">
-						<?php _e('Just fill in your details below and we’ll call you back at a convenient time.') ?>
-					</div>					
-
-				</div>
+				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		
 			<div class="span six break-on-mobile content-inner">
 			<?php while ( have_posts() ) : the_post(); ?>
