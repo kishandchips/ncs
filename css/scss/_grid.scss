@@ -34,8 +34,7 @@
 	@extend .clearfix;
 	width: 100%;
 	display: block;
-
-
+	@include borderbox;
 }
 
 .span {

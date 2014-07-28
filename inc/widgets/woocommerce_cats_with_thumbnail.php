@@ -38,7 +38,7 @@ class Product_Cats_With_Thumb extends WP_Widget {
                     
                   ?>
                   <li>
-                    <a href="/product-category/<?php echo $catTerm->slug; ?>">
+                    <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
                       <span><?php echo $catTerm->name; ?></span>
                       <?php echo '<img src="'.$image[0].'" />';  ?>
                     </a>                  

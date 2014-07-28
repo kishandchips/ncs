@@ -981,7 +981,6 @@ body {
 	overflow: hidden;
 
 	#content {
-		border-left: 1px solid #D6D5CE;
 		padding: 3em;
 		background: #FFF;
 		height: 100%;
@@ -995,7 +994,56 @@ body {
 		@include device-width(6) {
 			padding: 2em 1em 3em;
 		}
+
+		/****************************/
+		/* if Flexible Content;		*/
+		/****************************/		
+
+		&.flexible {
+			padding: 0;
+
+			> .span {
+				padding: 0;
+
+				> .row {
+					padding: 2em;
+
+					.row-title {
+						color: #1656A1;
+						width: 100%;
+						@include opensans-light;
+						@include font-size(25);
+						text-align: center;
+						margin: 0 0 1.5em 0;
+					}
+
+					h1 {
+						@include font-size(32);
+					}
+
+					.span {
+						padding: 0 3%;
+					}
+
+					.headerimage {
+						float: right;
+						margin: -70px 0;
+
+						@include device-width(12) {
+							margin: -15px 0;
+						}
+
+						@include device-width(8) {
+							margin: 0;
+							float: none;
+						}						
+					}
+				}
+			}
+		}
 	}
+
+
 
 	#page {
 		z-index: 1;
@@ -1059,6 +1107,7 @@ body {
 		
 #sidebar {
 	padding: 46px 0;
+	border-right: 1px solid #D6D5CE;
 
 	@include device-width(9) {
 	    position: absolute;

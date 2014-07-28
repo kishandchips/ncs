@@ -5,7 +5,8 @@
 	<meta name="format-detection" content="telephone=no">
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>   
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> 
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
 	<!--[if lt IE 8]> <script src="<?php bloginfo('template_url')?>/js/lte-ie7.js"></script> <![endif]-->
 	<!--[if IE]>

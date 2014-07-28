@@ -13,9 +13,17 @@
 	font-weight: 700;
 }
 
-
 .opensans {
 	@include opensans;
 }
+
+@mixin oswald {
+	font-family: 'Oswald', sans-serif;
+}
+
+.oswald {
+	@include oswald;
+}
+
 
 

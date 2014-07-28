@@ -268,7 +268,15 @@
           preloader: false,
 
           fixedContentPos: false
-        });		
+        });	
+
+	        $('a.img').magnificPopup({
+	          type: 'image',
+	          closeOnContentClick: true,
+	          image: {
+	            verticalFit: true
+	          }	          
+	        });        	
 
 		if ($(window).width() < 900) {
 			//responsive stuff here
