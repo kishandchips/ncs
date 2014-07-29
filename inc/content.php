@@ -58,7 +58,6 @@
 	 * Front Page - Offers & Bundles template
 	****************************************/
 	?>
-
 	<?php while(has_sub_field("offers_bundle_deals")): $e++; ?>
 		<section class="offers">
 			<div class="section-inner">
@@ -88,12 +87,6 @@
 		</section>
 	<?php endwhile; ?>
 <?php endif; ?>
-
-
-<?php if(get_field('include_about_us_inforgraphics_on_page', $id)): ?>
-	te kurva 
-<?php endif; ?>
-
 
 
 <?php 
@@ -163,3 +156,184 @@
 <?php $i++; ?>
 <?php endwhile; ?>
 <?php endif; ?>
+
+<?php
+/****************************************
+ * About US Infographics
+****************************************/
+?>
+<?php if(get_field('include_about_us_inforgraphics_on_page', $id)): ?>
+<div id="about-us">
+	<div class="row">
+		<div class="span five bespoke">
+			<div class="top">
+				<div class="desc">
+					<?php the_field('bespoke_desc'); ?>
+				</div>
+			</div>
+			<div class="bottom">
+				<h2><?php _e('Since 2004 we have installed…') ?></h2>
+				<div class="span five">
+					<div class="cabling">
+						<span>
+							<?php the_field('cabling'); ?>	
+						</span>
+						<?php _e('of Cabling') ?>
+					</div>					
+				</div>
+				<div class="span five">
+					<div class="screens">
+						<div class="span six">
+							<span>
+								<?php the_field('interactive_screens'); ?>
+							</span>
+						</div>
+						<div class="span four">
+							<?php _e('Interactive<br>Screens') ?>
+						</div>
+						
+					</div>
+					<div class="lighting">
+						<span>
+							<?php the_field('lighting_systems'); ?>
+						</span>
+						<?php _e('Lighting Systems') ?>
+					</div>					
+				</div>
+			</div>
+		</div>
+		<div class="span five quality">
+			<div class="top">
+				<div class="desc">
+					<?php the_field('high_quality_desc'); ?>
+				</div>
+			</div>
+			<div class="bottom">
+				<h4><?php _e('Over the years we have provided services for:') ?></h4>
+				<div class="span third">
+					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five num"><?php the_field('school_num_kent'); ?></div>
+					Astonishing 82% of Kent Schools, colleges and academies.
+					
+				</div>
+				<div class="span third">
+					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five num"><?php the_field('school_num'); ?>	</div>
+					Schools, colleges and academies outside of Kent.
+				</div>
+				<div class="span third">
+					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/commercial.png" alt=""></div>
+					<div class="span five num"><?php the_field('school_num_commercial'); ?></div>
+					Commercial, council and healthcare offices.
+					
+				</div>
+			</div>
+		</div>
+		<div class="span five support">
+			<div class="top">
+				<div class="desc">
+					<?php the_field('excellent_desc'); ?>	
+				</div>	
+			</div>
+			<div class="bottom">
+				<div class="span five left">
+				<img src="<?php bloginfo('template_directory') ?>/images/icons/including.jpg" alt="">
+				<span><?php the_field('staff'); ?></span><br>
+				<?php _e('Staff') ?>
+				</div>
+				<div class="span five right">
+					<div>
+						<span><img src="<?php bloginfo('template_directory') ?>/images/icons/engineer.png" alt=""></span>
+						<span class="num"><?php the_field('engineers'); ?></span><?php _e('Engineers'); ?>
+					</div>
+					<div>
+						<span><img src="<?php bloginfo('template_directory') ?>/images/icons/support.png" alt=""></span>
+						<span class="num"><?php the_field('support'); ?></span><?php _e('Support'); ?>
+					</div>
+					<div>
+						<span><img src="<?php bloginfo('template_directory') ?>/images/icons/business.png" alt=""></span>
+						<span class="num"><?php the_field('operation_team_'); ?></span><?php _e('Operation Team'); ?>
+					</div>
+					<div>
+						<span><img src="<?php bloginfo('template_directory') ?>/images/icons/engineer.png" alt=""></span>
+						<span class="num"><?php the_field('sales_marketing_'); ?></span><?php _e('Sales Marketing'); ?>
+					</div>
+					<div>
+						<span><img src="<?php bloginfo('template_directory') ?>/images/icons/account.png" alt=""></span>
+						<span class="num"><?php the_field('accounts'); ?></span><?php _e('Accounts'); ?>
+					</div>	
+				</div>				
+			</div>		
+		</div>
+		<div class="span five environment">
+			<div class="top">
+				<div class="desc">
+					<?php the_field('environment_desc'); ?>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="span five">
+					<div class="image">
+					<img src="<?php bloginfo('template_directory') ?>/images/icons/solar_panels.png" alt="">
+					<span><?php the_field('solar_num'); ?></span>	
+					</div>			
+					<?php _e('Solar panels are fitted on our rooftop'); ?>
+				</div>
+				<div class="span five">
+					<div class="image">
+						<img src="<?php bloginfo('template_directory') ?>/images/icons/ecovans.png" alt="">
+						<span><?php the_field('ecovans_num'); ?></span>						
+					</div>					
+					<?php _e('Ecovans keeping emmisions down'); ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row this-week">
+		<h2><?php _e('This week in the office…'); ?></h2>
+		<div class="span two-and-half support">
+			<div class="image">
+				<img src="<?php bloginfo('template_directory') ?>/images/icons/week-support.png" alt="">
+				<span><?php the_field('support_calls_answered'); ?></span>
+			</div>
+			<?php _e('Support calls Answered'); ?>
+		</div>
+		<div class="span two-and-half cabling">
+			<div class="image">
+				<img src="<?php bloginfo('template_directory') ?>/images/icons/week-cabling.png" alt="">
+				<span><?php the_field('meters_of_cabling_installed'); ?></span>
+			</div>
+			<?php _e('Meters of cabling installed'); ?>
+		</div>
+		<div class="span two-and-half energy">
+			<div class="image">
+				<img src="<?php bloginfo('template_directory') ?>/images/icons/week-energy.png" alt="">
+				<span><?php the_field('energy_generated_by_solar_panels'); ?></span>
+			</div>		
+			<?php _e('Energy generated by Solar Panels'); ?>
+		</div>
+		<div class="span two-and-half tea">
+			<div class="image">
+				<img src="<?php bloginfo('template_directory') ?>/images/icons/week-tea.png" alt="">
+				<span><?php the_field('cups_of_tea_made'); ?></span>
+			</div>		
+			<?php _e('Cups of tea made'); ?> 
+		</div>
+	</div>
+</div>
+<?php endif; ?>
+<?php if( have_rows('meet_the_team') ): ?>
+<div id="meet-the-team">
+	<h1 class="section-title"><?php _e('Meet the Team'); ?></h1>
+	<?php while( have_rows('meet_the_team') ): the_row(); ?>
+		<div class="row">
+			<div class="span five break-on-mobile">
+				<?php the_sub_field('team_image'); ?>	
+			</div>
+			<div class="span five break-on-mobile">
+				<?php the_sub_field('team_description'); ?>	
+			</div>
+		</div>
+	<?php endwhile; ?> 
+ </div>	
+<?php endif; ?>	

@@ -1000,7 +1000,7 @@ body {
 		/****************************/		
 
 		&.flexible {
-			padding: 0;
+			padding: 0 0 3em 0;
 
 			> .span {
 				padding: 0;
@@ -1822,6 +1822,412 @@ body {
 					}
 				}
 			}
+		}
+	}
+}
+
+
+/****************************/
+/* About Us Infographics	*/
+/****************************/	
+
+#about-us {
+
+	.row {
+		padding: 3.5em;
+
+		@include device-width(5) {
+			padding: 1.5em 0.5em;
+		}
+
+		>.span {
+			margin-bottom: 1.5em;
+
+			@include device-width(7) {
+				width: 100%;
+			}
+
+			.top, .bottom {
+				@include borderbox;
+				padding: 25px;
+			}
+
+			.top {
+				@include border_radius_top(12px);
+
+				h1 {
+					@include opensans-light;
+					@include font-size(25);
+				}
+
+				p {
+					line-height: 2;
+				}
+			}
+
+			.bottom {
+				@include border_radius_bottom(12px);
+			}
+
+
+			&.bespoke {
+				color: #FFF;
+
+				.top {
+					@extend .clearfix;
+					background: #113453;
+					.desc {
+						&:before {
+							@extend [class*="icon-"];
+							@extend .icon-ncslogo:before;
+							width: 100%;
+							text-align: center;
+							display: block;
+							@include font-size(30);
+						}					
+					}
+				}
+
+				.bottom {
+					@extend .clearfix;
+					background: #1B4264;
+					padding: 0 0 0 0;
+
+					h2 {
+						@include opensans-light;
+						@include font-size(20);
+						color: #e8ecef;
+						display: block;
+						width: 100%;
+						text-align: center;
+						border-bottom: 1px solid #3091CE;
+						line-height: 3;
+						margin: 0;
+					}
+
+					>.span {
+						padding: 0;
+
+						&:last-child {
+							border-left: 1px solid #3091CE;
+						}
+					}
+
+					.cabling {
+						background-image: url('../images/backgrounds/cable_roll.png');
+						background-size: 90% auto;
+						background-position: center center;
+						background-repeat: no-repeat;
+					 	text-align: center;
+					 	@include opensans-bold;
+					 	@include font-size(15);
+					 	padding: 6em 1em 6em 0;
+
+						 span {
+						 	display: block;
+						 	@include oswald;
+						 	@include font-size(30);
+
+						 	@include device-width(13) {
+								@include font-size(25);						 		
+						 	}
+
+						 	@include device-width(12) {
+								@include font-size(20);						 		
+						 	}	
+
+						 	@include device-width(10) {
+								@include font-size(15);						 		
+						 	}						 						 	
+						 }					 	
+
+					}
+
+					.screens {
+						background-image: url('../images/backgrounds/interactive_board.png');
+						background-size: 50% auto;
+						background-position: 13% center;
+						background-repeat: no-repeat;
+					 	padding: 1.5em 0;
+					 	margin: 9% 0;	
+					 	@include opensans-bold;
+					 	@include font-size(14);	
+					 	@extend .clearfix;
+
+					 	.six {
+					 		text-align: center;
+					 	}				
+
+					 	span {
+						 	display: block;
+						 	@include oswald;
+						 	@include font-size(25);
+							line-height: 2;	
+							padding-left: 20%;		
+
+						 	@include device-width(12) {
+								@include font-size(20);						 		
+						 	}	
+
+						 	@include device-width(10) {
+								@include font-size(15);						 		
+						 	}						 										 	
+						 }					 	
+					}
+
+					.lighting {
+						background-image: url('../images/backgrounds/lighting.png');
+						background-size: auto 70%;
+						background-position: 90% center;
+						background-repeat: no-repeat;
+						border-top: 1px solid #3091CE;						
+					 	@include opensans-bold;
+					 	@include font-size(14);	
+					 	padding: 2em;				
+
+						span {
+						 	display: block;
+						 	@include oswald;
+						 	@include font-size(25);	
+
+						 	@include device-width(12) {
+								@include font-size(20);						 		
+						 	}	
+
+						 	@include device-width(10) {
+								@include font-size(15);						 		
+						 	}						 						 							
+						}					
+
+					}
+				}
+			}
+
+			&.quality {
+
+				.top {
+					@extend .clearfix;
+					background: #EBEBEB;
+
+					.desc {
+						&:before {
+							@extend [class*="icon-"];
+							@extend .icon-wrench:before;
+							width: 100%;
+							text-align: center;
+							display: block;
+							@include font-size(25);
+							color: #717171;
+						}	
+
+						h1 {
+							color: #1656A1;					
+						}
+						
+					}
+				}
+
+				.bottom {
+					background: #F3F3F3;
+					text-align: center;
+					@extend .clearfix;
+					h4 {
+						@include font-size(14);
+						@include opensans-bold;
+						display: block;
+						width: 100%;
+						margin-bottom: 2em;
+					}
+
+					>.span {
+						@include font-size(12);
+						
+						.num {
+							@include font-size(40);
+							@include oswald;
+						}
+
+					}
+				}				
+			}
+
+			&.support {
+
+				.top {
+					@extend .clearfix;
+					background: #EBEBEB;
+
+					.desc {
+						&:before {
+							@extend [class*="icon-"];
+							@extend .icon-chat:before;
+							width: 100%;
+							text-align: center;
+							display: block;
+							@include font-size(25);
+							color: #717171;
+						}	
+
+						h1 {
+							color: #1656A1;					
+						}
+						
+					}
+				}
+
+				.bottom {
+					background: #F3F3F3;
+					@extend .clearfix;
+
+				 	.left {
+				 		text-align: right;
+			 			@include font-size(25);
+			 			color: #3091CE;		
+			 			@include opensans-bold;		 		
+
+				 		img {
+				 			float:right;
+				 			margin-left: 10%;
+				 		}
+
+				 		span {
+				 			@include oswald;
+				 			@include font-size(60);
+				 			color: #3091CE;
+				 		}
+				 	}
+
+				 	.right {
+				 		.num {
+				 			@include oswald;
+				 			margin: 0 0.5em;
+				 			@include font-size(15);
+				 		}
+				 	}
+				}				
+			}
+
+			&.environment {
+
+				.top {
+					color: #FFF;
+					@extend .clearfix;
+					background: #5B8629;
+
+					.desc {
+						&:before {
+							@extend [class*="icon-"];
+							@extend .icon-leaf:before;
+							width: 100%;
+							text-align: center;
+							display: block;
+							@include font-size(25);
+						}							
+
+						a {
+							color: #FFF !important;
+						}
+					}
+				}
+
+				.bottom {
+					background: #3C6111;
+					@extend .clearfix;
+					text-align: center;
+					color: #FFF;
+					@include opensans-bold;
+					@include font-size(14);
+
+					.span {
+						padding: 0 2em;
+					}
+
+					.image {
+						span {
+							@include vertical-align;
+							position: absolute;
+							width: 100%;
+							text-align: center;
+							left: 0;
+							color: #D0021B;
+							@include font-size(45);
+							top: 37%;				
+						}
+					}
+				}	
+			}					
+		}
+
+		&.this-week {
+			background: #FBFBFB;
+			border-top: 1px solid #DCDCDC;
+			border-bottom: 1px solid #DCDCDC;
+
+			h2 {
+				margin: 0 0 1.5em 0;
+				display:block;
+				width: 100%;
+				text-align: center;
+				color: #1656A1;
+				@include font-size(25);
+			}
+
+			.span {
+				text-align: center;
+				@include opensans-bold;
+				@include font-size(14);				
+
+				.image {
+					span {
+						@include oswald;
+						@include vertical-align;
+						position: absolute;
+						width: 100%;
+						text-align: center;
+						left: 0;
+						color: #D0021B;
+						@include font-size(35);
+						top: 41%;						
+					}
+				}
+
+				&.support, &.tea{
+					span {
+						color: #FFF;
+					}
+				}
+
+				&.cabling {
+					span {
+						color: #1656A1;
+					}
+				}
+			}
+		}	
+	}
+}
+
+#meet-the-team {
+	.section-title {
+		display: block;
+		width: 100%;
+		text-align: center;
+		color: #1656A1;
+		@include font-size(25);
+		margin: 2em 0;
+	}
+
+	.row {
+		@extend .clearfix;
+		padding: 3em;
+		border-bottom: 1px solid #3091CE;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		h1 {
+			@include font-size(30);
 		}
 	}
 }

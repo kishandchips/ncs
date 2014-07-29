@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?-jicpp9');
-	src:url('fonts/icons.eot?#iefix-jicpp9') format('embedded-opentype'),
-		url('fonts/icons.woff?-jicpp9') format('woff'),
-		url('fonts/icons.ttf?-jicpp9') format('truetype'),
-		url('fonts/icons.svg?-jicpp9#icons') format('svg');
+	src:url('fonts/icons.eot?-3h00wr');
+	src:url('fonts/icons.eot?#iefix-3h00wr') format('embedded-opentype'),
+		url('fonts/icons.woff?-3h00wr') format('woff'),
+		url('fonts/icons.ttf?-3h00wr') format('truetype'),
+		url('fonts/icons.svg?-3h00wr#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-leaf:before {
+	content: "\e611";
+}
+.icon-ncslogo:before {
+	content: "\e612";
+}
+.icon-wrench:before {
+	content: "\e613";
+}
 .icon-quote:before {
 	content: "\e610";
 }
