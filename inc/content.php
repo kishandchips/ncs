@@ -321,19 +321,45 @@
 		</div>
 	</div>
 </div>
+
+	<?php if( have_rows('meet_the_team') ): ?>
+	<div id="meet-the-team">
+		<h1 class="section-title"><?php _e('Meet the Team'); ?></h1>
+		<?php while( have_rows('meet_the_team') ): the_row(); ?>
+			<div class="row">
+				<div class="span five break-on-mobile">
+					<?php the_sub_field('team_image'); ?>	
+				</div>
+				<div class="span five break-on-mobile">
+					<?php the_sub_field('team_description'); ?>	
+				</div>
+			</div>
+		<?php endwhile; ?> 
+	 </div>	
+	<?php endif; ?>	
+
+	 <?php if( have_rows('testimonial') ): ?>
+		 <div id="quotes">
+		 	<?php the_field('testiomonials_title'); ?>
+		 	<?php while( have_rows('testimonial') ): the_row(); ?>
+				<div class="span two-and-half break-on-mobile">
+					<div class="testimonial">
+						<div class="quote">
+							<?php the_sub_field('body'); ?>	
+						</div>
+						<div class="meta">
+							<span class="author">
+								<?php the_sub_field('author'); ?>	
+							</span>
+							<span class="position">
+								<?php the_sub_field('position'); ?>	
+							</span>
+						</div>
+					</div>
+				</div>		 		
+		 	<?php endwhile; ?>
+		 </div>
+	<?php endif; ?>
+
+
 <?php endif; ?>
-<?php if( have_rows('meet_the_team') ): ?>
-<div id="meet-the-team">
-	<h1 class="section-title"><?php _e('Meet the Team'); ?></h1>
-	<?php while( have_rows('meet_the_team') ): the_row(); ?>
-		<div class="row">
-			<div class="span five break-on-mobile">
-				<?php the_sub_field('team_image'); ?>	
-			</div>
-			<div class="span five break-on-mobile">
-				<?php the_sub_field('team_description'); ?>	
-			</div>
-		</div>
-	<?php endwhile; ?> 
- </div>	
-<?php endif; ?>	

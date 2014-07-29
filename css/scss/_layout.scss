@@ -830,6 +830,14 @@ body {
 	z-index: 1;
 	overflow: hidden;
 
+	&.environmental-policy {
+		background: #4E8A38 url('../images/backgrounds/leaf_pattern.png');
+
+		#parent-title, #page-title {
+			background: none;
+		}
+	}
+
 	.span {
 		background: #0C305A;
 	}
@@ -2220,15 +2228,94 @@ body {
 	.row {
 		@extend .clearfix;
 		padding: 3em;
-		border-bottom: 1px solid #3091CE;
 
-		&:last-child {
-			border-bottom: none;
+		&:nth-child(odd) {
+			background: #EBEBEB;
+		}
+
+		&:nth-child(even) {
+			background: #F3F3F3;
+		}
+
+		.span {
+			padding: 0 2em;
+
+			@include device-width(5) {
+				padding: 0;				
+			}
+		}
+
+		img {
+			@include borderbox;
+			padding: 5px;
+			border: 1px solid #ccc;
+			@include box-shadow(0 0  10px #ccc);
 		}
 
 		h1 {
 			@include font-size(30);
 		}
+	}
+}
+
+#quotes {
+	padding: 3em 2em;
+
+	h1 {
+		@include font-size(30);
+	}
+
+	.testimonial {
+		margin-top: 3em;
+		padding-right: 3em;
+
+		&:nth-child(3n+1) {
+			color: #5E9129;
+		}
+
+		&:nth-child(3n+2) {
+			color: #4A90E2;
+		}	
+
+		&:nth-child(3n+3) {
+			color: #00817F;
+		}					
+
+		.quote {
+			@include opensans-light;
+			@include font-size(20);
+			margin-bottom: 1em;
+
+			@include device-width(4) {
+				@include font-size(15);
+			}
+
+			&:before {
+				@extend [class*="icon-"];
+				@extend .icon-quote:before;
+				display: block;
+				width: 100%;
+				@include font-size(30);
+				margin-bottom: 0.3em;
+			}
+		}
+
+		.meta {
+			color: #4A4A4A;
+			@include font-size(14);			
+
+			.author {
+				@include opensans-bold;
+				width: 100%;
+				display: block;						
+
+			}
+
+			.position {
+				@include opensans-light;
+			}
+		}
+
 	}
 }
 

@@ -25,7 +25,7 @@
 		}
 	 ?>	
 
-	<div id="page-header" class="clearfix">
+	<div id="page-header" class="clearfix <?php if (is_page(43)):?>environmental-policy<?php endif; ?>">
 		<div class="container">
 			<div id="parent-title" class="span two">
 				<h2><?php echo $top_parent_title; ?></h2>	
