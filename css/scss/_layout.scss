@@ -1007,7 +1007,7 @@ body {
 		/* if Flexible Content;		*/
 		/****************************/		
 
-		&.flexible {
+		&.full-width {
 			padding: 0 0 3em 0;
 
 			> .span {
@@ -2320,6 +2320,121 @@ body {
 }
 
 /****************************/
+/* Environmental Policy		*/
+/****************************/
+
+#environmental-policy {
+	padding: 3em;
+
+	background: url('../images/backgrounds/leaf_pattern.png');
+
+
+	h1.title {
+		@include opensans-light;
+		@include font-size(30);
+		color: #1656A1;
+	}
+
+	.span {
+		margin-bottom: 4em;
+
+		@include device-width(7) {
+			width: 100%;
+		}		
+
+		.image {
+			img {
+				display: block;
+			}
+		}
+
+		&.image-left {
+			.image {
+				width: 40%;
+				float: left;
+			}
+
+			.body {
+				width: 60%;
+				float: right;
+				@include borderbox;
+			}
+
+		}
+
+		&.image-right {
+
+			.image {
+				width: 40%;
+				float: right;
+				display: block;
+			}
+
+			.body {
+				width: 60%;
+				float: left;
+			}			
+		}
+
+		&.image-left, &.image-right {
+
+			.image, .body {
+
+				@include device-width(7) {
+					width: 100%;
+				}
+			}
+		}		
+
+		.body {
+			background: #E8E8E8;
+
+			.copy {
+				padding: 4em 2em 2em;
+				@extend .clearfix;
+				position: relative;
+
+				h1 {
+					@include vertical-gradient(#6A973C, #86B555);
+					color: #FFF;
+					@include font-size(21);
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 0.5em 1.5em;
+					margin: 0;
+				}
+
+
+				.author-image {
+					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
+					@include border-radius(50%);
+					border: 4px solid #FFFFFF;	
+					float: left;				
+				}	
+
+				.meta {
+					color: #4A4A4A;
+					@include font-size(14);	
+					margin: 7.5em 0 0 13em;						
+
+					.author {
+						@include opensans-bold;
+						width: 100%;
+						display: block;						
+
+					}
+
+					.position {
+						@include opensans-light;
+					}
+				}				
+			}
+		}
+	}
+}
+
+/****************************/
 /* Testimonials				*/
 /****************************/	
 
@@ -2472,11 +2587,27 @@ body {
 			height: 100%;
 			display: block;
 			@include border_radius(10px);
-			@include vertical-gradient(#032E61, #1656A1);	
+			@include vertical-gradient(#032E61, #1656A1);
 
 			&:hover {
 				@include vertical-gradient(#1656A1, #032E61);	
 			}
+
+			.page-education & {
+				@include vertical-gradient(#017C7A, #009795);
+
+				&:hover {
+					@include vertical-gradient(#009795, #017C7A);	
+				}
+			}
+
+			& .related & {
+				@include vertical-gradient(#000, #fff);
+
+				&:hover {
+					@include vertical-gradient(#009795, #017C7A);	
+				}
+			}		
 		}
 
 		&:nth-child(6n+2), &:nth-child(6n+6) {
@@ -2485,6 +2616,14 @@ body {
 
 				&:hover {
 					@include vertical-gradient(#1F79E2, #02499E);	
+				}
+
+				.page-education & {
+					@include vertical-gradient(#6A973C, #86B555);
+
+					&:hover {
+						@include vertical-gradient(#86B555, #6A973C);	
+					}					
 				}
 			}
 		}
@@ -2526,8 +2665,32 @@ body {
 			@include opensans-bold;
 			@include font-size(16);
 		}
+	}
+
+	&.related {
+
+		.study:nth-child(even) {
+			a {
+				@include vertical-gradient(#6A973C, #86B555);
+
+				&:hover {
+					@include vertical-gradient(#86B555, #6A973C);	
+				}					
+			}
+		}
 	}	
 }
+
+.case-studies-title {
+	width: 100%;
+	display: block;
+	text-align: center;
+	@include font-size(30);
+	@include opensans-light;
+	color: #1656A1;
+	margin: 2em 0;
+}
+
 
 
 /****************************/

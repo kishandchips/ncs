@@ -2,18 +2,6 @@
    Buttons
    ========================================================================== */
 
-
-//  {
-// 	@include transition(background-color 0.3s ease);
-// 	background: #eeb111;
-// 	border: 0;
-// 	line-height: 1;
-// 	@include border-radius(2px);
-// 	&:hover {
-// 		background: #d9a110;
-// 	}
-// }
-
 button {
 	display: inline-block;
 	background: none;
@@ -22,3 +10,189 @@ button {
 		outline: none;
 	}
 }
+
+a.call-me-back {
+	@include vertical-gradient(#86B555, #5B8E26);
+	@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
+	margin: 0;
+	padding: 1em 3em;
+	@include border-radius(4px);
+	color: #FFF;
+	@include inline-block;
+	text-align: center;
+	@include borderbox;
+
+	&:hover {
+		@include vertical-gradient(#5B8E26, #86B555);
+	}
+
+	&:before {
+		@extend [class*="icon-"];
+		@extend .icon-bubble:before;
+	}			
+}
+
+.bubble {
+	position: relative;
+	@include font-size(13);
+	color: #4A4A4A;
+	display: block;
+	background: #FAFAFA;
+	border: 1px solid #E3E3E3;
+	@include borderbox;
+	padding: 17px;
+	@include border-radius(5px);
+
+	&:after, &:before {
+		bottom: 100%;
+		left: 20%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+	}
+
+	&:after {
+		border-color: rgba(250, 250, 250, 0);
+		border-bottom-color: #FAFAFA;
+		border-width: 14px;
+		margin-left: -14px;
+	}
+	&:before {
+		border-color: rgba(227, 227, 227, 0);
+		border-bottom-color: #E3E3E3;
+		border-width: 15px;
+		margin-left: -15px;
+	}	
+}
+
+#content {
+
+	p {
+		a {
+			color: #4A90E2;
+			font-weight: 500;
+			-webkit-transition: -webkit-transform 0.2s;
+			transition: transform 0.2s;
+			position: relative;
+			display: inline-block;
+			outline: none;
+			vertical-align: bottom;
+			text-decoration: none;
+			white-space: nowrap;
+
+			&:before, 
+			&:after {
+				pointer-events: none;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				-webkit-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+			}
+
+			&:hover, 
+			&:focus { 	
+				-webkit-transform: scale(0.8333);
+				transform: scale(0.8333);
+			}	
+
+			&:before {
+				position: absolute;
+				top: -2px;
+				left: -7px;
+				box-sizing: content-box;
+				padding: 0px;
+				width: 100%;
+				height: 100%;
+				border: 2px solid #4A90E2;
+				content: '';
+				opacity: 0;
+				-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+				transition: opacity 0.2s, transform 0.2s;
+				-webkit-transform: scale(0.8333);
+				transform: scale(0.8333);
+			}		
+
+			&:hover::before,
+			&:focus::before {
+				opacity: 1;
+				-webkit-transform: scale(1.2);
+				transform: scale(1.2);
+			}														
+		}	
+
+		a.download-btn {
+			@include opensans;
+			@include font-size(15);
+			color: #4A90E2;
+			background: #F7F7F7 url('../images/icons/document-download-icon.png') 6px center no-repeat;
+			@include border-radius(40px);
+			padding: 0.9em 2em 0.9em 5em;
+			@include box-shadow(0 1px 2px #ccc);
+			margin-top: 2em;
+
+			&:before {
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				border: none;
+				content: 'Download';
+				opacity: 1;
+				position: static;
+				width: 100%;
+				display: block;	
+				@include opensans-bold;
+				@include font-size(12);
+				color: #8A8A8A;			
+			}
+
+			&:hover, 
+			&:focus { 	
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				background: #4A90E2 url('../images/icons/document-download-icon.png') 6px center no-repeat;
+				color: #FFF;
+
+				&:before {
+					color: #FFF;		
+				}
+			}		
+		}	
+
+		a.more-about {
+			@include opensans;
+			@include font-size(15);
+			color: #1656A1;
+			background: #F7F7F7;
+			@include border-radius(4px);
+			padding: 0.5em 1em;
+			margin-top: 2em;
+
+			&:before {
+				display: none;		
+			}
+
+
+			&:after {
+				@extend [class*="icon-"];
+				@extend .icon-arrow-right:before;						
+				@include font-size(9);	
+				float: right;
+				margin: 9px 0 0 20px;						
+			}				
+
+			&:hover, 
+			&:focus { 	
+				-webkit-transform: scale(1);
+				transform: scale(1);
+				background: #1656A1;
+				color: #FFF;
+
+				&:after {
+					color: #FFF;		
+				}
+			}				
+		}			
+	}
+}	

@@ -45,6 +45,7 @@ function custom_setup_theme() {
 
 	add_image_size( 'frontpage', 283, 210, true);
 	add_image_size( 'small-thumbnail', 100, 100, true);
+	add_image_size( 'custom-thumbnail', 150);
 	add_image_size( 'custom-medium', 330, 330, true);
 	add_image_size( 'custom-navigation', 106, 67, true);
 	add_image_size( 'medium-large', 670);
@@ -194,11 +195,13 @@ function custom_styles() {
 }
 add_action('wp_enqueue_scripts', 'custom_styles');
 
-add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 
+// Add custom image sizes to editor
+add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 function my_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'medium-large' => __('Medium-Large'),
+        'custom-thumbnail' => __('Custom-Thumbnail'),
     ) );
 }
 

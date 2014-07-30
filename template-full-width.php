@@ -19,7 +19,7 @@ get_header(); ?>
 		 <?php endif; ?>
 		
 	</div>
-	<div id="content" class="span eight <?php if(get_field('content', $id)): ?>flexible<?php endif; ?>">
+	<div id="content" class="span eight full-width">
 		<div class="span ten break-on-mobile content-inner">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if(!$post->post_content == ''): ?>

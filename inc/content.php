@@ -140,7 +140,7 @@
 							$class = 'ten';
 							break;
 					} ?>
-					<div class="break-on-tablet span <?php echo $class; ?>" style="
+					<div class="break-on-tablet span <?php if (get_sub_field('column_width')):?><?php the_sub_field('column_width'); ?><?php else: ?><?php echo $class; ?><?php endif; ?>" style="
 					<?php if (get_sub_field('text_color')):?>color: <?php the_sub_field('text_color'); ?>;<?php endif; ?>
 					">
 						<?php the_sub_field('column-content'); ?>
@@ -360,6 +360,99 @@
 		 	<?php endwhile; ?>
 		 </div>
 	<?php endif; ?>
+<?php endif; ?>
+
+<?php
+/****************************************
+ * Environmental Policy
+****************************************/
+?>
+<?php if(get_field('environmental_policy_articles', $id)): ?>
+<div id="environmental-policy">
+	<?php while( have_rows('environmental_policy_articles') ): the_row(); ?>
+		<?php if (get_sub_field('article')): ?>
+			<h1 class="title"><?php the_sub_field('article'); ?></h1>
+		<?php endif; ?>
+
+		<div class="span <?php the_sub_field('box_size'); ?> image-<?php the_sub_field('image_position'); ?>">
+			<div class="image">
+				<?php 
+					$attachment_id = get_sub_field('article_image');
+					$size = "medium-large"; 
+					$image = wp_get_attachment_image_src( $attachment_id, $size );
+				?>					
+				<img src="<?php echo $image[0]; ?>" alt="">
+			</div>
+			<div class="body">
+				<div class="copy">
+					<?php the_sub_field('article_body'); ?>
+					<div class="quote">
+						<?php if (get_sub_field('article_quote')): ?>
+							<blockquote>
+								<?php the_sub_field('article_quote'); ?>
+							</blockquote>
+						<?php endif; ?>
+						<?php if (get_sub_field('author_image')): ?>
+							<?php 
+								$attachment_id = get_sub_field('author_image');
+								$size = "thumbnail"; 
+								$image = wp_get_attachment_image_src( $attachment_id, $size );
+							?>								
+							<img class="author-image" src="<?php echo $image[0]; ?>" alt="">
+							<div class="meta">
+								<span class="author">					
+									<?php the_sub_field('quote_author'); ?>
+								</span>
+								<span class="position">
+									<?php the_sub_field('quote_position'); ?>
+								</span>						
+							</div>							
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php endwhile; ?>
+</div>	
+<?php endif; ?>
 
 
+<?php
+/****************************************
+ * Environmental Policy
+****************************************/
+?>
+<?php if(get_field('show_related_case_studies', $id)): ?>
+	<?php 
+ 
+	$posts = get_field('select_related_case_studies');
+ 
+	if( $posts ): ?>
+			<h1 class="case-studies-title">Related Articles & Case Studies</h1>
+			<div id="case-studies" class="related clearfix">	
+			<?php $i = 1; ?>
+			<?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+				<article class="study span two-and-half equal-height break-on-mobile <?php if($i % 6 == 3): ?>wide<?php endif; ?>">
+					<a href="<?php echo get_permalink( $p->ID ); ?>">
+						<?php  ?>
+
+						<?php 
+									if($i % 6 == 3) {
+										echo get_the_post_thumbnail($p->ID,array(540, 240, 'bfi_thumb' => true) );
+									} else {
+										echo get_the_post_thumbnail($p->ID,array(260, 240, 'bfi_thumb' => true) );
+									}
+						 ?>						
+
+						<div class="title">
+							<h2 class="entry-title"><?php echo get_the_title($p->ID ); ?></h2>
+						</div>
+						<span class="readmore"><?php _e('Read our Case Study') ?></span>
+					</a>
+				</article>
+			<?php $i++; ?>
+			<?php endforeach; ?>
+
+			</div>
+	<?php endif; ?>
 <?php endif; ?>
