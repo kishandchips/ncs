@@ -158,41 +158,42 @@ a.call-me-back {
 					color: #FFF;		
 				}
 			}		
-		}	
-
-		a.more-about {
-			@include opensans;
-			@include font-size(15);
-			color: #1656A1;
-			background: #F7F7F7;
-			@include border-radius(4px);
-			padding: 0.5em 1em;
-			margin-top: 2em;
-
-			&:before {
-				display: none;		
-			}
-
-
-			&:after {
-				@extend [class*="icon-"];
-				@extend .icon-arrow-right:before;						
-				@include font-size(9);	
-				float: right;
-				margin: 9px 0 0 20px;						
-			}				
-
-			&:hover, 
-			&:focus { 	
-				-webkit-transform: scale(1);
-				transform: scale(1);
-				background: #1656A1;
-				color: #FFF;
-
-				&:after {
-					color: #FFF;		
-				}
-			}				
-		}			
+		}				
 	}
 }	
+
+a.more-about {
+	@include opensans;
+	@include font-size(15);
+	color: #1656A1;
+	background: #F7F7F7;
+	@include border-radius(4px);
+	padding: 0.5em 1em;
+	margin-top: 2em;
+	@include transition(all 0s ease);
+	@include inline-block;
+
+	&:before {
+		display: none;		
+	}
+
+
+	&:after {
+		@extend [class*="icon-"];
+		@extend .icon-arrow-right:before;						
+		@include font-size(9);	
+		margin: 9px 0 0 20px;						
+	}				
+
+	&:hover, 
+	&:focus { 	
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		background: #1656A1;
+		color: #FFF;
+
+		&:after {
+			color: #FFF;
+		}
+	}				
+}
