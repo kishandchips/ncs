@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 	<div id="wrap">
 		<header id="header" role="banner" class="clearfix container">
-			<a href="/" class="logo-container span two">
+			<a href="<?php bloginfo('url'); ?>" class="logo-container span two">
 				<img src="<?php bloginfo( 'template_url' ); ?>/images/logos/header.png" alt="<?php bloginfo( 'title' ); ?>" title="<?php bloginfo( 'title' ); ?>">
 			</a>
 			<div class="navigation-container span eight">

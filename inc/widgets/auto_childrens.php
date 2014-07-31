@@ -28,7 +28,8 @@ class Auto_Childs extends WP_Widget {
 							    'post_type'      => 'page',
 							    'posts_per_page' => -1,
 							    'post_parent'    => $top_parent,
-							    'orderby'        => 'menu_order'
+							    'orderby'        => 'date',
+                  'order'          => 'ASC'
 							 );
 							
 						$parent = new WP_Query( $args );

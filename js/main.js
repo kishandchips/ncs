@@ -245,7 +245,7 @@
 			main.equalHeight();
 
 			if ($(window).width() < 900) {
-			   //main.containerHeight();
+
 			}			
 		}
 	}
@@ -258,7 +258,7 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
-		//main.containerHeight();
+		main.containerHeight();
 
         $('.popup-youtube').magnificPopup({
           disableOn: 700,

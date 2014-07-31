@@ -27,6 +27,17 @@ body {
 
 		img {
 			margin: 1.1em 0;
+
+			@include device-width(6) {
+				max-width: 50%;
+				margin: 0;
+			}
+
+
+			@include device-width(4) {
+				max-width: 70%;
+				margin: 0;
+			}			
 		}
 
 		@include device-width(9) {
@@ -294,6 +305,10 @@ body {
 			margin-left: 20px;
 			padding-top: 2px;
 
+			@media only screen and (max-width: 600px) {	
+				display: none;
+			}
+
 			&:before {
 				@extend [class*="icon-"];
 				@extend .icon-search:before;
@@ -332,6 +347,14 @@ body {
 				float: left;
 				margin-left: 35px;
 				line-height: 22px;
+
+				@include device-width(6) {
+					margin-left: 20px;
+				}				
+
+				@include device-width(4) {
+					margin-left: 15px;
+				}
 
 				a:before {
 					color: #3178CC;
@@ -1542,7 +1565,7 @@ body {
 				background: #042143;
 				color: #FFF;
 				@include border-radius(10px);
-				padding: 32px;
+				padding: 29px;
 
 				a {
 					color: #FFF;
@@ -2715,13 +2738,24 @@ body {
 		overflow: hidden;
 		@extend .clearfix;
 
-		@include device-width(6) {
-			padding-bottom: 60%;
-			background-size: cover;
+		@include device-width(7) {
+			padding-bottom: 50%;
+			background-size: contain;
+			background-position: left bottom;
+
+			&.no-image {
+				padding-bottom: 0%;
+			}
 		}		
 
 		&.right {
 			background-position: left center;
+
+			@include device-width(7) {
+				background-size: contain;
+				background-position: left bottom;
+			}
+
 			.span {
 				float: right;
 			}
@@ -2730,13 +2764,17 @@ body {
 		.span {
 			padding: 3em 2em;
 
-			@include device-width(6) {
+			@include device-width(7) {
 				padding: 1em;
 				width: 100%;
 			}
 
 			&.ten {
 				padding: 1em 2em;
+
+				@include device-width(7) {
+					padding: 1em;
+				}
 			}
 		}
 	}

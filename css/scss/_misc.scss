@@ -7,19 +7,20 @@ img {
 	height: auto;
 }
 
+img.alignleft {
+	margin: 0 1em 1em 0;
+
+}
+
 blockquote {
 	background: #FFF;
 	border: 1px solid #d0d0d0;
 	@include border-radius(0.8em);
 	padding: 1em;
-	margin: 2em 1em 4em 1em;
+	margin: 1em 0.5em 2.5em 0.5em;
 	position: relative;
 	text-align: center;
 	color: #4A4A4A;
-
-	@include device-width(6) {
-		margin: 1em 0.5em 1.5em 0.5em;
-	}
 
 	&:after {
 		content: '';

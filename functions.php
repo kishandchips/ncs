@@ -200,6 +200,7 @@ add_action('wp_enqueue_scripts', 'custom_styles');
 add_filter( 'image_size_names_choose', 'my_custom_sizes' );
 function my_custom_sizes( $sizes ) {
     return array_merge( $sizes, array(
+    	'small-thumbnail' => __('Small Thumbnail'),
         'medium-large' => __('Medium-Large'),
         'custom-thumbnail' => __('Custom-Thumbnail'),
     ) );
