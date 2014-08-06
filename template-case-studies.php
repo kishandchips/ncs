@@ -44,16 +44,12 @@ get_header(); ?>
 				<?php $i = 1; ?>
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
-					<article class="study span two-and-half equal-height break-on-mobile <?php if($i % 6 == 3 || $i % 6 == 4): ?>wide<?php endif; ?>">
+					<article class="study span five equal-height break-on-mobile wide">
 						<a href="<?php the_permalink(); ?>">
 							<?php
 								if ( has_post_thumbnail() ) {
-
-									if($i % 6 == 3 || $i % 6 == 4) {
 										the_post_thumbnail(array(501, 240, 'bfi_thumb' => true));
-									} else {
-										the_post_thumbnail(array(241, 240, 'bfi_thumb' => true));
-									}
+
 									
 								}
 								else {

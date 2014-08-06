@@ -64,6 +64,7 @@ function custom_scripts() {
 
 	wp_enqueue_script('jquery',  get_template_directory_uri().'/js/libs/jquery.min.js');
 	wp_enqueue_script('magnific', get_template_directory_uri().'/js/plugins/magnific_popup.min.js', array('jquery'), '', true);
+	wp_enqueue_script('expander', get_template_directory_uri().'/js/plugins/jquery.expander.js', array('jquery'), '', true);	
 	wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', array('jquery'), '', true);
 }
 add_action('wp_enqueue_scripts', 'custom_scripts');
@@ -388,4 +389,3 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
   return $html;
 }
 add_filter('image_send_to_editor','give_linked_images_class',10,8);
-

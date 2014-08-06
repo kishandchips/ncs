@@ -2587,13 +2587,13 @@ body {
 #case-studies {
 	
 	.span {
-		&:nth-child(6n+3), &:nth-child(6n+4) {
-			width: 50%;
-		}
+		// &:nth-child(6n+3), &:nth-child(6n+4) {
+		// 	width: 50%;
+		// }
 
-		&:nth-child(6n+4) {
-			clear: left;
-		}
+		// &:nth-child(6n+4) {
+		// 	clear: left;
+		// }
 	}
 
 	.study {
@@ -2868,6 +2868,7 @@ body {
 /****************************/	
 
 .woocommerce {
+
 
 	.widget_product_categories {
 

@@ -12,58 +12,29 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
+<?php 
+global $page_id;
+$page_id = 16;
+?>
+
+
 
 <div id="page" class="container">
 	<div id="sidebar" class="span two break-on-mobile">
 		<?php dynamic_sidebar( 'product-sidebar' ); ?>
 	</div>	
 	<div id="content" class="span eight break-on-mobile content-inner">
-		<div class="breadcrumb">
-			<?php
-				do_action( 'woocommerce_before_main_content' );
-			?>
-		</div>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php if(!$post->post_content == ''): ?>
+				<div class="page-content">
+					<?php the_content(); ?>
+				</div>
+				<?php endif; ?>
+				<?php if ( get_field('content')):?>
+					<?php get_template_part('inc/content'); ?>
+				<?php endif; ?>
 
-		<?php if ( have_posts() ) : ?>
-
-			<?php
-				/**
-				 * woocommerce_before_shop_loop hook
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?>
-
-			<?php woocommerce_product_loop_start(); ?>
-
-				<?php woocommerce_product_subcategories(); ?>
-
-				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php wc_get_template_part( 'content', 'product' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-			<?php woocommerce_product_loop_end(); ?>
-
-			<?php
-				/**
-				 * woocommerce_after_shop_loop hook
-				 *
-				 * @hooked woocommerce_pagination - 10
-				 */
-				do_action( 'woocommerce_after_shop_loop' );
-			?>
-
-		<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
-
-			<?php wc_get_template( 'loop/no-products-found.php' ); ?>
-
-		<?php endif; ?>
-
-		<?php do_action( 'woocommerce_after_main_content' ); ?>	
-	</div>
+			<?php endwhile; // end of the loop. ?>	
+	</div>	
 </div>	
 <?php get_footer( 'shop' ); ?>

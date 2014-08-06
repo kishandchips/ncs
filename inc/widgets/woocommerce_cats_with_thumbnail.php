@@ -31,12 +31,11 @@ class Product_Cats_With_Thumb extends WP_Widget {
                 <?php $catTerms = get_terms('product_cat', $args); ?>
 
                 <?php foreach($catTerms as $catTerm) : ?>
-                  <?php echo $catTerm->description ; ?>
-                  <?php
-                    $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
-                    $image = wp_get_attachment_image_src($thumbnail_id, 'custom-navigation');
-                    
-                  ?>
+                    <?php // echo $catTerm->description ; ?>
+                    <?php
+                        $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
+                        $image = wp_get_attachment_image_src($thumbnail_id, 'custom-navigation');
+                    ?>
                   <li>
                     <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
                       <span><?php echo $catTerm->name; ?></span>

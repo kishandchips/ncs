@@ -10,8 +10,9 @@
 			$top_parent_title = 'Products';
 		} 
 		if ( is_product_category() ) {
-			$product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
-			$page_title = $product_cats[0]->name;
+			$queried_object = get_queried_object(); 
+			$queried_object_name = $queried_object->name;
+			$page_title = $queried_object_name;		
 		}
 
 		if (is_home()) {

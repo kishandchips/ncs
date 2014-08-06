@@ -16,7 +16,7 @@ $highlight: adjust-hue( $primary, 150 );                                        
 $highlightext: desaturate(lighten($highlight,50%),18%);        /* Text on highlight colour bg */
 
 $contentbg: #fff;                                                                                 /* Content BG - Tabs (active state) */
-$subtext: #777;      
+$subtext: #4A4A4A;      
 
 /* Colours */
 $tertiary: $primary; 									/* Price slider bar / layered nav UI */
@@ -25,16 +25,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 /* =Custom Font
 -------------------------------------------------------------- */
-@font-face {
-	font-family: 'star';
-	src:url('../fonts/star.eot');
-	src:url('../fonts/star.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/star.woff') format('woff'),
-		url('../fonts/star.ttf') format('truetype'),
-		url('../fonts/star.svg#star') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+
 
 /* =Global styles/layout
 -------------------------------------------------------------- */
@@ -47,7 +38,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 	border-left: 1px solid #CCC;
 	border-right: 1px solid #CCC;
 	border-bottom: 1px solid #CCC;
-	list-style:none outside;
+	list-style:none outside;	
 	@include clearfix();
 	width: auto;
 
@@ -115,22 +106,6 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 	}
 }
 
-p.demo_store {
-	position:fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: 0;
-	width: 100%;
-	font-size: 1em;
-	padding: .5em 0;
-	text-align: center;
-	@include vertical-gradient( $primary, darken($primary, 10) );
-	border: 1px solid darken($primary, 10);
-	color: $primarytext;
-	z-index: 99998;
-	@include inset-box-shadow( 0, 0, 0, 3px, rgba(255,255,255,0.2) );
-}
 
 .admin-bar { // Styles applied when the admin bar is present
 	p.demo_store {
@@ -138,683 +113,270 @@ p.demo_store {
 	}
 }
 
-.woocommerce, .woocommerce-page { // namespace to avoid conflict with common global class names
+.woocommerce, .woocommerce-page { 
 
-	small.note {
-		display:block;
-		color: $subtext;
-		font-size: 11px;
-		line-height: 21px;
-		margin-top: 10px;
+	#page {
+
+		#content {
+			background: #fcfcfc;
+		}
 	}
 
 	.woocommerce-breadcrumb{
 		@include clearfix();
-		margin: 0 0 1em;
-		padding: 0;
-		font-size: 0.92em;
+		padding: 2em 3em;
+		margin: 0;
 		color: $subtext;
+		@include opensans-light;
+		@include font-size(14);
+		background: #F1F1F1;
+
 		a {
-			color: $subtext;
-		}
-	}
+			@include opensans-bold;
+			margin: 0 1em;
+			color: #242239;
 
-	.col2-set {
-		@include clearfix();
-		width: 100%;
-		.col-1 {
-			float:left;
-			width: 48%;
-		}
-		.col-2 {
-			float: right;
-			width: 48%;
-		}
-	}
-
-	.product-header {
-		border-bottom: 1px solid #cccccc;
-		vertical-align: bottom;
-		margin: 0 0 2em 0;
-		> .inner {
-			padding: 1.5em 10px;
-		}
-
-		.call-us {
-			padding: 0.5em 0 0 0;
-
-			.phone-number-container {
-				margin-top: 0;
-			}
-			
-			.phone-number {
-				@include font-size(30);
+			&:hover {
+				color: #41009E;
 			}
 		}
+	}	
+
+	#main {
+		#content {
+			padding: 0;
+
+
+			.row {
+				padding: 2em;
+			}
+
+			#expertise .row {
+				padding: 0;
+			}
+
+			.cat-header {
+				background: #f7f7f7;
+
+				&.no-child {
+					padding: 0;
+
+					.span {
+						padding: 0;
+
+						&.logo {
+							text-align: center;
+						}
+
+						&.picture {
+							text-align: right;
+
+							img {
+								@include inline-block;
+							}
+						}
+					}
+				}
+			}			
+		}		
 	}
 
-
-	/* =Product Page
+	/* Product Page
 	-------------------------------------------------------------- */
 
-	div.product, #content div.product {
-		margin-bottom: 0;
-		position: relative;
-		margin: 2em 0 0 0;
+	#product {
+		padding: 4em 8em;
 
-		.column-1 {
-			padding-right: 3em;
-			@include device-width(12) {
-				padding-right: 10px;
-			}
+		@include device-width(10) {
+			padding: 4em 2em;
 		}
 
+		.product {
+			@extend .clearfix;
 
-		.column-2 {
-			padding-right: 8em;
-
-			@include device-width(12) {
-				padding-right: 10px;
-			}
-		}
-		/* Main product title */
-		.product_title {
-			clear:none;
-			margin-top: 0;
-			padding: 0;
-			@include font-size(25);
-		}
-
-		/* Price */
-		span.price, p.price {
-			color: #333;
-
-
-			margin: 0;
-			.amount {
-				@include font-size(35);
-				@include helvetica-bold;
-			}
-
-			ins {
-				background: inherit;
-			}
-			del {
-				font-size: 0.67em;
-				color:fade( desaturate( $highlight, 75% ), 50% );
-			}
-
-			.change-postcode-btn {
-				@include helvetica-bold;
-				font-size: 0.8em;
-			}
-		}
-
-		/* Stock */
-		p.stock {
-			font-size: 0.92em;
-		}
-		.stock {
-			color: $highlight;
-		}
-		.out-of-stock {
-			color: red;
-		}
-
-		/* Product image and thumbnail */
-		div.images {
-			margin-bottom: 2em;
-			img {
-				display:block;
-				width: 100%;
-				height:auto;
-				@include box-shadow(0,1px,2px,0,rgba(0,0,0,0.3));
-				@include transition();
-			}
-			div.thumbnails {
-				padding-top: 1em;
-				@include clearfix();
-				a {
-					float:left;
-					width: 18%;
-					margin-right: 2.5%;
+			.images {
+				img {
+					@include box-shadow(none !important);
+					background: #FFF;
 				}
-				a.last {
-					margin-right: 0;
-				}
-				a.first {
-					clear:both;
-				}
-			}
-		}
 
-		/* Summary div (contains title, price etc) */
-		div.summary {
-			margin-bottom: 2em;
-		}
-
-		/* Social networking */
-		div.social {
-			text-align: right;
-			margin: 0 0 1em;
-			span {
-				margin: 0 0 0 2px;
-				span {
-					margin: 0;
-				}
-				.stButton .chicklets {
-					padding-left: 16px;
-					width: 0;
-				}
-			}
-			iframe {
-				float:left;
-				margin-top: 3px;
-			}
-		}
-
-
-		.box {
-			background: #f1f1f1;
-			margin-bottom: 2em;
-			&.blue {
-				background: #326ba1;
-				color: #FFF;
-
-				> .header {
-					background: #245d93;
-					.title {
-						color: #FFF;
+				.thumbnails {
+					a {
+						width: 21%;
 					}
 				}
 			}
 
-			> .header{
-				background: #e6e6e6;
-				padding: 0.5em 1em;
-				.title {
-					margin: 0;
-					@include helvetica-bold;
-					color: #326ba1;	
+			.entry-summary {
+				background: #FFF;
+				padding: 2em;
+				@include borderbox;
+
+				h1 {
+					@include font-size(22);
 				}
 			}
-			> .content {
-				padding: 1em;
-				position: relative;
-			}
-		}
 
+			.description {
+				@extend .clearfix;
 
-		.dimensions {
-			border-bottom: 4px solid #326ba1;
-
-			.details {
-				margin: 2em 0;
-			}
-			.size {
-				margin: 0.5em 0;
-				background: url(../images/backgrounds/product_dimensions.png) no-repeat;
-				width: 333px;
-				height: 121px;
-				position: relative;
-
-				.skip {
-					position: absolute;
-					bottom: 0;
-					left: 55%;
-					@include translateX(-50%);
-
-					.no-csstransforms {
-						left: 20px;
-					}
+				.summary {
+					width: 100%;
 				}
-			}
-		}
 
-		.upgrade {
-			.upgrade-img {
-				position: absolute;
-				bottom: -40%;
-				right: -20%;
-			}
-		}
-		.postcode {
-			.gform_body .gform_fields .gfield {
-				&.hide-label {
-					margin-top: 0;
-					.gfield_label {
+				.details {
+					.read-less {
+						margin-bottom: 15px;
 						display: block;
 					}
 				}
+
 			}
 		}
 
-		/* Tabs on the product page */
-		// .woocommerce-tabs {
-		// 	clear:both;
+		.more-products {
+			@extend .clearfix;
+			display: block;
+			width: 100%;
+			margin: 5em 0;
 
-		// 	ul.tabs {
-		// 	    list-style:none;
-		// 	    padding: 0 0 0 1em;
-		// 	    margin: 0 0 1.618em;
-		// 	    overflow:hidden;
-		// 	    position: relative;
-
-		// 	    li {
-		// 	    	border: 1px solid darken( $secondary, 10 );
-		// 		    @include vertical-gradient( $secondary, darken( $secondary, 10 ) );
-		// 		    display: inline-block;
-		// 		    position: relative;
-		// 		    z-index: 0;
-		// 		    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255,255,255,0.6);
-		// 		    margin: 0 -5px;
-		// 		    padding: 0 1em;
-
-		// 		    a {
-		// 		    	display: inline-block;
-		// 		    	padding: .5em 0;
-		// 		    	font-weight:bold;
-		// 		    	color: $secondarytext;
-		// 		    	@include darkorlighttextshadow( $secondarytext );
-		// 		    	text-decoration: none;
-
-		// 		    	&:hover {
-		// 		    		text-decoration:none;
-		// 		    		color: lighten( $secondarytext, 10 );
-		// 		    	}
-		// 		    }
-
-		// 		    &.active {
-		// 		    	background: $contentbg;
-		// 			    z-index: 2;
-		// 			    border-bottom-color: $contentbg;
-
-		// 			    a {
-		// 			    	color: inherit;
-		// 			    	text-shadow: inherit;
-		// 			    }
-
-		// 			    &:before {
-		// 			    	box-shadow: 2px 2px 0 $contentbg;
-		// 			    }
-
-		// 			    &:after {
-		// 			    	box-shadow: -2px 2px 0 $contentbg;
-		// 			    }
-		// 		    }
-		// 		    &:before, &:after {
-		// 		    	border: 1px solid darken( $secondary, 10 );
-		// 			    position:absolute;
-		// 			    bottom: -1px;
-		// 			    width: 5px;
-		// 			    height: 5px;
-		// 			    content: " ";
-		// 		    }
-		// 		    &:before {
-		// 		    	left: -6px;
-		// 		    	-webkit-border-bottom-right-radius: 4px;
-		// 		    	-mox-border-bottom-right-radius: 4px;
-		// 			    border-bottom-right-radius: 4px;
-		// 			    border-width: 0 1px 1px 0;
-		// 			    box-shadow: 2px 2px 0 darken( $secondary, 10 );
-		// 		    }
-		// 		    &:after {
-		// 		    	right: -6px;
-		// 		    	-webkit-border-bottom-left-radius: 4px;
-		// 		    	-mox-border-bottom-left-radius: 4px;
-		// 			    border-bottom-left-radius: 4px;
-		// 			    border-width: 0 0 1px 1px;
-		// 			    box-shadow: -2px 2px 0 darken( $secondary, 10 );
-		// 		    }
-		// 	    }
-		// 	    &:before {
-		// 	    	position:absolute;
-		// 		    content: " ";
-		// 		    width: 100%;
-		// 		    bottom: 0;
-		// 		    left: 0;
-		// 		    border-bottom: 1px solid darken( $secondary, 10 );
-		// 		    z-index: 1;
-		// 	    }
-		// 	}
-		// 	.panel {
-		// 		margin: 0 0 2em;
-		// 		padding: 0;
-		// 	}
-		// }
-
-		/* Cart button */
-		p.cart {
-			margin-bottom: 2em;
-			@include clearfix();
-		}
-
-		/* add to cart forms */
-		form.cart {
-
-			margin: 1em 0;
-			@include clearfix();
-			div.quantity {
-				float:left;
-				margin: 0 4px 0 0;
-			}
-			table {
-				border-width: 0 0 1px 0;
-				td {
-					padding-left:0;
-				}
-				div.quantity {
-					float:none;
-					margin: 0;
-				}
-				small.stock {
-					display:block;
-					float:none;
-				}
-			}
-			.variations {
+			h2 {
+				@include font-size(22);
+				color: #1656A1;
+				@include opensans-light;
 				margin-bottom: 1em;
-				label {
-					font-weight: bold;
-				}
-				select {
+			}
+
+			h4 {
+				@include font-size(13);
+				color: #4A4A4A;
+				font-weight: normal;
+			}
+
+			.span.five {
+				@include device-width(7) {
 					width: 100%;
-					float:left;
-				}
-				td.label {
-					padding-right: 1em;
-				}
-				td {
-					vertical-align: top;
 				}
 			}
-			.button {
-				vertical-align: middle;
-				float:left;
-				@include font-size(20);
-			}
 
-			.group_table {
-				td.label {
-					padding-right: 1em;
-					padding-left: 1em;
-				}
-				td {
-					vertical-align: top;
-				}
-			}
-		}
-	}
+			.item {
 
-	/* Sale labels */
-	span.onsale {
-		min-height: 32px;
-		min-width: 32px;
-		padding: 4px;
-		font-size: 12px;
-		font-weight:bold;
-		position:absolute;
-		text-align: center;
-		line-height: 32px;
-		top: 6px;
-		left: 6px;
-		margin: 0;
-		@include border-radius(20px);
-		@include vertical-gradient( lighten( $highlight, 10), $highlight );
-		@include text_shadow( 0, -1px, 0, $highlight );
-		color: $highlightext;
-		-webkit-box-shadow:
-			inset 0 1px 0 rgba(255,255,255,0.3),
-			inset 0 -1px 0 rgba(0,0,0,0.2),
-			0 1px 2px rgba(0,0,0,0.2);
-		-moz-box-shadow:
-			inset 0 1px 0 rgba(255,255,255,0.3),
-			inset 0 -1px 0 rgba(0,0,0,0.2),
-			0 1px 2px rgba(0,0,0,0.2);
-		box-shadow:
-			inset 0 1px 0 rgba(255,255,255,0.3),
-			inset 0 -1px 0 rgba(0,0,0,0.2),
-			0 1px 2px rgba(0,0,0,0.2);
-	}
-
-	/* Product loops */
-
-	.products ul, ul.products {
-		margin: 4em 0 1em;
-		padding: 0;
-		list-style:none outside;
-		clear:both;
-		@include clearfix();
-		li {
-			list-style:none outside;
-		}
-	}
-
-	.related, .upsells.products {
-		@include clearfix();
-		ul.products, ul {
-			float:none;
-			li.product {
-				width: 48%;
 				img {
-					width: 100%;
-					height:auto;
-				}
-			}
-		}
-	}
-
-	ul.products {
-		li.product {
-			float:left;
-			margin: 0 2% 2.992em 0;
-			padding: 0;
-			position: relative;
-			width: 32%;
-			margin-left: 0;
-
-
-			.onsale {
-				top: 0;
-				right: 0;
-				left:auto;
-				margin: -6px -6px 0 0;
-			}
-			h3 {
-				padding: .5em 0;
-				margin: 0;
-				font-size: 1em;
-
-				@extend .arrow-right-btn;
-			}
-			a {
-				text-decoration:none;
-			}
-			a img {
-				width: 100%;
-				height:auto;
-				display:block;
-				margin: 0 0 8px;
-				@include box-shadow(0,1px,2px,0,rgba(0,0,0,0.3));
-				@include transition();
-			}
-			a:hover img {
-				@include box-shadow(0,1px,3px,0,rgba(0,0,0,0.4));
-			}
-			strong {
-				display:block;
-			}
-			.price {
-				color: $highlight;
-				display:block;
-				font-weight:normal;
-				margin-bottom: .5em;
-				del {
-					font-size: 0.67em;
-					color:fade( desaturate( $highlight, 75% ), 50% );
-					margin: -2px 0 0 0;
-				}
-				ins {
-					background:none;
-				}
-				.from {
-					font-size: 0.67em;
-					margin: -2px 0 0 0;
-					text-transform: uppercase;
-					color:fade( desaturate( $highlight, 75% ), 50% );
-				}
-			}
-
-
-		}
-		li.first {
-			clear:both;
-		}
-		li.last {
-			margin-right: 0;
-		}
-
-		li.skip-finder {
-			padding-top: 2em;
-			text-align: center;
-		}
-	}
-
-	.woocommerce-result-count {
-		float: left;
-		margin: 0 0 1em;
-	}
-	.woocommerce-ordering {
-		margin: 0 0 1em;
-		float: right;
-		select {
-			vertical-align: top;
-		}
-	}
-	nav.woocommerce-pagination, #content nav.woocommerce-pagination {
-		text-align: center;
-		ul {
-			display: inline-block;
-			white-space: nowrap;
-			padding:0;
-			clear: both;
-			border: 1px solid darken( $secondary, 10 );
-			border-right: 0;
-			margin: 1px;
-			li {
-				border-right: 1px solid darken( $secondary, 10 );
-				padding: 0;
-				margin: 0;
-				float: left;
-				display: inline;
-				overflow: hidden;
-				a, span {
-					margin: 0;
-					text-decoration: none;
-					padding: 0;
-					line-height: 1em;
-					font-size: 1em;
-					font-weight: normal;
-					padding: .5em;
-					min-width: 1em;
+					background: #FFF;
 					display: block;
+					border: 1px solid #EDEDED;
+					padding: 1em;
+					@include borderbox;
+					@include transition(all 0.3s ease);
 				}
-				span.current, a:hover, a:focus {
-					background: $secondary;
-					color: darken( $secondary, 40 );
+
+				a {
+					display: block;
+
+					&:hover {
+						img {
+							border: 1px solid #759950;
+						}						
+					}
 				}
 			}
 		}
 	}
+
+	.woo-cat {
+		.woo-content {
+			padding: 3em;
+
+			@include device-width(7) {
+				width: 100%;
+			}
+
+			.section-title {
+				@include font-size(23);
+				color: #4A4A4A;
+				margin: 1em 0;
+			}
+
+			.cat-description {
+				@include border-radius(4px);
+				background: #FFF;
+				@include box-shadow(0 1px 2px rgba(black, 0.5));
+				@include borderbox;
+				padding: 25px;
+				margin-bottom: 4em;
+			}
+
+			ul.products {
+				.item {
+					@include border-radius(4px);
+					background: #FFF;
+					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
+					line-height: 15px;
+					margin: 2%;
+					width: 46%;
+					padding: 1em;
+
+					@include device-width(9) {
+						width: 100%;
+					}
+
+					&:hover {
+						@include box-shadow(0px 2px 4px 0px rgba(47,119,204,0.50));
+					}
+
+					img {
+						float: left;
+						width: 40%;
+						margin-right: 5%;
+					}
+
+					h4 {
+						@include font-size(17);
+						color: #4A4A4A;
+					}
+
+					p {
+						@include font-size(12);
+						color: #4A4A4A;
+						overflow: hidden;
+					}
+				}
+			}
+		}
+
+		.same-level-categories {
+			.item {
+				text-align: center;
+				padding: 0 4em;
+				margin: 0.5em 0;
+
+				@include device-width(8) {
+					padding: 0 1em;
+				}
+
+				a {
+					padding: 2em;
+					display: block;
+					background: #f7f7f7;
+					position: relative;
+
+					img {
+					
+					}
+				}
+			}
+		}
+
+	}
+
+
 
 	/* =Buttons
 	-------------------------------------------------------------- */
 
 	a.button, button.button, input.button, #respond input#submit, #content input.button {
-		@extend .orange-btn;
-		// font-size: 100%;
-	 //    margin: 0;
-	 //    line-height: 1em;
-	 //    cursor: pointer;
-	 //    position: relative;
-	 //    font-family: inherit;
-		// text-decoration:none;
-		// overflow: visible;
-		// padding: 6px 10px;
-	 //    text-decoration:none;
-	 //    font-weight:bold;
-	 //    @include border-radius(2px);
-	 //    left: auto;
-	 //    text-shadow:0 1px 0 $secondary + #111;
-	 //    color: $secondarytext;
-	 //    @include darkorlighttextshadow( $secondarytext );
-	 //    border: 1px solid darken( $secondary, 20 );
-		// @include vertical-gradient( $secondary, darken( $secondary, 10 ) );
-		// white-space: nowrap;
-		// display: inline-block;
 
-	 //    -webkit-box-shadow:
-	 //        inset 0 -1px 0 rgba(0,0,0,0.075),
-	 //        inset 0 1px 0 rgba(255,255,255,0.3),
-	 //        0 1px 2px rgba(0,0,0,0.1);
-	 //    -moz-box-shadow:
-	 //        inset 0 -1px 0 rgba(0,0,0,0.075),
-	 //        inset 0 1px 0 rgba(255,255,255,0.3),
-	 //        0 1px 2px rgba(0,0,0,0.1);
-	 //    box-shadow:
-	 //        inset 0 -1px 0 rgba(0,0,0,0.075),
-	 //        inset 0 1px 0 rgba(255,255,255,0.3),
-	 //        0 1px 2px rgba(0,0,0,0.1);
 
-		// &.loading {
-		// 	color: lighten( $secondarytext, 10 );
-		// 	border: 1px solid $secondary;
-
-		// 	&:before {
-		// 		content: "";
-		// 		position:absolute;
-		// 		top: 0;
-		// 		right: 0;
-		// 		left: 0;
-		// 		bottom: 0;
-		// 		background: url(../images/woocommerce/ajax-loader.gif) center no-repeat rgba(255,255,255,0.65);
-		// 	}
-		// }
-
-		// &.added {
-		// 	&:before {
-		// 		content: "";
-		// 		position:absolute;
-		// 		height: 16px;
-		// 		width: 16px;
-		// 		top: 0.35em;
-		// 		right: -26px;
-		// 		text-indent: 0;
-		// 		background: url(../images/woocommerce/success.png) no-repeat;
-		// 	}
-		// }
-
-		// &:hover {
-		// 	@include vertical-gradient( $secondary, darken( $secondary, 15 ) );
-		// 	text-decoration:none;
-		// }
-
-		// &:active {
-		// 	top: 1px;
-		// }
-
-		// &.alt {
-		// 	@include vertical-gradient( $primary, darken( $primary, 10 ) );
-		// 	border-color: darken($primary, 20);
-		// 	color: $primarytext;
-		// 	@include darkorlighttextshadow( $primarytext, 0.6 );
-
-		// 	&:hover {
-		// 		@include vertical-gradient( $primary, darken( $primary, 15 ) );
-		// 		color:$primarytext + #111;
-		// 		@include darkorlighttextshadow( $primarytext + #111, 0.6 );
-		// 	}
-		// }
 	}
 
 	.cart .button, .cart input.button {
@@ -878,7 +440,7 @@ p.demo_store {
 		    @include border-radius(2px);
 
 		    color: $secondarytext;
-			@include darkorlighttextshadow( $secondarytext );
+			
 			border: 1px solid darken( $secondary, 20 );
 			@include vertical-gradient( $secondary, darken( $secondary, 10 ) );
 
@@ -912,194 +474,6 @@ p.demo_store {
 		}
 	}
 
-	/* =Reviews/comments
-	-------------------------------------------------------------- */
-	#reviews {
-		h2 small {
-			float: right;
-			color: $subtext;
-			font-size: 15px;
-			line-height: 21px;
-			margin: 10px 0 0 0;
-			a {
-				text-decoration:none;
-				color: $subtext;
-			}
-		}
-		h3 {
-			margin: 0;
-		}
-		#respond {
-			margin: 0;
-			border: 0;
-			padding: 0;
-		}
-		#comment {
-			height: 75px;
-		}
-		#comments {
-			.add_review {
-				@include clearfix();
-			}
-			h2 {
-				clear:none;
-			}
-			ol.commentlist {
-				@include clearfix();
-				margin: 0;
-				width: 100%;
-				background:none;
-				list-style: none;
-				li {
-					padding: 00;
-					margin: 0 0 20px;
-					border: 0;
-					position: relative;
-					background: 0;
-					border: 0;
-					.meta {
-						color: $subtext;
-						font-size: 0.75em;
-					}
-					img.avatar {
-						float:left;
-						position:absolute;
-						top: 0;
-						left: 0;
-						padding: 3px;
-						width: 32px;
-						height:auto;
-						background: $secondary;
-						border: 1px solid darken( $secondary, 3 );
-						margin: 0;
-						line-height: 1;
-					}
-					.comment-text {
-						margin: 0 0 0 50px;
-						border: 1px solid darken( $secondary, 3 );
-						@include border-radius(4px);
-						padding: 1em 1em 0;
-						p {
-							margin: 0 0 1em;
-						}
-						p.meta {
-							font-size: 0.83em;
-						}
-					}
-				}
-			}
-			.commentlist > li:before {
-				content: "";
-			}
-		}
-	}
-
-	/* Star rating */
-
-	.star-rating {
-		float: right;
-		overflow: hidden;
-		position: relative;
-		height: 1em;
-		line-height: 1em;
-		font-size: 1em;
-		width: 5.4em;
-		font-family: 'star';
-		&:before {
-			content: "\73\73\73\73\73";
-			color: darken( $secondary, 10 );
-			float: left;
-			top: 0;
-			left: 0;
-			position: absolute;
-		}
-		span {
-			overflow: hidden;
-			float: left;
-			top: 0;
-			left: 0;
-			position: absolute;
-			padding-top: 1.5em;
-		}
-		span:before {
-			content: "\53\53\53\53\53";
-			top: 0;
-			position: absolute;
-			left: 0;
-		}
-	}
-
-	.products {
-		.star-rating {
-			display: block;
-			margin: 0 0 .5em;
-			float: none;
-		}
-	}
-
-	.hreview-aggregate {
-		.star-rating {
-			margin: 10px 0 0 0;
-		}
-	}
-
-	#review_form {
-		#respond {
-			@include clearfix();
-			position: static;
-			margin: 0;
-			width: auto;
-			padding: 0 0 0;
-			background: transparent none;
-			border: 0;
-			p {
-				margin: 0 0 10px;
-			}
-			.form-submit {
-				input {
-					left: auto;
-				}
-			}
-			textarea {
-				-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-				-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-				box-sizing: border-box;         /* Opera/IE 8+ */
-				width: 100%;
-			}
-		}
-	}
-
-	p.stars {
-		@include clearfix();
-		span {
-			width: 80px;
-			height: 16px;
-			position: relative;
-			float:left;
-			background: url(../images/woocommerce/star.png) repeat-x left 0;
-			a {
-				float:left;
-				position:absolute;
-				left: 0;
-				top: 0;
-				width: 16px;
-				height: 0;
-				padding-top: 16px;
-				overflow:hidden;
-			}
-			a:hover, a:focus {
-				background: url(../images/woocommerce/star.png) repeat-x left -16px;
-			}
-			a.active {
-				background: url(../images/woocommerce/star.png) repeat-x left -32px;
-			}
-			a.star-1 { width: 16px; z-index: 10; }
-			a.star-2 { width: 32px; z-index: 9; }
-			a.star-3 { width: 48px; z-index: 8; }
-			a.star-4 { width: 64px; z-index: 7; }
-			a.star-5 { width: 80px; z-index: 6; }
-		}
-	}
 
 	/* =Tables
 	-------------------------------------------------------------- */
@@ -1142,7 +516,7 @@ p.demo_store {
 		border-collapse: separate;
 		@include border-radius(5px);
 		th {
-			@include helvetica-bold;
+			
 			line-height: 18px;
 			padding: 9px 12px;
 		}
@@ -1159,7 +533,7 @@ p.demo_store {
 		}
 
 		tfoot th {
-			@include helvetica-bold;
+			
 			border-top: 1px solid rgba(0,0,0,0.1);
 		}
 	}
@@ -1272,64 +646,6 @@ p.demo_store {
 	}
 
 
-	/* =Cart Sidebar
-	-------------------------------------------------------------- */
-
-	ul.cart_list, ul.product_list_widget {
-		list-style:none outside;
-		padding: 0;
-		margin: 0;
-		li {
-			padding: 4px 0;
-			margin: 0;
-			@include clearfix();
-			list-style:none;
-			a {
-				display:block;
-				font-weight:bold;
-			}
-			img {
-				float: right;
-				margin-left: 4px;
-				width: 32px;
-				height:auto;
-				@include box-shadow(0,1px,2px,0,rgba(0,0,0,0.3));
-			}
-			dl {
-				margin: 0;
-				font-size: 0.8751em;
-				padding-left: 1em;
-				border-left: 2px solid rgba(0,0,0,0.1);
-
-				dt {
-					float:left;
-					clear:left;
-					margin-right: .25em;
-				}
-
-				dd {
-					margin-bottom: .5em;
-				}
-			}
-			.star-rating {
-				float:none;
-			}
-		}
-	}
-
-	.widget_shopping_cart {
-		.total {
-			border-top: 3px double $secondary;
-			padding: 4px 0 0;
-			strong {
-				min-width: 40px;
-				display: inline-block;
-			}
-		}
-		.buttons {
-			@include clearfix();
-		}
-	}
 
 
 	/* =Cart Page
@@ -1449,7 +765,7 @@ p.demo_store {
 				padding: 1em 0;
 				line-height: 1;
 				@include font-size(14);
-				@include helvetica-bold;
+				
 			}
 			select {
 				width: 100%;
@@ -1564,7 +880,6 @@ p.demo_store {
 							margin: 0;
 							font-size: .9em;
 							cursor: pointer;
-							@include helvetica-roman;
 						}
 
 						&:hover {
@@ -1714,7 +1029,7 @@ p.demo_store {
 			@include vertical-gradient( darken( $secondary, 5 ), darken( $secondary, 10 ) );
 			@include box-shadow(0,1px,2px,0,rgba(0,0,0,0.25));
 			color: $secondarytext;
-			@include darkorlighttextshadow( $secondarytext );
+			
 
 			p:last-child {
 				margin-bottom: 0;

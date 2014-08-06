@@ -14,6 +14,16 @@
 			$("#footer .carousel" ).clone().appendTo( "#menu-secondary-header-nav .news .sub-menu");
 			$( "#menu-secondary-header-nav .news .sub-menu li" ).wrapAll( "<div class='nav' />");
 
+	        if($.fn.expander){
+	        	$('.expander').expander({
+	        		expandText: 'More <i class="icon icon-down-chevron"></i>',
+	        		userCollapseText: 'Less <i class="icon icon-up-chevron"></i>',
+	        		slicePoint: 500,
+	        		expandSpeed: 0,
+	        		collapseSpeed: 0
+	        	});
+	        }			
+
 			$.fn.simpleSlider = function(options) {
 						
 				var defaults = {
