@@ -59,7 +59,8 @@ get_header( 'shop' ); ?>
 
 
 <?php if(($parent->term_id=="") && (sizeof($children)>0)): ?> 
-	<!-- Tempalte if Category has Children -->
+	<!-- Tempalte if Category has Children and NO Parent-->
+	<div id="top-level-cat">
 		<?php if ($cat_description !=''): ?>
 			<div class="row cat-header">
 				<div class="span five break-on-mobile">
@@ -71,7 +72,6 @@ get_header( 'shop' ); ?>
 			</div>
 		<?php endif ?>	
 		<div class="woo-content">
-				Shiiit This is a TOP LEVEL Product Cat!	
 			<?php if ( have_posts() ) : ?>
 				<?php woocommerce_product_loop_start(); ?>
 
@@ -79,7 +79,10 @@ get_header( 'shop' ); ?>
 
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php wc_get_template_part( 'content', 'product' ); ?>
+						<a href="<?php the_permalink(); ?>">
+							<?php the_post_thumbnail('custom-medium-noncrop' ); ?>
+							<h3><?php the_title(); ?></h3>
+						</a>
 
 					<?php endwhile; // end of the loop. ?>
 
@@ -95,7 +98,7 @@ get_header( 'shop' ); ?>
 	</div>
 
 <?php elseif(($parent->term_id!="") && (sizeof($children)==0)): ?>
-	<!-- Tempalte if Category has NOT Children -->
+	<!-- Tempalte if Category HAS NOT Children and HAS parent -->
 
 		<?php if ($cat_description !=''): ?>
 			<div class="row cat-header no-child">
@@ -154,42 +157,69 @@ get_header( 'shop' ); ?>
 				<?php endif; ?>
 
 			</div>
-			<div class="span three">
-				sidebar
+			<div class="span three product-list-sidebar">
+				<?php dynamic_sidebar( 'product-list' ); ?>
 			</div>
-			<div class="span ten same-level-categories">
-	                <?php
-	                  global $post;
-	                  $args = array(
-	                    'orderby'            => 'ASC',
-	                    'parent'             => $parent_cat_id,
-	                    'order'              => 'ASC',
-	                    'hide_empty' => 0,
-	                );  ?>
+			<?php // Include Other Manufacturers box ?>
+				<div class="span ten same-level-categories">
+				<h3 class="section-title clearfix"><?php _e('From other manufacturers…'); ?></h3>
+					<div class="inner">
+				        <?php
+				          $args = array(
+				            'orderby'            => 'ASC',
+				            'parent'             => $parent_cat_id,
+				            'order'              => 'ASC',
+				            'hide_empty' => 0,
+				        );  ?>
 
-	                <?php $catTerms = get_terms('product_cat', $args); ?>
+				        <?php $catTerms = get_terms('product_cat', $args); ?>
 
-	                <?php foreach($catTerms as $catTerm) : ?>
-	                    <?php
-	                        $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
-	                        $image = wp_get_attachment_image_src($thumbnail_id, 'full');
-	                    ?>
-						<div class="span five item break-on-mobile">
-		                    <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
-		                      <?php echo '<img src="'.$image[0].'" />';  ?>
-		                    </a>                  
-	                    </div>
-	                <?php endforeach; ?>
-			</div>
+				        <?php foreach($catTerms as $catTerm) : ?>
+				            <?php
+				                $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
+				                $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+				            ?>
+							<div class="span five item break-on-mobile equal-height">
+				                <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
+				                  <?php echo '<img class="vertical-align" src="'.$image[0].'" />';  ?>
+				                </a>                  
+				            </div>
+				        <?php endforeach; ?>
+			        </div>
+				</div>			
 		</div>
+		<?php // Include Need help with the right product box ?>
 		<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
 
 		<?php do_action( 'woocommerce_after_main_content' ); ?>	
 	</div>
 
 <?php else: ?>
+	
+<div id="mid-level-cat">
+	<?php if ( have_posts() ) : ?>
+		<?php woocommerce_product_loop_start(); ?>
 
-	middle level category
+			<?php woocommerce_product_subcategories(); ?>
+
+			<?php while ( have_posts() ) : the_post(); ?>
+
+				<a href="<?php the_permalink(); ?>">
+					<?php the_post_thumbnail('custom-medium-noncrop' ); ?>
+					<h3><?php the_title(); ?></h3>
+				</a>
+
+			<?php endwhile; // end of the loop. ?>
+
+		<?php woocommerce_product_loop_end(); ?>
+	<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
+
+		<?php wc_get_template( 'loop/no-products-found.php' ); ?>
+
+	<?php endif; ?>
+	<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
+</div>
+
 <?php endif; ?>
 </div>	
 <?php get_footer( 'shop' ); ?>

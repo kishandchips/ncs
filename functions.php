@@ -18,6 +18,9 @@ require( get_template_directory() . '/inc/widgets/menu_separator.php' );
 
 require( get_template_directory() . '/inc/widgets/woocommerce_cats_with_thumbnail.php');
 
+require( get_template_directory() . '/inc/widgets/technician-quote.php');
+
+
 // Custom Actions
 
 add_action( 'init', 'custom_init');
@@ -47,6 +50,7 @@ function custom_setup_theme() {
 	add_image_size( 'small-thumbnail', 100, 100, true);
 	add_image_size( 'custom-thumbnail', 150);
 	add_image_size( 'custom-medium', 330, 330, true);
+	add_image_size( 'custom-medium-noncrop', 330);
 	add_image_size( 'custom-navigation', 106, 67, true);
 	add_image_size( 'medium-large', 670);
 }
@@ -181,7 +185,17 @@ function custom_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title"><span>',
 		'after_title'   => '</span></h1>',
-	));								
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Product List Sidebar', 'ncs' ),
+		'id'            => 'product-list',
+		'description'   => __( 'Sidebar that appears on Product Detail Pages.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));									
 
 }
 add_action( 'widgets_init', 'custom_widgets_init' );
@@ -389,3 +403,11 @@ function give_linked_images_class($html, $id, $caption, $title, $align, $url, $s
   return $html;
 }
 add_filter('image_send_to_editor','give_linked_images_class',10,8);
+
+
+add_filter('loop_shop_columns', 'loop_columns');
+if (!function_exists('loop_columns')) {
+	function loop_columns() {
+		return 3; // 3 products per row
+	}
+}

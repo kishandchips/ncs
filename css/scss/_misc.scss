@@ -496,14 +496,11 @@ hr {
 #right-product {
 	padding: 2em 6em;
 	background: #FFF;
+	clear: left;
 
 	@include device-width(8) {
 		padding: 1em;
 	}
-
-	@include device-width(6) {
-		padding: 0;
-	}	
 
 	.ten {
 		padding-right: 40%;
@@ -796,6 +793,83 @@ hr {
 
 	iframe {
 		width: 100% !important;
+	}
+}
+
+.tech-quote {
+
+	.image {
+		img {
+			display: block;
+		}
+	}
+	.copy {
+		color: #FFF;
+		@include font-size(15);
+		@include vertical-gradient(#F76B1C, #E65B47);
+		@include borderbox;
+		padding: 1.5em 2em;
+		line-height: 1.4;
+		@include border_radius_bottom(4px);
+
+		.quote {
+			margin-bottom: 1em;
+
+			&:before {
+				@extend [class*="icon-"];
+				@extend .icon-quote:before;
+				display: block;
+				margin-bottom: 0.5em;
+			}
+		}
+
+		.meta {
+			color: #FFF;
+			@include font-size(14);			
+
+			.author {
+				@include opensans-bold;
+				width: 100%;
+				display: block;						
+
+			}
+
+			.position {
+				@include opensans-light;
+			}
+		}		
+	}
+}
+
+.widget_top_rated_products {
+	.product_list_widget {
+
+		li {
+			background: #FFF;
+			@include border-radius(4px);
+			@include box-shadow(0 1px 0px 0px #E4E4E4);
+			margin: 1em 0 !important;
+			@include borderbox;
+			padding: 1em !important;
+
+			&:hover {
+				background: #F7F7F7;
+			}
+
+			a {
+				@include opensans-light;
+				@include font-size(13);
+				color: #4A4A4A;
+				font-weight: normal !important;
+
+				img {
+					float: left !important;
+					width: 50px !important;
+					height: auto !important;	
+					margin-right: 15px !important;			
+				}
+			}
+		}
 	}
 }
 

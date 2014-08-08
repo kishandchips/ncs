@@ -35,13 +35,22 @@ $woocommerce_loop['loop']++;
 
 	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
 
+
 		<?php
 			/**
 			 * woocommerce_before_subcategory_title hook
 			 *
 			 * @hooked woocommerce_subcategory_thumbnail - 10
 			 */
-			do_action( 'woocommerce_before_subcategory_title', $category );
+			// do_action( 'woocommerce_before_subcategory_title', $category );
+
+		    $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+		    $image = wp_get_attachment_url( $thumbnail_id );
+		    if ( $image ) {
+		    	echo '<div class="image-holder equal-height">';
+			    echo '<img class="vertical-align" src="' . $image . '" alt="" />';
+			    echo '</div>';
+			}			
 		?>
 
 		<h3>
@@ -52,6 +61,15 @@ $woocommerce_loop['loop']++;
 					echo apply_filters( 'woocommerce_subcategory_count_html', ' <mark class="count">(' . $category->count . ')</mark>', $category );
 			?>
 		</h3>
+
+			<?php 
+				  $excerpt = get_the_excerpt();;
+				  $excerpt = strip_tags($excerpt);
+				  $excerpt = substr($excerpt, 0, 200);
+				  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+				  $excerpt = $excerpt . ' ...';
+			?>
+			<p class="excerpt"><?php echo $excerpt; ?></p>		
 
 		<?php
 			/**

@@ -286,6 +286,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 	.woo-cat {
 		.woo-content {
 			padding: 3em;
+			@include borderbox;
 
 			@include device-width(7) {
 				width: 100%;
@@ -316,12 +317,13 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 					width: 46%;
 					padding: 1em;
 
-					@include device-width(9) {
+					@include device-width(10) {
 						width: 100%;
+						margin: 4% 2%;
 					}
 
 					&:hover {
-						@include box-shadow(0px 2px 4px 0px rgba(47,119,204,0.50));
+						background: #f7f7f7;
 					}
 
 					img {
@@ -344,7 +346,39 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 			}
 		}
 
+		// Product list SIDEBAR
+		.product-list-sidebar {
+			padding: 3em 2.3em;
+
+			.widget-title {
+				@include opensans;
+				@include font-size(23);
+				color: #4A4A4A;
+				margin-bottom: 1.5em;
+			}
+
+			aside {
+				margin-bottom: 3em;
+			}
+
+			@include device-width(7) {
+				width: 100%;
+
+				.tech-quote {
+					.image {
+						display: none;
+					}
+				}
+			}							
+		}		
+
 		.same-level-categories {
+			margin-bottom: 5em;
+
+			h3 {
+				padding: 0 3em;
+			}
+
 			.item {
 				text-align: center;
 				padding: 0 4em;
@@ -359,6 +393,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 					display: block;
 					background: #f7f7f7;
 					position: relative;
+					height: 75%;
 
 					img {
 					
@@ -366,7 +401,98 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				}
 			}
 		}
+	}
 
+	#top-level-cat {
+		ul.products {
+			padding: 2em;
+
+			@include device-width(5) {
+				padding: 0;
+			}			
+
+			li {
+				width: 29%;
+				margin: 2%;
+
+				@media only screen and (max-width: 768px) {	
+					width: 46%;
+					margin: 2%;
+					float: left;
+				}
+
+				@include device-width(5) {
+					width: 100%;
+					margin: 2em 0;
+				}				
+
+				h3 {
+					@include font-size(23);
+					color: #4A4A4A !important;
+					@include opensans;
+
+					.count {
+						display: none;
+					}
+				}				
+
+				.excerpt {
+					display: none;
+				}
+			}
+
+		}
+	}
+
+	#mid-level-cat {
+
+		ul.products {
+			padding: 4em;
+
+			@include device-width(5) {
+				padding: 2em;
+			}			
+
+			li {
+				width: 40%;
+				margin: 2% 5%;
+				@include box-shadow(none);
+
+				@include device-width(5) {
+					width: 100%;
+					margin: 2em 0;
+				}
+
+
+				a {
+					color: #4A4A4A;
+
+					.image-holder {
+						background: #f7f7f7;
+						padding: 2em;
+
+						img {
+							@include box-shadow(none);
+							@include borderbox;
+							max-width: 100%;
+							height: auto;
+							width: auto;	
+							margin: 0 auto;
+						}											
+					}
+
+					h3 {
+						@include font-size(23);
+						color: #4A4A4A !important;
+						@include opensans;
+
+						.count {
+							display: none;
+						}
+					}
+				}
+			}
+		}
 	}
 
 
@@ -375,8 +501,30 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 	-------------------------------------------------------------- */
 
 	a.button, button.button, input.button, #respond input#submit, #content input.button {
+		@include vertical-gradient(#86B555, #5B8E26);
+		@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
+		margin: 0;
+		padding: 1em 3em;
+		@include border-radius(4px);
+		color: #FFF;
+		@include inline-block;
+		text-align: center;
+		@include borderbox;
+		border: none;
 
+		&:hover {
+			@include vertical-gradient(#5B8E26, #86B555);
+		}
 
+	
+	}
+
+	button.single_add_to_cart_button {
+		&:before {
+			@extend [class*="icon-"];
+			@extend .icon-basket:before;
+			margin-right: 5px;
+		}		
 	}
 
 	.cart .button, .cart input.button {
