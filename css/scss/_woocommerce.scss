@@ -539,12 +539,19 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 		display: inline-block;
 	}
 
-		input.button, #content input.button, button.button {
-			text-shadow: none;
-			@include opensans;
-			margin: 0 0.5em;
-			padding: 0.7em;
-		}	
+	a.button, input.button, #content input.button, button.button {
+		text-shadow: none;
+		@include opensans;
+		margin: 0 0.5em;
+		padding: 0.7em;
+	}	
+
+	#content p {
+		a.button.wc-backward {
+			color: #FFF;
+		}		
+	}
+
 
 	/* =Quantity inputs
 	-------------------------------------------------------------- */
