@@ -753,8 +753,8 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 			padding: 3em;
 		}
 
-		#coupon_code {
-			width: 48%;
+		input#coupon_code {
+			width: 48% !important;
 		}		
 
 		.cart-collaterals {
@@ -896,23 +896,23 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 			label.checkbox {
 				display: inline;
 			}
-			input.input-text, textarea {
-				-webkit-box-sizing:border-box;
-				-moz-box-sizing:border-box;
-				box-sizing:border-box;
-				width: 100%;
-				margin: 0;
-				outline: 0;
-				line-height: 1em;
+			input[type=text],
+			input[type=email],
+			input[type=url],
+			input[type=tel],
+			input[type=number],
+			input[type=password], 
+			textarea,
+			select {
+				border: 1px solid #969696;
+				@include font-size(18);
+				padding: 0.4em 1em;
+				color: #696969;
+				@include border-radius(5px);
+				line-height: 29px;
+				@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
 			}
-			textarea {
-				height: 3.5em;
-				line-height: 1.5em;
-				display:block;
-				-moz-box-shadow:none;
-				-webkit-box-shadow:none;
-				box-shadow:none;
-			}
+
 			&.validate-required.woocommerce-validated {
 				input.input-text {
 					background-image: url(../images/woocommerce/icons/valid.png);
@@ -1253,6 +1253,13 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 	/* =Account Page
 	-------------------------------------------------------------- */
+
+
+	&.page-my-account {
+		.page-content {
+			padding: 3em;
+		}
+	}
 
 	.addresses {
 		.title {
