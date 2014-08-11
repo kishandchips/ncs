@@ -920,3 +920,95 @@ hr {
 		}
 	}
 }
+
+.widget_product_categories {
+
+	> ul.product-categories {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			position: relative;
+
+			a {
+				color: #4A4A4A;
+				@include opensans;
+				padding: 20px 60px;
+				display: block;
+
+				&:hover {
+					@include vertical-gradient(#F7F6F3, #E6E4DB);
+				}
+			}
+
+			&.current-cat {
+
+				> a {
+					@include vertical-gradient(#F7F6F3, #E6E4DB);
+				}
+			}
+
+			&.cat-parent {
+				span {
+					position: absolute;
+					right: 15px;
+					top: 25px;
+					width: 17px;
+					height: 14px;
+					cursor: pointer;
+
+					&:after {
+						@extend [class*="icon-"];
+						@extend .icon-down-chevron:before;
+						color: #C2C2C2;
+					}
+
+					&.open {
+						&:after {
+							@extend [class*="icon-"];
+							@extend .icon-up-chevron:before;
+							color: #C7C7C7;
+						}							
+					}
+				}
+
+				&:hover {
+					span {
+						color: #41009E;
+					}
+				}
+			}
+
+			&.current-cat, &.current-cat-parent {
+				> a {
+					color: #41009E;
+				}
+			}
+
+			ul {
+				display: none;
+				list-style-type: none;
+				padding: 0;
+				background: #F7F7F7;
+
+				li {
+
+					a {
+						padding-left: 80px;
+					}
+
+					ul {
+						background: #F1F1F1;
+						li {
+
+							a {
+								padding-left: 100px;			
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

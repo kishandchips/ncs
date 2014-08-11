@@ -10,7 +10,28 @@ get_header(); ?>
 <div id="page" class="container">
 	<div id="single">
 		<div id="sidebar" class="span two">
-			<?php dynamic_sidebar( 'news-sidebar' ); ?>
+			<?php 
+				// if Service page
+				if ( get_post_type() == 'service' )
+				{
+				   dynamic_sidebar( 'service-pages' );
+				}
+				// if Case Study Page
+				elseif(get_post_type() == 'case_study') { 
+
+					// $terms = get_the_terms( $post->ID, 'case_study_category' );
+
+				 //    foreach($terms as $term){
+				 //    	if ($term->slug == 'commercial') {
+				 //    		global $parent_id, $page_id, $wp_query;
+				 //    	}
+				 //    }
+			  		dynamic_sidebar( 'education-sidebar' );
+
+				} else {
+				    dynamic_sidebar( 'news-sidebar' );
+				}
+			 ?>		
 		</div>
 		<div id="content" class="span eight">
 			<div class="span four break-on-mobile sidebar">

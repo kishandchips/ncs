@@ -6,23 +6,9 @@
  * @since 3.0.0
  */
 
-/*
-* Create HTML list of nav menu items.
-* Replacement for the native Walker, using the description.
-*
-* @see    http://wordpress.stackexchange.com/q/14037/
-* @author toscho, http://toscho.de
-*/
+
 class Thumbnail_Walker extends Walker_Nav_Menu {
-/**
-* Start the element output.
-*
-* @param  string $output Passed by reference. Used to append additional content.
-* @param  object $item   Menu item data object.
-* @param  int $depth     Depth of menu item. May be used for padding.
-* @param  array $args    Additional strings.
-* @return void
-*/
+
 	function start_el(&$output, $item, $depth, $args, $id) {
 		$classes     = empty ( $item->classes ) ? array () : (array) $item->classes;
 
@@ -56,6 +42,7 @@ class Thumbnail_Walker extends Walker_Nav_Menu {
 		    if ( has_post_thumbnail( $item->object_id ) ) {
 		  $thumbnail = get_the_post_thumbnail( $item->object_id, 'custom-navigation' );
 		  }
+		  
 
 
 

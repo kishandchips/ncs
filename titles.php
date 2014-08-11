@@ -24,6 +24,16 @@
 			$top_parent_title = 'News';
 			$page_title = 'Articles';
 		}
+
+		if ( is_singular( 'service' ) ) {
+			$top_parent_title = 'Services';
+			$page_title = get_the_title($post->ID);
+		}	
+
+		if ( is_singular( 'case_study' ) ) {
+			$top_parent_title = 'Case Studies';
+			$page_title = get_the_title($post->ID);
+		}		
 	 ?>	
 
 	<div id="page-header" class="clearfix <?php if (is_page(43)):?>environmental-policy<?php endif; ?>">

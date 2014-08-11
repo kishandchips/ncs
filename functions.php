@@ -195,7 +195,17 @@ function custom_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title"><span>',
 		'after_title'   => '</span></h1>',
-	));									
+	));	
+
+	register_sidebar( array(
+		'name'          => __( 'Service Pages Sidebar', 'ncs' ),
+		'id'            => 'service-pages',
+		'description'   => __( 'Sidebar that appears on Service Pages.', 'ncs' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title"><span>',
+		'after_title'   => '</span></h1>',
+	));										
 
 }
 add_action( 'widgets_init', 'custom_widgets_init' );
@@ -411,3 +421,43 @@ if (!function_exists('loop_columns')) {
 		return 3; // 3 products per row
 	}
 }
+
+
+// rename the coupon field on the cart page
+function woocommerce_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+ 
+	if ( 'Apply Coupon' === $text ) {
+		$translated_text = 'Apply Vouchers';
+	}
+ 
+	return $translated_text;
+}
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_cart', 10, 3 );
+
+
+// rename the coupon field on the checkout page
+function woocommerce_rename_coupon_message_on_checkout() {
+ 
+	return 'Have a Voucher Code?';
+}
+add_filter( 'woocommerce_checkout_coupon_message', 'woocommerce_rename_coupon_message_on_checkout' );
+ 
+
+
+function woocommerce_rename_coupon_field_on_checkout( $translated_text, $text, $text_domain ) {
+ 	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+ 
+	if ( 'Coupon code' === $text ) {
+		$translated_text = 'Voucher Code';
+	
+	} elseif ( 'Apply Coupon' === $text ) {
+		$translated_text = 'Apply Voucher Code';
+	}
+	return $translated_text;
+}
+add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_checkout', 10, 3 );

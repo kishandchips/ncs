@@ -221,3 +221,30 @@ fieldset {
 	}
 }
 
+//****************************
+// Advanced Newsletter Form 
+//***************************
+
+.gform_body {
+	li.selection {
+
+		.ginput_container {
+			@extend .clearfix;
+
+			li {
+				width: 29%;
+				float: left;
+				margin: 1% 2%;
+
+				
+				label {
+					@include font-size(14);
+					color: #666666;
+				}
+				@include device-width(5) {
+					width: 46%;
+				}
+			}
+		}
+	}
+}

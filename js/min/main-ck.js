@@ -227,7 +227,7 @@
 				$(this).nextAll('ul.children').first().slideToggle(200);
 			});
 
-			if ( parent.hasClass('current-cat')) {
+			if ( parent.is('.current-cat, .current-cat-parent')) {
 				$.each(current, function() {
 					$('span', this).first().addClass('open');
 					$('.children', this).first().show();

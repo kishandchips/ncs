@@ -12,18 +12,13 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'shop' ); ?>
-<?php 
-global $page_id;
-$page_id = 16;
-?>
-
-
 
 <div id="page" class="container">
 	<div id="sidebar" class="span two break-on-mobile">
 		<?php dynamic_sidebar( 'product-sidebar' ); ?>
 	</div>	
 	<div id="content" class="span eight break-on-mobile content-inner">
+	<?php query_posts('page_id=16'); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if(!$post->post_content == ''): ?>
 				<div class="page-content">

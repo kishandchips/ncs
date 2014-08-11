@@ -431,7 +431,7 @@
 				<div class="span <?php if (get_sub_field('full_width')):?>ten<?php else: ?>four<?php endif; ?>" style="<?php if (get_sub_field('content_background_color')):?>background-color: <?php the_sub_field('content_background_color'); ?>;<?php endif; ?><?php if (get_sub_field('content_color')):?>color: <?php the_sub_field('content_color'); ?>;<?php endif; ?>">
 					<?php the_sub_field('content'); ?>
 					<?php if (get_sub_field('box_link')): ?>
-						<a class="more-about" href="<?php the_sub_field('box_link') ?>"><?php _e('Read More'); ?></a>
+						<a class="more-about" href="<?php bloginfo('url'); ?><?php the_sub_field('box_link') ?>"><?php _e('Read More'); ?></a>
 					<?php endif; ?>
 					
 				</div>
