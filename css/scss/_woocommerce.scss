@@ -673,34 +673,6 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 		}
 	}
 
-	table.shop_table {
-		margin: 0px -1px 24px 0px;
-		text-align:left;
-		width: 100%;
-		border-collapse: separate;
-		@include border-radius(5px);
-		th {
-			
-			line-height: 18px;
-			padding: 2em;
-		}
-		td {
-			border-top: 1px solid rgba(0,0,0,0.1);
-			padding: 2em;
-			vertical-align: middle;
-			small {
-				font-weight: normal;
-			}
-		}
-		tfoot td,  {
-			border-top: 1px solid rgba(0,0,0,0.1);
-		}
-
-		tfoot th {
-			
-			border-top: 1px solid rgba(0,0,0,0.1);
-		}
-	}
 
 	table.my_account_orders {
 		font-size: 0.85em;
@@ -1480,5 +1452,34 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				}
 			}
 		}
+	}
+}
+
+table.shop_table {
+	margin: 0px -1px 24px 0px;
+	text-align:left;
+	width: 100%;
+	border-collapse: separate;
+	@include border-radius(5px);
+	th {
+		
+		line-height: 18px;
+		padding: 2em;
+	}
+	td {
+		border-top: 1px solid rgba(0,0,0,0.1);
+		padding: 2em;
+		vertical-align: middle;
+		small {
+			font-weight: normal;
+		}
+	}
+	tfoot td,  {
+		border-top: 1px solid rgba(0,0,0,0.1);
+	}
+
+	tfoot th {
+		
+		border-top: 1px solid rgba(0,0,0,0.1);
 	}
 }
