@@ -461,3 +461,25 @@ function woocommerce_rename_coupon_field_on_checkout( $translated_text, $text, $
 	return $translated_text;
 }
 add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_checkout', 10, 3 );
+
+
+
+// replace Add to Cart Buttons with Quote button if product doesn't having price
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+
+add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_template_single_add_to_cart', 30 );
+function custom_woocommerce_template_single_add_to_cart() {
+	global $product;
+
+	$type = $product->product_type;
+	$price = $product->price;
+
+	if ( $price_html = $product->get_price_html() ) {
+		do_action( 'woocommerce_' . $type . '_add_to_cart'  );
+	} else {
+		echo '<form class="cart">';
+		do_shortcode('[dvin-wcql-button]');
+		echo '</form>';
+	}
+}

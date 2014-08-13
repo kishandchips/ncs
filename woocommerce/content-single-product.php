@@ -36,10 +36,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		<?php
 			do_action( 'woocommerce_single_product_summary' );
 		?>
+
 			<?php if(get_field('datasheet_file')): ?>
 				<a href="<?php the_field('datasheet_file'); ?>" class="download-btn"><?php the_field('datasheet_name'); ?></a>
 			<?php endif; ?>
-
 
 	</div><!-- .summary -->
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />		

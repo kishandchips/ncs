@@ -157,6 +157,11 @@ body {
 		position: relative;
 		padding: 13px 0;
 
+		@include device-width(6) {
+			padding-left: 36px;
+			background: url(../images/logos/header_small.jpg) left center no-repeat;
+		}
+
 		>ul {
 			float: left;
 			list-style-type: none;
@@ -942,12 +947,12 @@ body {
 				&#nav-open-btn {
 					display: block;	
 					float:left;
-					margin:0.5em 0.5em 0 0;		
+					margin: 0.8em 0.5em 0 0;		
 					cursor: pointer;
 					padding: 10px 35px 16px 0px;
 
 					@include device-width(6) {
-						margin: 0 0.5em 0 0;	
+						margin: 0.2em 0.5em 0 0;	
 					}					
 
 					span, span:before, span:after {
