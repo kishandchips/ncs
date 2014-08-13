@@ -8,6 +8,7 @@
 
 		if (is_woocommerce()) {
 			$top_parent_title = 'Products';
+			$page_title = 'Products';	
 		} 
 		if ( is_product_category() ) {
 			$queried_object = get_queried_object(); 
@@ -31,8 +32,8 @@
 		}	
 
 		if ( is_singular( 'case_study' ) ) {
-			$top_parent_title = 'Case Studies';
-			$page_title = get_the_title($post->ID);
+			$top_parent_title = '';
+			$page_title = 'Case Studies';
 		}		
 	 ?>	
 

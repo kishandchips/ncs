@@ -2,8 +2,11 @@
 
 		<?php
 		global $wp_query;
-		$postid = $wp_query->post->ID; ?>
-		<?php if(is_front_page() || get_post_meta($postid, 'show_newsletter_signup_box', true)): ?>
+		$post_id = $wp_query->post->ID; ?>
+
+
+
+		<?php if(is_front_page() || get_post_meta($post_id, 'show_newsletter_signup_box', true)): ?>
 			<div id="newsletter">
 				<div class="container">
 					<?php gravity_form(1, true, true, false, '', true); ?>

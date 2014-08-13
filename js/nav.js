@@ -126,9 +126,9 @@
                 if (nav_open && !hasParent(e.target, 'nav')) {
                     //e.preventDefault();
                     app.closeNav();
-                }
+                }               
             },
-            true);
+            true);            
 
             addClass(doc, 'js-ready');
 

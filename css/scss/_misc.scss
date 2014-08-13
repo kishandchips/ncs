@@ -1012,3 +1012,54 @@ hr {
 		}
 	}
 }
+
+.sharethis {
+	background: #1656A1;	
+	padding: 15px;
+	@include inline-block;
+	margin: 2em 0 0 -30px;
+
+	span {
+		margin-right: 15px;
+	}
+
+	a {
+		color: #FFF;
+		@extend [class*="icon-"];
+		margin-right: 0.5em;
+		@include inline-block;
+
+		&:hover {
+			color: #4A90E2;
+		}
+
+		&:before {
+			@include font-size(20);
+			margin-right: 5px;
+		}
+
+		&.facebook {
+			&:before {
+				@extend .icon-facebook:before;
+			}
+		}
+
+		&.twitter {
+			&:before {
+				@extend .icon-twitter:before;
+			}
+		}
+
+		&.linkedin {
+			&:before {
+				@extend .icon-linkedin:before;
+			}
+		}
+
+		&.googleplus {
+			&:before {
+				@extend .icon-googleplus:before;
+			}
+		}						
+	}	
+}

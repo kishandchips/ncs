@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header( 'shop' ); ?>
 
 <div id="page" class="container">
-	<div id="sidebar" class="span two break-on-mobile">
+	<div id="sidebar" class="span two">
 		<?php dynamic_sidebar( 'product-sidebar' ); ?>
 	</div>	
 	<div id="content" class="span eight break-on-mobile content-inner">

@@ -1563,7 +1563,7 @@ body {
 				background: #042143;
 				color: #FFF;
 				@include border-radius(10px);
-				padding: 29px;
+				padding: 15px 29px;
 
 				a {
 					color: #FFF;
@@ -1831,7 +1831,7 @@ body {
 						width: auto;
 						margin: 0;
 						padding: 20px;
-						@include font-size(20);
+						@include font-size(22);
 						@include inline-block;
 						color: #FFF;
 						@include transition(all 0.3s ease);
@@ -1843,6 +1843,7 @@ body {
 
 						p {
 							margin: 0;
+							@include font-size(22);
 						}
 					}
 
@@ -2564,7 +2565,7 @@ body {
 				.author-image {
 					position: absolute;
 					right: 5%;
-					top: -20%;
+					top: -54px;
 					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
 					@include border-radius(50%);
 					border: 4px solid #FFFFFF;
@@ -2712,6 +2713,47 @@ body {
 	@include opensans-light;
 	color: #1656A1;
 	margin: 2em 0;
+}
+
+/****************************/
+/* Single Case Study: ;		*/
+/****************************/
+
+.single-case-study {
+
+	.span.content-inner {
+		padding-right: 0;
+	}
+
+	.span.sidebar {
+		padding-left: 0;
+	}
+
+
+	.case-study-header {
+		@include vertical-gradient(#009795, #017C7A);
+		color: #FFF;
+		@include borderbox;
+		padding: 30px 30px 0;
+		margin-bottom: 3em;
+
+		.page-commercial & {
+			@include vertical-gradient(#02499E, #1F79E2);	
+		}
+
+		.date {
+			@include font-size(14);
+			width: 100%;
+			display: block;
+		}
+
+		h1 {
+			@include font-size(30);
+			@include opensans-light;
+			line-height: 1.2;
+		}
+	}
+
 }
 
 /****************************/

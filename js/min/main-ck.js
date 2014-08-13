@@ -206,6 +206,25 @@
 			}
 		},
 
+		shareBtns: function() {
+
+			$('.share-popup-btn').on('click', function(e){
+				e.preventDefault();
+				var url = $(this).attr('href');
+
+				if(main.app){
+					main.systemLink(url);
+				} else {
+					var width = 640,
+						height = 305,
+						left = ($(window).width() - width) / 2,
+						top = ($(window).height() - height) / 2;
+
+					window.open(url, 'sharer', 'toolbar=0,status=0,width='+width+',height='+height+',left='+left+', top='+top);
+				}
+			});
+		},			
+
 		containerHeight: function() {
 			var highestCol = Math.max($('#sidebar').outerHeight(true), $('#content').outerHeight(true));
 			$('#page, #sidebar, #content').height(highestCol);
@@ -249,7 +268,34 @@
 		            span.css('width',newW);
 		        });
 		    }
-		},		
+		},
+
+		magnificPopup: function () {
+	        $('.popup-youtube').magnificPopup({
+	          disableOn: 700,
+	          type: 'iframe',
+	          mainClass: 'mfp-fade',
+	          removalDelay: 160,
+	          preloader: false,
+
+	          fixedContentPos: false
+	        });	
+
+			$('.gallery-item a, .page-content a.img').magnificPopup({
+			  type: 'image',
+			  gallery:{
+			    enabled:true
+			  }
+			});        
+
+	        $('a.img').magnificPopup({
+	          type: 'image',
+	          closeOnContentClick: true,
+	          image: {
+	            verticalFit: true
+	          }	          
+	        }); 
+		},				
 		
 		resize: function(){
 			main.equalHeight();
@@ -268,25 +314,9 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
-		main.containerHeight();
-
-        $('.popup-youtube').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
-
-          fixedContentPos: false
-        });	
-
-	        $('a.img').magnificPopup({
-	          type: 'image',
-	          closeOnContentClick: true,
-	          image: {
-	            verticalFit: true
-	          }	          
-	        });        	
+		main.containerHeight();  
+		main.magnificPopup();
+		main.shareBtns();
 
 		if ($(window).width() < 900) {
 			//responsive stuff here
