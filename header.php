@@ -30,7 +30,7 @@
 						<a href="/get-in-touch/" class="get-in-touch">
 							<?php _e('Get in touch'); ?>
 						</a>
-						<a href="" class="live-chat">
+						<a href="" class="live-chat ClickdeskChatLink" image="false">
 							<?php _e('Live chat'); ?>
 						</a>
 					</div>				

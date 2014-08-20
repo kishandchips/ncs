@@ -25,7 +25,7 @@ class Support_Widget extends WP_Widget {
 								<?php _e('Call Me Back') ?>
 							</a>								
 							</div>
-							<a href="#" class="live-chat">
+							<a href="#" class="live-chat ClickdeskChatLink" image="false">
 								<?php _e('Live Chat') ?>
 							</a>
               <?php echo $after_widget; ?>

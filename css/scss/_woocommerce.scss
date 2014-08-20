@@ -163,6 +163,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 					.span {
 						padding: 0;
+						height: 260px;
 
 						&.logo {
 							text-align: center;
@@ -462,6 +463,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				margin: 2% 5%;
 				@include box-shadow(none);
 
+				&:nth-child(2n+1) {
+					clear: left;
+				}
+
 				@include device-width(5) {
 					width: 100%;
 					margin: 2em 0;
@@ -474,6 +479,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 					.image-holder {
 						background: #f7f7f7;
 						padding: 2em;
+						height: 158px;
 
 						img {
 							@include box-shadow(none);

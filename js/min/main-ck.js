@@ -22,7 +22,13 @@
 	        		expandSpeed: 0,
 	        		collapseSpeed: 0
 	        	});
-	        }			
+	        }
+
+    		$('.live-chat').click(function(event) {
+    			event.preventDefault();
+    			$('#wp-live-chat').css("left","auto");
+    			$('#wp-live-chat-1').click();
+    		});
 
 			$.fn.simpleSlider = function(options) {
 						

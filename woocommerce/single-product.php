@@ -20,7 +20,7 @@ get_header( 'shop' ); ?>
 	<div id="content" class="span eight break-on-mobile">
 		<div class="breadcrumb">
 			<?php
-				do_action( 'woocommerce_before_main_content' );
+				woocommerce_breadcrumb();
 			?>
 		</div>
 		<div id="product">
@@ -28,9 +28,8 @@ get_header( 'shop' ); ?>
 				<?php wc_get_template_part( 'content', 'single-product' ); ?>
 			<?php endwhile; ?>				
 		</div>
-		<?php do_action( 'woocommerce_after_main_content' ); ?>		
-
 		<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
+
 	</div>
 </div>	
 <?php get_footer( 'shop' ); ?>

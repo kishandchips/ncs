@@ -62,8 +62,10 @@ $woocommerce_loop['loop']++;
 			?>
 		</h3>
 
+			<?php $category_description = get_field('category_description', 'product_cat_' . $category->term_id); ?>
+
 			<?php 
-				  $excerpt = get_the_excerpt();;
+				  $excerpt = $category_description;
 				  $excerpt = strip_tags($excerpt);
 				  $excerpt = substr($excerpt, 0, 200);
 				  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));

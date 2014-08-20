@@ -107,11 +107,18 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	  $terms = wp_get_post_terms( $post->ID, 'product_cat' );
 	  foreach ( $terms as $term ) $cats_array[] = $term->term_id;
 	 
-	  $query_args = array( 'post__not_in' => array( $post->ID ), 'posts_per_page' => 5, 'no_found_rows' => 1, 'post_status' => 'publish', 'post_type' => 'product', 'tax_query' => array( 
-	    array(
-	      'taxonomy' => 'product_cat',
-	      'field' => 'id',
-	      'terms' => $cats_array
+	  $query_args = array( 'post__not_in' => array( $post->ID ), 
+	  	'posts_per_page' => 3, 
+	  	'no_found_rows' => 1, 
+	  	'post_status' => 'publish', 
+	  	'post_type' => 'product', 
+	  	'order' => 'ASC',
+	  	'tax_query' => array( 
+		    array(
+		      'taxonomy' => 'product_cat',
+		      'field' => 'id',
+			  'posts_per_page' => 3,	      
+		      'terms' => $cats_array
 	    )));
 	 
 	  $r = new WP_Query($query_args);

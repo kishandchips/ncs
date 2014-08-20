@@ -36,7 +36,7 @@ get_header( 'shop' ); ?>
 
 			// Get Category Thumbnails
 		    $thumbnail_id = get_woocommerce_term_meta( $term_id, 'thumbnail_id', true );
-		    $thumbnail = wp_get_attachment_url( $thumbnail_id );			
+		    $thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'custom-medium-noncrop' );			
 			 
 			$cat_description = get_field('category_description', $queried_object);		 
 			$cat_image = get_field('category_header_image', $taxonomy . '_' . $term_id);
@@ -105,7 +105,7 @@ get_header( 'shop' ); ?>
 				<div class="span five break-on-mobile equal-height logo">
 					<?php 
 					    if ( $thumbnail ) {
-						    echo '<img src="' . $thumbnail . '" class="vertical-align" />';
+						    echo '<img src="' . $thumbnail[0] . '" class="vertical-align" />';
 						}
 					 ?>				
 				</div>
@@ -169,7 +169,8 @@ get_header( 'shop' ); ?>
 				            'orderby'            => 'ASC',
 				            'parent'             => $parent_cat_id,
 				            'order'              => 'ASC',
-				            'hide_empty' => 0,
+				            'number'			 =>	2,
+				            'hide_empty' => 0
 				        );  ?>
 
 				        <?php $catTerms = get_terms('product_cat', $args); ?>
