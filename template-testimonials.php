@@ -28,6 +28,7 @@ get_header(); ?>
 						$parent = array_reverse(get_post_ancestors($post->ID));
 						$first_parent = get_page($parent[0]);
 						$slug =  $first_parent->post_name;
+
 					 ?>
 					<?php 
 						$have_image = array();
@@ -38,7 +39,7 @@ get_header(); ?>
 							'taxonomy'			=>	'testimonial_category',
 							'term' 				=> 	$slug,
 							'posts_per_page' 	=>  -1,
-							'order'				=> 'ASC'
+							'order'				=> 'DESC'
 						)); 
 					?>
 

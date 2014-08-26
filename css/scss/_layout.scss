@@ -2243,6 +2243,8 @@ body {
 }
 
 #meet-the-team {
+	@extend .clearfix;
+
 	.section-title {
 		display: block;
 		width: 100%;
@@ -2352,6 +2354,7 @@ body {
 
 #environmental-policy {
 	padding: 3em;
+	@extend .clearfix;
 
 	background: url('../images/backgrounds/leaf_pattern.png');
 

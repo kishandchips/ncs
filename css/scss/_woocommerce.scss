@@ -310,6 +310,15 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				@include borderbox;
 				padding: 25px;
 				margin-bottom: 4em;
+				color: #333;
+
+				span {
+					color: #333 !important;
+				}
+
+				a {
+					color: #4A90E2 !important;
+				}
 			}
 
 			ul.products {

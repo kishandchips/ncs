@@ -50,7 +50,8 @@ $woocommerce_loop['loop']++;
 		    	echo '<div class="image-holder equal-height">';
 			    echo '<img class="vertical-align" src="' . $image . '" alt="" />';
 			    echo '</div>';
-			}			
+			}
+
 		?>
 
 		<h3>
