@@ -21,21 +21,39 @@ class Technician_Quote extends WP_Widget {
               <?php echo $before_widget; ?>
                   <?php if ( $title )
                         echo $before_title . $title . $after_title; ?>
-							<div class="tech-quote">
+                        <?php 
+                            $queried_object = get_queried_object(); 
+                            $cat_quote = get_field('category_quote', $queried_object);       
+                            $cat_quote_author = get_field('category_quote_author', $queried_object);  
+                            $cat_quote_pos = get_field('category_quote_position', $queried_object);      
+                         ?>
+				            <div class="tech-quote">
                                 
                                 <div class="image">
                                     <img src="<?php bloginfo('template_directory')?>/images/misc/tech-quote.jpg" alt="">
                                 </div>
                                 <div class="copy">
                                     <div class="quote">
-                                        <?php echo $quote; ?>
+                                        <?php if($cat_quote): ?>
+                                            <?php echo $cat_quote; ?>
+                                        <?php else: ?>
+                                            <?php echo $quote; ?>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="meta">
                                         <span class="author">
-                                            <?php echo $author; ?>
+                                            <?php if($cat_quote_author): ?>        
+                                                <?php echo $cat_quote_author; ?>
+                                            <?php else: ?>
+                                                <?php echo $author; ?>
+                                            <?php endif; ?>
                                         </span>
                                         <span class="position">
-                                            <?php echo $position ?>
+                                            <?php if($cat_quote_pos): ?> 
+                                                <?php echo $cat_quote_pos ?>
+                                            <?php else: ?>
+                                               <?php echo $position ?>
+                                            <?php endif; ?>                                                
                                         </span>
                                     </div>
                                     <img class="author-image" src="<?php echo $image[0]; ?>" alt="">

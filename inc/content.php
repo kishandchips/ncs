@@ -37,7 +37,7 @@
 									}
 								 ?>
 								<div class="span <?php echo $boxclass; ?> <?php echo $valign; ?>" <?php if ( get_sub_field('box_margin')): ?>style="margin: <?php the_sub_field('box_margin'); ?>"<?php endif; ?> >
-									<a href="<?php the_sub_field('box_link'); ?>" class="<?php the_sub_field('title_position') ?> <?php if (get_sub_field('video_link')) { echo 'popup-youtube'; } ?>" style="background-image: url('<?php the_sub_field('box_image'); ?>')">
+									<a <?php if(get_sub_field('box_link')): ?>href="<?php the_sub_field('box_link'); ?>"<?php endif; ?> class="<?php the_sub_field('title_position') ?> <?php if (get_sub_field('video_link')) { echo 'popup-youtube'; } ?>" style="background-image: url('<?php the_sub_field('box_image'); ?>')">
 										<?php if (get_sub_field('box_title')): ?>
 											<span class="title <?php the_sub_field('box_color'); ?>">
 												<?php the_sub_field('box_title'); ?>

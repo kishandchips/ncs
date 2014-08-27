@@ -401,6 +401,10 @@ hr {
 		padding: 35px 20px;
 		@include borderbox;
 
+		@include device-width(11) {
+			padding: 20px 10px;
+		}		
+
 		img.profile {
 			border: 6px solid #FFFFFF;
 			@include border-radius(50%);
@@ -425,6 +429,10 @@ hr {
 			@include opensans-light;
 			@include font-size(30);
 			color: #4B4B4B;
+
+			@include device-width(11) {
+				@include font-size(20);
+			}
 
 			&:before {
 				@extend [class*="icon-"];
@@ -811,6 +819,10 @@ hr {
 		padding: 1.5em 2em;
 		line-height: 1.4;
 		@include border_radius_bottom(4px);
+
+		span {
+			color: #FFF !important;
+		}
 
 		.quote {
 			margin-bottom: 1em;

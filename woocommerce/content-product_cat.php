@@ -13,6 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $woocommerce_loop;
 
+
+    $term = get_term_by( 'id', $parent_cat_id, 'product_cat', 'ARRAY_A' );
+	$parent_name = $term['name'];
+
+	$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+	$parent = get_term($term->parent, get_query_var('taxonomy') );
+	$children = get_term_children($term->term_id, get_query_var('taxonomy')); //
+
+
+
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
 	$woocommerce_loop['loop'] = 0;
@@ -29,11 +39,17 @@ $woocommerce_loop['loop']++;
         echo ' first';
 	if ( $woocommerce_loop['loop'] % $woocommerce_loop['columns'] == 0 )
 		echo ' last';
+	if(($parent->term_id=="") && (sizeof($children)>0)) {
+		echo ' top';
+	} else {
+		echo ' mid';
+	}	
 	?>">
 
 	<?php do_action( 'woocommerce_before_subcategory', $category ); ?>
 
 	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
+
 
 
 		<?php
@@ -46,9 +62,17 @@ $woocommerce_loop['loop']++;
 
 		    $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
 		    $image = wp_get_attachment_url( $thumbnail_id );
+		    $image_top = wp_get_attachment_image_src( $thumbnail_id, 'frontpage' );
+
 		    if ( $image ) {
 		    	echo '<div class="image-holder equal-height">';
-			    echo '<img class="vertical-align" src="' . $image . '" alt="" />';
+
+	    		// if top level cat use different size image
+				if(($parent->term_id=="") && (sizeof($children)>0)) {
+					echo '<img class="vertical-align" src="' . $image_top[0] . '" alt="" />';
+				} else {
+					echo '<img class="vertical-align" src="' . $image . '" alt="" />';
+				}
 			    echo '</div>';
 			}
 

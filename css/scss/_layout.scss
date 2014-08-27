@@ -518,6 +518,11 @@ body {
 							width: 240px;
 							margin: 0 9px 19px 10px;
 
+							@include device-width(11) {
+								width:32%;
+								margin: 0 0.5% 1%; 
+							}
+
 							a {
 								@extend .clearfix;
 								padding: 0;
@@ -535,6 +540,10 @@ body {
 									display: block;
 									float: left;
 									width: 89px;
+
+									@include device-width(11) {
+										width: 64px;
+									}
 								}
 
 								img {
@@ -666,11 +675,19 @@ body {
 									height: 67px;
 									overflow: hidden;
 
+									@include device-width(11) {
+										height: 50px;
+									}
+
 									span {
 										padding: 0.8em 1em;
 										display: block;
 										float: left;
 										width: 89px;
+
+										@include device-width(11) {
+											width: auto;
+										}
 									}
 
 									img {

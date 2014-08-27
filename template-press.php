@@ -44,7 +44,13 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 							<article class="press">
 								<div class="span three image">
-									<?php the_post_thumbnail(array(200, 'bfi_thumb' => true)); ?>
+								<?php 
+									$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+									$url = $thumb['0'];
+								 ?>
+									<a class="img" href="<?php echo $url; ?>">
+										<?php the_post_thumbnail(array(200, 'bfi_thumb' => true)); ?>
+									</a>
 								</div>
 								<div class="span seven content">
 									<h2 class="title"><?php the_title(); ?></h2>
