@@ -50,8 +50,6 @@ $woocommerce_loop['loop']++;
 
 	<a href="<?php echo get_term_link( $category->slug, 'product_cat' ); ?>">
 
-
-
 		<?php
 			/**
 			 * woocommerce_before_subcategory_title hook
@@ -75,7 +73,6 @@ $woocommerce_loop['loop']++;
 				}
 			    echo '</div>';
 			}
-
 		?>
 
 		<h3>
