@@ -2630,6 +2630,10 @@ body {
 			}
 		}
 
+		h2 {
+			@include word-break;
+		}
+
 		a {
 			height: 100%;
 			display: block;

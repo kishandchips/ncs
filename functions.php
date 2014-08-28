@@ -483,3 +483,7 @@ function custom_woocommerce_template_single_add_to_cart() {
 		echo '</form>';
 	}
 }
+
+
+// Display 20 products per page. Goes in functions.php
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 20;' ), 20 );

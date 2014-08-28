@@ -48,9 +48,7 @@ get_header(); ?>
 						<a href="<?php the_permalink(); ?>">
 							<?php
 								if ( has_post_thumbnail() ) {
-										the_post_thumbnail(array(501, 240, 'bfi_thumb' => true));
-
-									
+										the_post_thumbnail(array(501, 240, 'bfi_thumb' => true));	
 								}
 								else {
 									echo '<img src="' . get_bloginfo( 'stylesheet_directory' ) . '/images/misc/thumbnail-default.jpg" />';

@@ -100,6 +100,7 @@ get_header( 'shop' ); ?>
 <?php elseif(($parent->term_id!="") && (sizeof($children)==0)): ?>
 	<!-- Tempalte if Category HAS NOT Children and HAS parent -->
 
+
 		<?php if ($cat_description !=''): ?>
 			<div class="row cat-header no-child">
 				<div class="span five break-on-mobile equal-height logo">
@@ -145,9 +146,9 @@ get_header( 'shop' ); ?>
 									?>
 									<p><?php echo $excerpt; ?></p>
 								</a>								
-							</div>
-
+							</div>	
 						<?php endwhile; // end of the loop. ?>
+
 
 					<?php woocommerce_product_loop_end(); ?>
 				<?php elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : ?>
@@ -156,6 +157,7 @@ get_header( 'shop' ); ?>
 
 				<?php endif; ?>
 
+				<?php get_template_part('inc/pagination'); ?>
 			</div>
 			<div class="span three product-list-sidebar">
 				<?php dynamic_sidebar( 'product-list' ); ?>

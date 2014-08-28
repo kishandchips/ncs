@@ -894,6 +894,9 @@ hr {
 	text-align: center;
 	text-transform: lowercase;
 	margin-top: 4em;
+	width: 100%;
+	display: block;
+	clear: both;
 	
 	a {
 		&:hover {

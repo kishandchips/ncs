@@ -28,6 +28,7 @@ get_header( 'shop' ); ?>
 				<?php wc_get_template_part( 'content', 'single-product' ); ?>
 			<?php endwhile; ?>				
 		</div>
+
 		<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
 
 	</div>
