@@ -215,18 +215,18 @@
 			<div class="bottom">
 				<h4><?php _e('Over the years we have provided services for:') ?></h4>
 				<div class="span third">
-					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num_kent'); ?></div>
 					Astonishing 82% of Kent Schools, colleges and academies.
 					
 				</div>
 				<div class="span third">
-					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num'); ?>	</div>
 					Schools, colleges and academies outside of Kent.
 				</div>
 				<div class="span third">
-					<div class="span five"><img src="<?php bloginfo('template_directory') ?>/images/icons/commercial.png" alt=""></div>
+					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/commercial.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num_commercial'); ?></div>
 					Commercial, council and healthcare offices.
 					

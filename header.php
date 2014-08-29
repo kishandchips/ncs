@@ -1,5 +1,22 @@
 <!DOCTYPE html>
 <head>
+<!--
+
+ __   .__       .__                       .___     .__    .__              
+|  | _|__| _____|  |__ _____    ____    __| _/____ |  |__ |__|_____  ______
+|  |/ /  |/  ___/  |  \\__  \  /    \  / __ |/ ___\|  |  \|  \____ \/  ___/
+|    <|  |\___ \|   Y  \/ __ \|   |  \/ /_/ \  \___|   Y  \  |  |_> >___ \ 
+|__|_ \__/____  >___|  (____  /___|  /\____ |\___  >___|  /__|   __/____  >
+     \/       \/     \/     \/     \/      \/    \/     \/   |__|       \/                      
+                                                                                                                                                     
+Designed & Developed by Kish and Chips
+- - -
+http://kishandchips.com
+http://facebook.com/kishandchips
+@kc_create
+- - -
+
+-->
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">

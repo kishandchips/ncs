@@ -184,6 +184,10 @@ body {
 			 		color: #4A4A4A;
 			 		padding: 15px 17px;
 			 		@include border-radius(3px);
+
+			 		@include device-width(4) {
+			 			padding: 15px 9px;
+			 		} 
 			 	}
 
 			 	&:hover > a {
@@ -1611,6 +1615,10 @@ body {
 			width: 100%;
 			margin: 6% 0;
 
+			@include device-width(5) {
+				padding: 4% 0;
+			}
+
 			.section-inner {
 				float: left;
 				width: 100%;
@@ -2234,6 +2242,10 @@ body {
 				@include font-size(14);				
 
 				.image {
+					img {
+						margin: 0 auto;
+					}
+
 					span {
 						@include oswald;
 						@include vertical-align;
@@ -2376,6 +2388,10 @@ body {
 #environmental-policy {
 	padding: 3em;
 	@extend .clearfix;
+
+	@include device-width(5) {
+		padding: 1em;
+	}
 
 	background: url('../images/backgrounds/leaf_pattern.png');
 

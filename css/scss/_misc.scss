@@ -5,7 +5,6 @@
 img {
 	max-width: 100%;
 	height: auto;
-	display: block;
 }
 
 img.alignleft {
@@ -75,6 +74,18 @@ blockquote {
 	text-shadow: none;
 	color: transparent;
 	background-color: transparent;
+}
+
+.scroll-table {
+	overflow: auto;
+}
+
+.scroll-table-signs {
+	display: none;
+
+	@include device-width(5) {
+		display: block;
+	}
 }
 
 .hide {
@@ -1036,7 +1047,7 @@ hr {
 	margin: 2em 0 0 0;
 
 	span {
-		margin-right: 15px;
+		margin-right: 10px;
 	}
 
 	a {

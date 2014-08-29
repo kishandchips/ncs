@@ -131,6 +131,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 		@include font-size(14);
 		background: #F1F1F1;
 
+		@include device-width(5) {
+			display: none;
+		}
+
 		a {
 			@include opensans-bold;
 			margin: 0 1em;
@@ -192,10 +196,21 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 			padding: 4em 2em;
 		}
 
+		@include device-width(5) {
+			padding-top: 1em;
+			padding: 0;
+		}		
+
 		.product {
 			@extend .clearfix;
 
 			.images {
+				@include borderbox;
+
+				@include device-width(5) {
+					padding: 2em;
+				}
+
 				img {
 					@include box-shadow(none !important);
 					background: #FFF;
@@ -227,6 +242,11 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 				.summary {
 					width: 100%;
+
+					.read-more {
+						margin-top: 15px;
+						display: block;						
+					}					
 				}
 
 				.details {
@@ -234,6 +254,7 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 						margin-bottom: 15px;
 						display: block;
 					}
+
 				}
 
 			}
@@ -295,6 +316,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 			@include device-width(7) {
 				width: 100%;
+			}
+
+			@include device-width(5) {
+				padding: 1em;
 			}
 
 			.section-title {
@@ -388,6 +413,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 		.same-level-categories {
 			margin-bottom: 5em;
+
+			@include device-width(5) {
+				margin: 1em 0;
+			}
 
 			h3 {
 				padding: 0 3em;
@@ -742,6 +771,11 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 		.page-content {
 			padding: 3em;
+
+			@include device-width(5) {
+				padding: 1em;
+
+			}
 		}
 
 		input#coupon_code {
@@ -775,6 +809,12 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				margin: 20px 0 0 0;
 				clear: right;
 				float: right;
+
+				@include device-width(5) {
+					float: none;
+					width: 100%;
+				}
+
 				.button {
 					width: 100%;
 					float:none;
@@ -791,6 +831,13 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 				width: 48%;
 				text-align: right;
+
+				@include device-width(5) {
+					float: none;
+					width: 100%;
+				}
+
+
 				p {
 					margin: 0;
 					small {
@@ -1035,6 +1082,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 
 		.page-content {
 			padding: 3em;
+
+			@include device-width(5) {
+				padding: 1em;
+			}
 		}
 
 		input.button {
@@ -1104,6 +1155,8 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 			border-bottom: 1px solid darken( $secondary, 10 );
 			margin: 0;
 			list-style:none outside;
+			list-style-type: none !important;
+
 			li {
 				line-height: 2em;
 				text-align:left;
