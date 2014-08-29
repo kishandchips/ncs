@@ -28,15 +28,27 @@ get_header(); ?>
 			 ?>		
 		</div>
 		<div id="content" class="span eight <?php if(get_post_type() == 'case_study'): ?>single-case-study<?php endif; ?>">
+
+			<div class="case-study-header">
+				<div class="span six break-on-mobile equal-height title">
+					<div class="inner">
+						<span class="date"><?php the_time('F Y'); ?></span>
+						<h1><?php the_title(); ?></h1>
+					</div>
+					<?php get_template_part('inc/sharethis'); ?>
+				</div>
+				<?php 
+					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium-large' );
+					$url = $thumb['0'];
+				 ?>
+				<div class="span four break-on-mobile equal-height thumbnail" <?php if(has_post_thumbnail()) :?> style="background-image: url('<?php echo $url; ?>') "<?php endif;?>>	
+				</div>
+			</div>		
+
 			<div class="span four break-on-mobile sidebar">
-				<?php if(has_post_thumbnail()) :?>
-					<?php echo get_the_post_thumbnail($p->ID,array(407, 277, 'bfi_thumb' => true) ); ?>
-				<?php endif;?>
 				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		
 			<div class="span six break-on-mobile content-inner">
-
-				<h1><?php the_title(); ?></h1>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php if(!$post->post_content == ''): ?>
@@ -47,10 +59,11 @@ get_header(); ?>
 					<?php if ( get_field('content')):?>
 						<?php get_template_part('inc/content'); ?>
 					<?php endif; ?>			
+
 				<?php endwhile; // end of the loop. ?>
 				<?php wp_reset_query(); ?>
 			</div>
-	
+
 			<?php if(get_field('show_related_case_studies', $id)): ?>
 				<div class="related-cs span ten">
 			<?php 

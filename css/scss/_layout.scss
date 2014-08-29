@@ -1130,7 +1130,7 @@ body {
 				margin: 5% 0 5% 25%;
 
 				@include device-width(9) {
-					margin: 5% 0;
+					margin: 5%;
 				}
 			}			
 
@@ -1146,7 +1146,11 @@ body {
 		.content-inner {
 			@include device-width(6) {
 				width: 100%;
-			}			
+			}		
+
+			.page-content {
+				padding: 5%;
+			}	
 		}
 	}
 }
@@ -2760,11 +2764,14 @@ body {
 
 
 	.case-study-header {
+		@extend .clearfix;
 		@include vertical-gradient(#009795, #017C7A);
 		color: #FFF;
 		@include borderbox;
-		padding: 30px 30px 0;
-		margin-bottom: 3em;
+
+		.span {
+			padding: 0;
+		}
 
 		.page-commercial & {
 			@include vertical-gradient(#02499E, #1F79E2);	
@@ -2780,6 +2787,26 @@ body {
 			@include font-size(30);
 			@include opensans-light;
 			line-height: 1.2;
+		}
+
+		.sharethis {
+			position: absolute;
+			bottom: 0;
+		}
+
+		.title {
+
+			.inner {
+				margin: 30px 30px 80px;	
+			}
+			
+		}
+
+		.thumbnail {
+			min-height: 280px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
 		}
 	}
 
