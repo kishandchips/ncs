@@ -28,12 +28,12 @@ get_header(); ?>
 			 ?>		
 		</div>
 		<div id="content" class="span eight <?php if(get_post_type() == 'case_study'): ?>single-case-study<?php endif; ?>">
-
 			<div class="case-study-header">
 				<div class="span six break-on-mobile equal-height title">
 					<div class="inner">
 						<span class="date"><?php the_time('F Y'); ?></span>
 						<h1><?php the_title(); ?></h1>
+
 					</div>
 					<?php get_template_part('inc/sharethis'); ?>
 				</div>
@@ -43,8 +43,7 @@ get_header(); ?>
 				 ?>
 				<div class="span four break-on-mobile equal-height thumbnail" <?php if(has_post_thumbnail()) :?> style="background-image: url('<?php echo $url; ?>') "<?php endif;?>>	
 				</div>
-			</div>		
-
+			</div><!-- /Case Study Header  -->
 			<div class="span four break-on-mobile sidebar">
 				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		
