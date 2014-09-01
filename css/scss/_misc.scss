@@ -875,6 +875,7 @@ hr {
 			margin: 1em 0 !important;
 			@include borderbox;
 			padding: 1em !important;
+			text-align: right;
 
 			&:hover {
 				background: #F7F7F7;
@@ -885,6 +886,7 @@ hr {
 				@include font-size(13);
 				color: #4A4A4A;
 				font-weight: normal !important;
+				text-align: left;
 
 				img {
 					float: left !important;
@@ -892,6 +894,10 @@ hr {
 					height: auto !important;	
 					margin-right: 15px !important;			
 				}
+			}
+
+			.amount {
+				font-weight: bold;
 			}
 		}
 	}

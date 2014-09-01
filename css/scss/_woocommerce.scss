@@ -350,11 +350,15 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				.item {
 					@include border-radius(4px);
 					background: #FFF;
-					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.50));
+					@include box-shadow(0px 2px 4px 0px rgba(0,0,0,0.20));
 					line-height: 15px;
 					margin: 2%;
 					width: 46%;
 					padding: 1em;
+
+					&:nth-child(2n+1) {
+						clear: left;
+					}
 
 					@include device-width(10) {
 						width: 100%;

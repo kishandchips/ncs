@@ -135,7 +135,11 @@ get_header( 'shop' ); ?>
 
 							<div class="span five item equal-height">
 								<a href="<?php the_permalink(); ?>">
-									<?php the_post_thumbnail('thumbnail'); ?>
+									<?php 
+										if ( has_post_thumbnail() ) {
+											the_post_thumbnail(array(150, 'bfi_thumb' => true));	
+										}
+									 ?>									
 									<h4><?php the_title(); ?></h4>
 									<?php 
 										  $excerpt = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
@@ -163,34 +167,41 @@ get_header( 'shop' ); ?>
 				<?php dynamic_sidebar( 'product-list' ); ?>
 			</div>
 			<?php // Include Other Manufacturers box ?>
-				<div class="span ten same-level-categories">
-				<h3 class="section-title clearfix"><?php _e('From other manufacturers…'); ?></h3>
-					<div class="inner">
-				        <?php
-				          $args = array(
-				            'orderby'            => 'ASC',
-				            'parent'             => $parent_cat_id,
-				            'order'              => 'ASC',
-				            'number'			 =>	2,
-				            'hide_empty' => 0
-				        );  ?>
 
-				        <?php $catTerms = get_terms('product_cat', $args); ?>
+		        <?php
+		          $args = array(
+		            'orderby'            => 'ASC',
+		            'parent'             => $parent_cat_id,
+		            'order'              => 'ASC',
+		            'exclude'			 => $term_id,
+		            'number'			 =>	2,
+		            'hide_empty' => 0
+		        );  ?>
 
-				        <?php foreach($catTerms as $catTerm) : ?>
-				            <?php
-				                $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
-				                $image = wp_get_attachment_image_src($thumbnail_id, 'full');
-				            ?>
-							<div class="span five item break-on-mobile equal-height">
-				                <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
-				                  <?php echo '<img class="vertical-align" src="'.$image[0].'" />';  ?>
-				                </a>                  
-				            </div>
-				        <?php endforeach; ?>
-			        </div>
-				</div>			
-		</div>
+		        <?php $catTerms = get_terms('product_cat', $args); ?>
+
+		        <?php if($catTerms): ?>
+
+					<div class="span ten same-level-categories">
+					<h3 class="section-title clearfix"><?php _e('From other manufacturers…'); ?></h3>
+						<div class="inner">
+
+					        <?php foreach($catTerms as $catTerm) : ?>
+					            <?php
+					                $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
+					                $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+					            ?>
+								<div class="span five item break-on-mobile equal-height">
+					                <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
+					                  <?php echo '<img class="vertical-align" src="'.$image[0].'" />';  ?>
+					                </a>                  
+					            </div>
+					        <?php endforeach; ?>
+				        </div>
+					</div>	
+
+				<?php endif; ?>
+			</div>
 		<?php // Include Need help with the right product box ?>
 		<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
 
