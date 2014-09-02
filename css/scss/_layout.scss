@@ -1035,10 +1035,12 @@ body {
 #main {
 	overflow: hidden;
 
+
 	#content {
 		padding: 3em;
 		background: #FFF;
 		height: 100%;
+		padding-bottom: 10em;
 
 		@include device-width(9) {
 			padding: 1em;
@@ -1102,6 +1104,7 @@ body {
 
 	#page {
 		z-index: 1;
+		@include flexbox;
 
 		#content {
 

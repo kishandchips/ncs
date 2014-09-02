@@ -112,7 +112,7 @@ get_header( 'shop' ); ?>
 				<div class="span five break-on-mobile equal-height picture">
 					<?php 
 						if ( has_post_thumbnail() ) {
-							the_post_thumbnail(array(560, 'bfi_thumb' => true));	
+							the_post_thumbnail(array( 0 , 260, 'bfi_thumb' => true));	
 						}
 					 ?>	
 				</div>			

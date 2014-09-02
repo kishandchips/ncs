@@ -231,10 +231,10 @@
 			});
 		},			
 
-		containerHeight: function() {
-			var highestCol = Math.max($('#sidebar').outerHeight(true), $('#content').outerHeight(true));
-			$('#page, #sidebar, #content').height(highestCol);
-		},
+		// containerHeight: function() {
+		// 	var highestCol = Math.max($('#sidebar').outerHeight(true), $('#content').outerHeight(true));
+		// 	$('#page, #sidebar, #content').height(highestCol);
+		// },
 
 		productNav: function() {
 			var container = $('#sidebar ul.product-categories'),
@@ -320,7 +320,7 @@
 		main.loaded();
 		main.equalHeight();	
 		main.productNav();
-		main.containerHeight();  
+		//main.containerHeight();  
 		main.magnificPopup();
 		main.shareBtns();
 
