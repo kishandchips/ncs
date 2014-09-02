@@ -9,7 +9,7 @@
 
 class Thumbnail_Walker extends Walker_Nav_Menu {
 
-	function start_el(&$output, $item, $depth, $args, $id) {
+	function start_el(&$output, $item, $depth, $args) {
 		$classes     = empty ( $item->classes ) ? array () : (array) $item->classes;
 
 		$class_names = join(

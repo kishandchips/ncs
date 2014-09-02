@@ -150,6 +150,11 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 		#content {
 			padding: 0;
 
+			.woocommerce-info {
+				max-width: 90%;
+				margin: 20px auto !important;				
+			}
+
 
 			.row {
 				padding: 2em;

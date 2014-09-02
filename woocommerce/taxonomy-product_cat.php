@@ -28,30 +28,29 @@ get_header( 'shop' ); ?>
 		<?php 
 		 	// Get Category Header
 			$queried_object = get_queried_object(); 
-
 			$taxonomy = $queried_object->taxonomy;
-
 			$category_name = $queried_object->name;
 			$term_id = $queried_object->term_id;  
 
 			// Get Category Thumbnails
 		    $thumbnail_id = get_woocommerce_term_meta( $term_id, 'thumbnail_id', true );
-		    $thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'custom-medium-noncrop' );			
-			 
+		    $thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'custom-medium-noncrop' );		
 			$cat_description = get_field('category_description', $queried_object);		 
 			$cat_image = get_field('category_header_image', $taxonomy . '_' . $term_id);
  
 			// Get Parent Category name;
 			$prod_terms = get_the_terms( $post->ID, 'product_cat' );
 
-			foreach ($prod_terms as $prod_term) {
-			    $product_cat_id = $prod_term->term_id;
-			    $product_parent_category = get_ancestors( $product_cat_id, 'product_cat' );  
-			    $parent_cat_id = array_shift( $product_parent_category );
-			}
+				if ($prod_terms) {
+					foreach ($prod_terms as $prod_term) {
+					    $product_cat_id = $prod_term->term_id;
+					    $product_parent_category = get_ancestors( $product_cat_id, 'product_cat' );  
+					    $parent_cat_id = array_shift( $product_parent_category );
+					}					
+				}
+
 		    $term = get_term_by( 'id', $parent_cat_id, 'product_cat', 'ARRAY_A' );
 			$parent_name = $term['name'];
-
 			$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			$parent = get_term($term->parent, get_query_var('taxonomy') );
 			$children = get_term_children($term->term_id, get_query_var('taxonomy')); //					
@@ -111,7 +110,11 @@ get_header( 'shop' ); ?>
 					 ?>				
 				</div>
 				<div class="span five break-on-mobile equal-height picture">
-					<img src="<?php echo $cat_image; ?>" alt="">
+					<?php 
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail(array(560, 'bfi_thumb' => true));	
+						}
+					 ?>	
 				</div>			
 			</div>
 		<?php endif ?>
