@@ -413,7 +413,7 @@ hr {
 		padding: 35px 20px;
 		@include borderbox;
 
-		@include device-width(11) {
+		@include device-width(12) {
 			padding: 20px 10px;
 		}		
 

@@ -73,8 +73,8 @@ function custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'custom_scripts');
 
-//Custom Sidebards
 
+//Custom Sidebards
 function custom_widgets_init() {
 
 	register_sidebar( array(
@@ -231,7 +231,7 @@ function my_custom_sizes( $sizes ) {
     ) );
 }
 
-
+// Custom Excerpt with character limit.
 if ( ! function_exists( 'excerpt' )) {
 function excerpt($num) {
 	    $limit = $num+1;
@@ -259,6 +259,7 @@ if ( ! function_exists( 'add_slug_body_class' )) {
 	add_filter( 'body_class', 'add_slug_body_class' );
 }
 
+// add category slug to body as class on single pages
 if ( ! function_exists( 'single_cat_body_class' ))  {
 	function single_cat_body_class( $classes ) {
 		if (is_single()) {
@@ -271,6 +272,8 @@ if ( ! function_exists( 'single_cat_body_class' ))  {
 	add_filter( 'body_class', 'single_cat_body_class' );
 }
 
+
+// add first - last classes to nav menu items
 function wpb_first_and_last_menu_class($items) {
     $items[1]->classes[] = 'first';
     $items[count($items)]->classes[] = 'last';
@@ -278,7 +281,8 @@ function wpb_first_and_last_menu_class($items) {
 }
 add_filter('wp_nav_menu_objects', 'wpb_first_and_last_menu_class');
 
-//Custom Post types
+
+//Create Custom Post types
 function custom_init(){
 	
 	require( get_template_directory() . '/inc/classes/custom-post-type.php' );
@@ -360,6 +364,8 @@ function custom_init(){
 }
 
 
+
+// add gforms placeholder fields
 add_action("gform_field_standard_settings", "custom_gform_standard_settings", 10, 2);
 function custom_gform_standard_settings($position, $form_id){
     if($position == 25){
@@ -446,7 +452,6 @@ function woocommerce_rename_coupon_message_on_checkout() {
 add_filter( 'woocommerce_checkout_coupon_message', 'woocommerce_rename_coupon_message_on_checkout' );
  
 
-
 function woocommerce_rename_coupon_field_on_checkout( $translated_text, $text, $text_domain ) {
  	if ( is_admin() || 'woocommerce' !== $text_domain ) {
 		return $translated_text;
@@ -465,7 +470,6 @@ add_filter( 'gettext', 'woocommerce_rename_coupon_field_on_checkout', 10, 3 );
 
 
 // replace Add to Cart Buttons with Quote button if product doesn't having price
-
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 
 add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_template_single_add_to_cart', 30 );
