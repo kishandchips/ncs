@@ -163,7 +163,7 @@ body {
 		padding: 13px 0;
 
 		@include device-width(6) {
-			padding-left: 36px;
+			padding-left: 50px;
 			background: url(../images/logos/header_small.jpg) left center no-repeat;
 		}
 
@@ -190,9 +190,13 @@ body {
 			 		padding: 15px 17px;
 			 		@include border-radius(3px);
 
-			 		@include device-width(4) {
-			 			padding: 15px 9px;
+			 		@include device-width(5) {
+			 			padding: 15px 7px;
 			 		} 
+
+			 		@include device-width(5) {
+			 			padding: 15px 7px;
+			 		}			 		
 			 	}
 
 			 	&:hover > a {
@@ -319,7 +323,7 @@ body {
 			margin-left: 20px;
 			padding-top: 2px;
 
-			@media only screen and (max-width: 600px) {	
+			@media only screen and (max-width: 700px) {	
 				display: none;
 			}
 
@@ -403,7 +407,7 @@ body {
 					@include font-size(16);
 					@include inline-block;
 
-					@include device-width(5) {
+					@include device-width(7) {
 						span {
 							display: none;
 						}
