@@ -1,5 +1,10 @@
 $nav-off-canvas-width: 70%;
 
+/* Older MSIE workarounds */
+.lt-ie9 article, .lt-ie9 aside, .lt-ie9 nav {
+	display: block;
+}
+
 html {
 	font-size: 62.5%;
 }
