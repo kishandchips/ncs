@@ -491,3 +491,23 @@ function custom_woocommerce_template_single_add_to_cart() {
 
 // Display 20 products per page. Goes in functions.php
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 20;' ), 20 );
+
+
+// Include the Google Analytics Tracking Code (ga.js)
+function google_analytics_tracking_code(){
+
+ $host = $_SERVER['HTTP_HOST']; 
+ if($host == "ncstechnology.co.uk") { ?>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-54445446-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+ <?php } }
+
+add_action('wp_footer', 'google_analytics_tracking_code', 100);
