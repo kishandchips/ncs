@@ -213,7 +213,7 @@ body {
 			 	&.current-post-parent > a,
 			 	&.current > a {
 			 		color: #4A4A4A;
-			 		background: #EAEAEA;
+			 		//background: #EAEAEA;
 			 	}
 
 			 	.sub-menu {
@@ -253,7 +253,7 @@ body {
 				 	.sub-menu {
 						opacity: 1;
 						position:absolute;
-						top:76%;
+						top: 60px;
 						left:0;
 
 					 	@include device-width(7) {
@@ -511,6 +511,10 @@ body {
 									display: block;
 									@include transition(none);
 
+									@include device-width(12) {
+										padding: 1em;
+									}
+
 									&:hover {
 										@include vertical-gradient(#004848, #004848);
 									}
@@ -588,7 +592,7 @@ body {
 
 		 			> .sub-menu {
 		 				border-top: 8px solid #004848;
-		 				background: url(../images/backgrounds/education-drop-bg.jpg) left top repeat;
+		 				background: #012928 url(../images/backgrounds/education-drop-bg.jpg) left top repeat;
 		 			}		 			
 
 			 	}
@@ -608,7 +612,7 @@ body {
 					
 					> .sub-menu {
 						border-top: 8px solid #00459C;
-						background: url(../images/backgrounds/commercial-drop-bg.jpg) left top repeat;
+						background: #083264 url(../images/backgrounds/commercial-drop-bg.jpg) left top repeat;
 
 						.widget-nav-menu {
 							ul.menu {
@@ -649,7 +653,7 @@ body {
 
 					> .sub-menu {
 						border-top: 8px solid #292550;
-						background: url(../images/backgrounds/products-drop-bg.jpg) left top repeat;
+						background: #7d799a url(../images/backgrounds/products-drop-bg.jpg) left top repeat;
 
 						.widget-product-cats-with-thumb {
 							@extend .clearfix;
@@ -687,6 +691,11 @@ body {
 									@include transition(none);
 									height: 67px;
 									overflow: hidden;
+
+									@include device-width(12) {
+										height: 55px;
+										line-height: 1.2;
+									}
 
 									@include device-width(11) {
 										height: 50px;
@@ -1165,7 +1174,7 @@ body {
 			}		
 
 			.page-content {
-				padding: 5%;
+				padding: 5% 5% 5% 0;
 			}	
 		}
 	}
@@ -1853,7 +1862,11 @@ body {
 				@include device-width(4) {
 					width: 100%;
 					padding-bottom: 60% !important;
-				}				
+				}	
+
+				a {
+					background-size: cover;
+				}			
 
 				&.third {
 					padding-bottom: 20.7%;
@@ -2334,6 +2347,7 @@ body {
 
 #quotes {
 	padding: 3em 2em;
+	@extend .clearfix;
 
 	h1 {
 		@include font-size(30);
@@ -2412,6 +2426,66 @@ body {
 		@include opensans-light;
 		@include font-size(30);
 		color: #1656A1;
+	}
+
+	.ncs-saved {
+		@include borderbox;
+		margin: 8% 8% 0 0;
+
+		.span {
+			margin-bottom: 0;
+		}
+
+		.top {
+			@extend .clearfix;
+			background: #EBEBEB;
+			@include border_radius_top(4px);
+			padding: 1em 3em;
+		}
+
+		.bottom {
+			@extend .clearfix;
+			background: #F3F3F3;
+			@include border_radius_bottom(4px);
+			padding: 1em;
+
+			img {
+				margin: 0 auto;
+			}
+
+			.img {
+				position: relative;
+			}
+
+			span {
+				@include vertical-align;
+				position: absolute;
+				width: 100%;
+				text-align: center;
+				left: 0;
+				color: #D0021B;
+				@include font-size(35);
+				top: 50%;				
+				@include oswald;
+			}	
+
+			p {
+				color: #717171;
+				font-weight: bold;
+				text-align: center;
+			}		
+
+			.saved {
+
+
+			}
+
+			.paying {
+				span {
+					color: #EDCC0F;
+				}
+			}
+		}
 	}
 
 	.span {
