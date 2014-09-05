@@ -249,22 +249,42 @@ hr {
 
 .green-bg {
 	@include vertical-gradient(#5B8E26, #86B555);
+
+	&:hover, a:hover & {
+		@include vertical-gradient(#EC7B0A, #EE6903);
+	}
 }
 
 .dark-green-bg {
 	@include vertical-gradient(#006867, #00817F);
+
+	&:hover, a:hover & {
+		@include vertical-gradient(#EC7B0A, #EE6903);
+	}
 }
 
 .orange-bg {
 	@include vertical-gradient(#EE8803, #EC9D0A);
+
+	&:hover, a:hover & {
+		@include vertical-gradient(#EC7B0A, #EE6903);
+	}
 }
 
 .blue-bg {
 	@include vertical-gradient(#4F88CB, #72ACF0);
+
+	&:hover, a:hover & {
+		@include vertical-gradient(#EC7B0A, #EE6903);
+	}	
 }
 
 .dark-blue-bg {
 	@include vertical-gradient(#3E6A9E, #5179A8);
+
+	&:hover, a:hover & {
+		@include vertical-gradient(#EC7B0A, #EE6903);
+	}
 }
 
 .solid-green-bg {
