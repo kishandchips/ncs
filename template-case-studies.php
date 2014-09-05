@@ -37,7 +37,7 @@ get_header(); ?>
 						'term' 				=> 	$slug,
 						'posts_per_page' 	=>  -1,
 						'order'				=> 'DESC',
-						'showposts'			=> '9',
+						'showposts'			=> '10',
 						'paged'				=> $paged
 					)); 
 				?>
