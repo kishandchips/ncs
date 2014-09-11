@@ -20,6 +20,8 @@ require( get_template_directory() . '/inc/widgets/woocommerce_cats_with_thumbnai
 
 require( get_template_directory() . '/inc/widgets/technician-quote.php');
 
+require( get_template_directory() . '/inc/widgets/featured-products.php');
+
 
 // Custom Actions
 

@@ -102,3 +102,19 @@ a.more-about {
 		}
 	}				
 }
+
+.cta {
+	@include vertical-gradient(#86B555, #5B8E26);
+	@include box-shadow(0px 2px 2px 0px rgba(0,0,0,0.50));
+	margin: 0;
+	padding: 1em 3em;
+	@include border-radius(4px);
+	color: #FFF;
+	@include inline-block;
+	text-align: center;
+	@include borderbox;
+
+	&:hover {
+		@include vertical-gradient(#5B8E26, #86B555);
+	}		
+}

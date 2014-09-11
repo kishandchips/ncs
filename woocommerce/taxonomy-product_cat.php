@@ -110,11 +110,16 @@ get_header( 'shop' ); ?>
 					 ?>				
 				</div>
 				<div class="span five break-on-mobile equal-height picture">
-					<?php 
+<!-- 					<?php 
 						if ( has_post_thumbnail() ) {
 							the_post_thumbnail(array( 0 , 260, 'bfi_thumb' => true));	
 						}
-					 ?>	
+					 ?>	 -->
+					<?php  
+						$params = array( 'height' => 260 );
+						echo "<img src='" . bfi_thumb( "$cat_image", $params ) . "'/>";
+					?>
+					
 				</div>			
 			</div>
 		<?php endif ?>

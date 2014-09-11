@@ -302,6 +302,25 @@ hr {
 	background: #DD4459;
 }
 
+.dark-panel{
+	color:#fff;
+
+	a{
+		color: #fff;
+
+		&:hover{
+			color: #eeb111;
+		}
+	}
+
+	.more-about{
+		color: initial;
+
+		&:hover{
+			color: initial;
+		}
+	}
+}
 
 
 /* =============================================================================
@@ -885,7 +904,7 @@ hr {
 	}
 }
 
-.widget_top_rated_products {
+.widget_featured_products_widget {
 	.product_list_widget {
 
 		li {

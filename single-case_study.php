@@ -47,7 +47,7 @@ get_header(); ?>
 			<div class="span four break-on-mobile sidebar">
 				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		
-			<div class="span six break-on-mobile content-inner">
+			<div class="span six break-on-mobile">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php if(!$post->post_content == ''): ?>

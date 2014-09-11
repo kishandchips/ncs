@@ -1128,9 +1128,8 @@ body {
 
 			.content-inner {
 				float: left;
+				width: 100%;
 				color: #4A4A4A;
-
-
 			}
 
 			.sidebar {
@@ -1594,6 +1593,7 @@ body {
 		padding: 3em 0;
 
 		.page-content {
+			padding: 10px;
 			@extend .clearfix;
 
 			.break-on-mobile {
@@ -1623,6 +1623,10 @@ body {
 						text-decoration: underline;
 					}
 				}
+			}
+
+			.three{
+				padding-right: 0;
 			}
 
 			a.live-chat {
@@ -1677,21 +1681,58 @@ body {
 				position: relative;
 
 				a {
-					position: absolute;
+					// position: absolute;
 					width: 96%;
 					@include border-radius(10px);
+					display: inline-block;
 					overflow: hidden;	
 					height: 96%;
 					margin: 2%;
-					background-size: contain;
+					background-size: cover;
 					background-repeat: no-repeat;
-					@include borderbox;
-					padding: 10px;			
+					@include borderbox;		
 					left: 0;						
 				}
 
+				//BOX SPECIFIC
+
+				&.school-case{
+					a{
+						padding-top: 55%;
+					}
+				}
+				
+				&.team{
+					clear:both;
+
+					a{
+						padding-top: 70%;
+						background-size: cover;
+					}
+				}
+
+				&.expertise{
+					a{
+						padding-top: 70%;
+					}
+				}
+
+				&.solutions{
+					a{
+						padding-top: 55%;
+					}
+				}
+
+				&.offers{
+					a{
+						background-size: contain;
+					}
+				}
+
+				//BOX SPECIFIC END
+
 				&.two {
-					padding-bottom: 20%;
+					// padding-bottom: 20%;
 
 					a {
 						margin: 4%;
@@ -1699,11 +1740,11 @@ body {
 				}
 
 				&.four {
-					padding-bottom: 40%;
+					// padding-bottom: 40%;
 				}
 
 				&.half {
-					padding-bottom: 20%;
+					// padding-bottom: 20%;
 					
 					 a {
 						height: 96%;
@@ -1711,18 +1752,19 @@ body {
 				}					
 
 				&.half.valign-bottom {
-					padding-bottom: 40%;
+					// padding-bottom: 40%;
 
 					a {
 						height: 48%;
-						top: 48%;
+						// padding-top: 48%;
+						margin-top: 48%;
 					}					
 				}
 
-				@include device-width(8) {
+				@include device-width(10) {
 					width: 50%;
 					margin: 0 !important;
-					padding-bottom: 40% !important;
+					// padding-bottom: 40% !important;
 
 					a {
 						margin: 2% !important;
@@ -1734,20 +1776,24 @@ body {
 							height: 96%;
 						}
 					}
+
+					&.cta-offer{
+						width: 100%;
+					}
 				}
 
 				@include device-width(5) {
 					width: 100%;
 					margin: 0 !important;
-					padding-bottom: 80% !important;
+					// padding-bottom: 80% !important;
 				}					
 
 				.title {
 					color: #FFF;
-					position: absolute;	
+					// position: absolute;	
 					@include opensans-light;	
 					@include borderbox;
-					padding: 4%;	
+					padding: 4%;
 
 					h1 {
 						@include font-size(24);	
@@ -1788,8 +1834,7 @@ body {
 						right: 0;
 						top: 0;
 						width: 50%;
-						height: 100;
-						float: none;
+						float: right;
 						height: 100%;						
 					}	
 				}
@@ -1866,6 +1911,7 @@ body {
 				}	
 
 				a {
+					position: absolute;
 					background-size: cover;
 				}			
 
@@ -2927,7 +2973,7 @@ body {
 		text-align: center;
 		color: #1656A1;
 		@include font-size(30);
-		margin: 3em 0 1.5em;
+		padding: 3em 0 1.5em;
 	}
 
 	.row {
@@ -2944,6 +2990,10 @@ body {
 
 			&.no-image {
 				padding-bottom: 0%;
+			}
+
+			&.electrical{
+				padding-bottom:73%;
 			}
 		}		
 

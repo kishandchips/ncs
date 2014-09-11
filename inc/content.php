@@ -36,12 +36,12 @@
 										$valign = 'valign-top';
 									}
 								 ?>
-								<div class="span <?php echo $boxclass; ?> <?php echo $valign; ?>" <?php if ( get_sub_field('box_margin')): ?>style="margin: <?php the_sub_field('box_margin'); ?>"<?php endif; ?> >
+								<div class="span <?php echo $boxclass; ?> <?php echo $valign; ?> <?php the_sub_field('row_class') ?>" <?php if ( get_sub_field('box_margin')): ?>style="margin: <?php the_sub_field('box_margin'); ?>"<?php endif; ?> >
 									<a <?php if(get_sub_field('box_link')): ?>href="<?php the_sub_field('box_link'); ?>"<?php endif; ?> class="<?php the_sub_field('title_position') ?> <?php if (get_sub_field('video_link')) { echo 'popup-youtube'; } ?>" style="background-image: url('<?php the_sub_field('box_image'); ?>')">
 										<?php if (get_sub_field('box_title')): ?>
-											<span class="title <?php the_sub_field('box_color'); ?>">
+											<div class="title <?php the_sub_field('box_color'); ?>">
 												<?php the_sub_field('box_title'); ?>
-											</span>									
+											</div>									
 										<?php endif; ?>									
 									</a>
 								</div>
@@ -468,7 +468,7 @@
 			<h1 class="section-title"><?php the_field('sections_title'); ?></h1>
 		<?php endif; ?>
 		<?php while( have_rows('rows') ): the_row(); ?>		
-			<div class="row <?php if (get_sub_field('content_alignment')):?>right<?php endif; ?><?php if (get_sub_field('full_width')):?>no-image<?php endif; ?>" <?php if (get_sub_field('background')):?>style="background-image: url('<?php the_sub_field('background'); ?>');"<?php endif; ?>>
+			<div class="row <?php if (get_sub_field('content_alignment')):?>right<?php endif; ?><?php if (get_sub_field('full_width')):?>no-image<?php endif; ?>  <?php the_sub_field('row_class') ?>" <?php if (get_sub_field('background')):?>style="background-image: url('<?php the_sub_field('background'); ?>');"<?php endif; ?>>
 				<div class="span <?php if (get_sub_field('full_width')):?>ten<?php else: ?>four<?php endif; ?>" style="<?php if (get_sub_field('content_background_color')):?>background-color: <?php the_sub_field('content_background_color'); ?>;<?php endif; ?><?php if (get_sub_field('content_color')):?>color: <?php the_sub_field('content_color'); ?>;<?php endif; ?>">
 					<?php the_sub_field('content'); ?>
 					<?php if (get_sub_field('box_link')): ?>

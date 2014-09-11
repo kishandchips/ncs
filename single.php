@@ -34,7 +34,7 @@ get_header(); ?>
 				<?php endif;?>
 				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		
-			<div class="span six break-on-mobile content-inner">
+			<div class="span six break-on-mobile">
 
 				<h1><?php the_title(); ?></h1>
 

@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 		<div id="content" class="span eight">
 			<div id="press">
-				<div class="span seven break-on-mobile content-inner">
+				<div class="span seven break-on-mobile">
 					<div class="page-content">
 						<?php if ( have_posts() ) : ?>
 							<?php while ( have_posts() ) : the_post(); ?>

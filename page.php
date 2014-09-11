@@ -29,7 +29,7 @@ get_header(); ?>
 
 			<?php dynamic_sidebar( 'pages' ); ?>
 		</div>		
-		<div class="span six break-on-mobile content-inner">
+		<div class="span six break-on-mobile">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if(!$post->post_content == ''): ?>
 				<div class="page-content">

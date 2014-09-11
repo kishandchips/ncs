@@ -23,7 +23,7 @@ get_header(); ?>
 		<div id="content" class="span eight">
 			<div id="testimonials">
 		
-				<div class="span seven break-on-mobile content-inner">
+				<div class="span seven break-on-mobile">
 					<?php 
 						$parent = array_reverse(get_post_ancestors($post->ID));
 						$first_parent = get_page($parent[0]);
