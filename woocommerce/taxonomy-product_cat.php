@@ -27,10 +27,10 @@ get_header( 'shop' ); ?>
 
 		<?php 
 		 	// Get Category Header
-			$queried_object = get_queried_object(); 
+			$queried_object = get_queried_object();
 			$taxonomy = $queried_object->taxonomy;
 			$category_name = $queried_object->name;
-			$term_id = $queried_object->term_id;  
+			$term_id = $queried_object->term_id;
 
 			// Get Category Thumbnails
 		    $thumbnail_id = get_woocommerce_term_meta( $term_id, 'thumbnail_id', true );
@@ -50,7 +50,7 @@ get_header( 'shop' ); ?>
 				}
 
 		    $term = get_term_by( 'id', $parent_cat_id, 'product_cat', 'ARRAY_A' );
-			$parent_name = $term['name'];
+			// $parent_name = $term['name'];
 			$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			$parent = get_term($term->parent, get_query_var('taxonomy') );
 			$children = get_term_children($term->term_id, get_query_var('taxonomy')); //					
@@ -131,8 +131,10 @@ get_header( 'shop' ); ?>
 						<?php echo $cat_description; ?>
 					</div>
 				<?php endif; ?>
-				<h3 class="section-title"><?php echo $parent_name; ?></h3>
 
+				<?php $daddy = get_term_by( 'id', $queried_object->parent, 'product_cat', 'ARRAY_A' ); ?>
+				<h3 class="section-title"><?php echo $daddy['name']; ?></h3>
+				<!-- <h3 class="section-title"><?php echo $parent_name; ?></h3> -->
 
 				<?php if ( have_posts() ) : ?>
 					<?php woocommerce_product_loop_start(); ?>
