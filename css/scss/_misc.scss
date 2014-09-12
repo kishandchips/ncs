@@ -530,8 +530,12 @@ hr {
 		@include font-size(30);
 		color: #4B4B4B;
 
-		@include device-width(11) {
-			@include font-size(23);
+		@include device-width(13) {
+			@include font-size(20);
+		}
+
+		@include device-width(10) {
+			@include font-size(18);
 		}
 
 		&:before {

@@ -1632,6 +1632,20 @@ body {
 			a.live-chat {
 				display: none;
 			}
+
+			.popup-youtube{
+				span{
+					word-spacing: -5px;
+					&:before{
+						margin-right: 5px;
+					}
+				}
+
+				&:hover{
+					color: #eeb111;
+					text-decoration: none !important;
+				}
+			}
 		}
 
 
@@ -1699,6 +1713,18 @@ body {
 				&.school-case{
 					a{
 						padding-top: 55%;
+
+					.icon-youtube{
+						color: #fff;
+					}
+					
+						span{
+							word-spacing: -5px;
+							
+							&:before{
+								margin-right: 5px;
+							}
+						}
 					}
 				}
 				
@@ -2640,7 +2666,7 @@ body {
 
 #testimonials {
 
-	.content-inner {
+	// .content-inner {
 
 		.span {
 
@@ -2754,7 +2780,7 @@ body {
 				}
 			}
 		}
-	}
+	// }
 }
 
 /****************************/
@@ -2977,6 +3003,7 @@ body {
 	}
 
 	.row {
+		position: relative;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
 		background-position: right center;
@@ -2984,17 +3011,43 @@ body {
 		@extend .clearfix;
 
 		@include device-width(7) {
-			padding-bottom: 50%;
-			background-size: contain;
-			background-position: left bottom;
+			// padding-bottom: 50%;
+			// background-size: contain;
+			// background-position: left bottom;
 
 			&.no-image {
 				padding-bottom: 0%;
-			}
 
-			&.electrical{
-				padding-bottom:73%;
+				.image{
+					display: none;
+				}
 			}
+		}
+
+		.image{
+			position: absolute;
+			top: 0;
+			right:0;
+			bottom: 0;
+			width:60%;
+			background-size:cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			@include device-width(7){
+				position: relative;
+				width: 100%;
+				height: 250px;
+				background-position: center top;
+			}
+		}
+
+		&.accessories{
+			background-size: 60% 100%;
+		}
+
+		&.energy-saving{
+			background-size: 60% 100%;
 		}		
 
 		&.right {
@@ -3003,6 +3056,10 @@ body {
 			@include device-width(7) {
 				background-size: contain;
 				background-position: left bottom;
+			}
+
+			.image{
+				left: 0;
 			}
 
 			.span {

@@ -19,7 +19,7 @@ class Support_Widget extends WP_Widget {
                   <?php if ( $title )
                         echo $before_title . $title . $after_title; ?>
 							<div class="support">
-							<p><?php _e('For Friendly Technical support or Product Advice, please call:') ?></p>
+							<p><?php _e('For friendly technical support or product advice, please call:') ?></p>
 							<p><span><?php the_field('phone_number', 'option'); ?></span></p>
 							<a href="<?php echo get_permalink( 318 ); ?>" class="call-me-back">
 								<?php _e('Call Me Back') ?>
