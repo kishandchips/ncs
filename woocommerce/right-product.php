@@ -8,13 +8,13 @@
       </div>
       <div class="span six break-on-tablet">
       	<div class="span five">
-			<a href="#" class="call-me-back">
+			<a href="<?php bloginfo('url'); ?>/get-in-touch" class="call-me-back">
 				<?php _e('Call Me Back') ?>
 			</a>      		
       	</div>
       	<div class="span five">
 			<div class="bubble left">
-				<?php _e('Just fill in your details below and we’ll call you back at a convenient time.') ?>
+				<?php _e('Just fill in your details and we\'ll call you back at a convenient time.') ?>
 			</div>          
 		</div>
       </div>

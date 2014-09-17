@@ -514,6 +514,10 @@ $quaternary: desaturate( darken( $tertiary, 45%), 40% ); /* Price slider bg */
 				margin: 2% 5%;
 				@include box-shadow(none);
 
+				&.first{
+					clear:none !important;
+				}
+
 				&:nth-child(2n+1) {
 					clear: left;
 				}

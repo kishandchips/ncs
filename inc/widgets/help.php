@@ -27,7 +27,7 @@ class Help_Box_Widget extends WP_Widget {
                                 </div>
                                 <div class="span four">
         							<div class="phone"><span><?php the_field('phone_number', 'option'); ?></span></div>
-        							<a href="/get-in-touch/" class="call-me-back">
+        							<a href="<?php bloginfo('url'); ?>/get-in-touch/" class="call-me-back">
         								<?php _e('Call Me Back') ?>
         							</a>								
                                 </div>

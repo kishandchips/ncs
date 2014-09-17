@@ -67,7 +67,7 @@ $woocommerce_loop['loop']++;
 
 	    		// if top level cat use different size image
 				if(($parent->term_id=="") && (sizeof($children)>0)) {
-					echo '<img class="vertical-align" src="' . $image_top[0] . '" alt="" />';
+					echo '<img class="vertical-align" src="' . $image . '" alt="" />';
 				} else {
 					echo '<img class="vertical-align" src="' . $image . '" alt="" />';
 				}

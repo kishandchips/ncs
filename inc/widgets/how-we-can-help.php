@@ -21,11 +21,11 @@ class HowWeCanHelp_Widget extends WP_Widget {
                     <div class="support-box">
                       <p><?php _e('How can we help your business? Please feel free to contact us at:') ?></p>
                       <div class="phone"><span><?php the_field('phone_number', 'option'); ?></span></div>
-                      <a href="#" class="call-me-back">
+                      <a href="<?php bloginfo('url'); ?>/get-in-touch" class="call-me-back">
                         <?php _e('Call Me Back') ?>
                       </a>
                       <div class="bubble">
-                        <?php _e('Just fill in your details below and we’ll call you back at a convenient time.') ?>
+                        <?php _e('Just fill in your details and we\'ll call you back at a convenient time.') ?>
                       </div>          
                       
                     </div>

@@ -58,46 +58,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 */	
 	 
 	if ( is_singular('product') ) {
-	 
-	  	global $post;
-	  	$brand = get_field('product_brand');
-		$cats = wp_get_post_terms( $post->ID, 'product_cat' );
-
-	  	foreach ( $cats as $cat ) $cats_array[] = $cat->term_id;
-
-	  $query_args = array( 'post__not_in' => array( $post->ID ), 
-	  	'posts_per_page' => 3, 
-	  	'no_found_rows' => 1, 
-	  	'post_status' => 'publish', 
-	  	'post_type' => 'product', 
-	  	'order' => 'ASC',
-		'meta_key' => 'product_brand',
-		'meta_value' => $brand,
-	  	'tax_query' => array( 
-		    array(
-		      'taxonomy' => 'product_cat',
-		      'field' => 'id',
-			  'posts_per_page' => 3,	      
-		      'terms' => $cats_array
-	    )));
-	 
-	  $brands = new WP_Query($query_args);
-			
-	  if ($brands->have_posts()) {
-	    ?>
-	      <?php while ($brands->have_posts()) : $brands->the_post(); global $product; ?>
+	  $related_products = get_field('related_products');
+	  if($related_products):
+		foreach ($related_products as $post):
+           	setup_postdata( $post );
+    ?>
 				<div class="span three item">
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail('thumbnail'); ?>
 						<h4><?php the_title(); ?></h4>
 					</a>								
 				</div>
-	      <?php endwhile; ?>
-	    <?php
-	    wp_reset_query();
-	  }	 
-	}
-	?>		
+	    <?php endforeach; endif; } ?>
+	    <?php wp_reset_postdata(); ?>	
 	</div>
 	<div class="span five break-on-mobile">
 		<h2><?php _e( 'Similar Products', 'woocommerce' ); ?></h2>
@@ -110,41 +83,19 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 
 	if ( is_singular('product') ) {
 	 
-	  global $post;
-	  $terms = wp_get_post_terms( $post->ID, 'product_cat' );
-	  foreach ( $terms as $term ) $cats_array[] = $term->term_id;
-
-	  $query_args = array( 'post__not_in' => array( $post->ID ), 
-	  	'posts_per_page' => 3, 
-	  	'no_found_rows' => 1, 
-	  	'post_status' => 'publish', 
-	  	'post_type' => 'product', 
-	  	'order' => 'ASC',
-	  	'tax_query' => array( 
-		    array(
-		      'taxonomy' => 'product_cat',
-		      'field' => 'id',
-			  'posts_per_page' => 3,	      
-		      'terms' => $cats_array
-	    )));
-	 
-	  $r = new WP_Query($query_args);
-			
-	  if ($r->have_posts()) {
-	    ?>
-	      <?php while ($r->have_posts()) : $r->the_post(); global $product; ?>
+	  $similar_products = get_field('similar_products');
+	  if($similar_products):
+		foreach ($similar_products as $post):
+           	setup_postdata( $post );
+    ?>
 				<div class="span three item">
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail('thumbnail'); ?>
 						<h4><?php the_title(); ?></h4>
 					</a>								
 				</div>
-	      <?php endwhile; ?>
-	    <?php
-	    wp_reset_query();
-	  }	 
-	}
-	?>		
+	    <?php endforeach; endif;} ?>
+	    <?php wp_reset_postdata(); ?>
 	</div>
 </div>
 

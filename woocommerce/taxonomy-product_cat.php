@@ -27,30 +27,31 @@ get_header( 'shop' ); ?>
 
 		<?php 
 		 	// Get Category Header
-			$queried_object = get_queried_object();
+			$queried_object = get_queried_object(); 
+
 			$taxonomy = $queried_object->taxonomy;
+
 			$category_name = $queried_object->name;
-			$term_id = $queried_object->term_id;
+			$term_id = $queried_object->term_id;  
 
 			// Get Category Thumbnails
 		    $thumbnail_id = get_woocommerce_term_meta( $term_id, 'thumbnail_id', true );
-		    $thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'custom-medium-noncrop' );		
+		    $thumbnail = wp_get_attachment_image_src( $thumbnail_id, 'custom-medium-noncrop' );			
+			 
 			$cat_description = get_field('category_description', $queried_object);		 
 			$cat_image = get_field('category_header_image', $taxonomy . '_' . $term_id);
  
 			// Get Parent Category name;
 			$prod_terms = get_the_terms( $post->ID, 'product_cat' );
 
-				if ($prod_terms) {
-					foreach ($prod_terms as $prod_term) {
-					    $product_cat_id = $prod_term->term_id;
-					    $product_parent_category = get_ancestors( $product_cat_id, 'product_cat' );  
-					    $parent_cat_id = array_shift( $product_parent_category );
-					}					
-				}
-
+			foreach ($prod_terms as $prod_term) {
+			    $product_cat_id = $prod_term->term_id;
+			    $product_parent_category = get_ancestors( $product_cat_id, 'product_cat' );  
+			    $parent_cat_id = array_shift( $product_parent_category );
+			}
 		    $term = get_term_by( 'id', $parent_cat_id, 'product_cat', 'ARRAY_A' );
-			// $parent_name = $term['name'];
+			$parent_name = $term['name'];
+
 			$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			$parent = get_term($term->parent, get_query_var('taxonomy') );
 			$children = get_term_children($term->term_id, get_query_var('taxonomy')); //					
@@ -110,16 +111,7 @@ get_header( 'shop' ); ?>
 					 ?>				
 				</div>
 				<div class="span five break-on-mobile equal-height picture">
-<!-- 					<?php 
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail(array( 0 , 260, 'bfi_thumb' => true));	
-						}
-					 ?>	 -->
-					<?php  
-						$params = array( 'height' => 260 );
-						echo "<img src='" . bfi_thumb( "$cat_image", $params ) . "'/>";
-					?>
-					
+					<img src="<?php echo $cat_image; ?>" alt="">
 				</div>			
 			</div>
 		<?php endif ?>
@@ -131,10 +123,8 @@ get_header( 'shop' ); ?>
 						<?php echo $cat_description; ?>
 					</div>
 				<?php endif; ?>
+				<h3 class="section-title"><?php echo $parent_name; ?></h3>
 
-				<?php $daddy = get_term_by( 'id', $queried_object->parent, 'product_cat', 'ARRAY_A' ); ?>
-				<h3 class="section-title"><?php echo $daddy['name']; ?></h3>
-				<!-- <h3 class="section-title"><?php echo $parent_name; ?></h3> -->
 
 				<?php if ( have_posts() ) : ?>
 					<?php woocommerce_product_loop_start(); ?>
@@ -145,11 +135,7 @@ get_header( 'shop' ); ?>
 
 							<div class="span five item equal-height">
 								<a href="<?php the_permalink(); ?>">
-									<?php 
-										if ( has_post_thumbnail() ) {
-											the_post_thumbnail(array(150, 'bfi_thumb' => true));	
-										}
-									 ?>									
+									<?php the_post_thumbnail('thumbnail'); ?>
 									<h4><?php the_title(); ?></h4>
 									<?php 
 										  $excerpt = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
@@ -177,41 +163,34 @@ get_header( 'shop' ); ?>
 				<?php dynamic_sidebar( 'product-list' ); ?>
 			</div>
 			<?php // Include Other Manufacturers box ?>
+				<div class="span ten same-level-categories">
+				<h3 class="section-title clearfix"><?php _e('From other manufacturers…'); ?></h3>
+					<div class="inner">
+				        <?php
+				          $args = array(
+				            'orderby'            => 'ASC',
+				            'parent'             => $parent_cat_id,
+				            'order'              => 'ASC',
+				            'number'			 =>	2,
+				            'hide_empty' => 0
+				        );  ?>
 
-		        <?php
-		          $args = array(
-		            'orderby'            => 'ASC',
-		            'parent'             => $parent_cat_id,
-		            'order'              => 'ASC',
-		            'exclude'			 => $term_id,
-		            'number'			 =>	2,
-		            'hide_empty' => 0
-		        );  ?>
+				        <?php $catTerms = get_terms('product_cat', $args); ?>
 
-		        <?php $catTerms = get_terms('product_cat', $args); ?>
-
-		        <?php if($catTerms): ?>
-
-					<div class="span ten same-level-categories">
-					<h3 class="section-title clearfix"><?php _e('From other manufacturers…'); ?></h3>
-						<div class="inner">
-
-					        <?php foreach($catTerms as $catTerm) : ?>
-					            <?php
-					                $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
-					                $image = wp_get_attachment_image_src($thumbnail_id, 'full');
-					            ?>
-								<div class="span five item break-on-mobile equal-height">
-					                <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
-					                  <?php echo '<img class="vertical-align" src="'.$image[0].'" />';  ?>
-					                </a>                  
-					            </div>
-					        <?php endforeach; ?>
-				        </div>
-					</div>	
-
-				<?php endif; ?>
-			</div>
+				        <?php foreach($catTerms as $catTerm) : ?>
+				            <?php
+				                $thumbnail_id = get_woocommerce_term_meta( $catTerm->term_id, 'thumbnail_id', true );
+				                $image = wp_get_attachment_image_src($thumbnail_id, 'full');
+				            ?>
+							<div class="span five item break-on-mobile equal-height">
+				                <a href="<?php bloginfo('url') ?>/product-category/<?php echo $catTerm->slug; ?>">
+				                  <?php echo '<img class="vertical-align" src="'.$image[0].'" />';  ?>
+				                </a>                  
+				            </div>
+				        <?php endforeach; ?>
+			        </div>
+				</div>			
+		</div>
 		<?php // Include Need help with the right product box ?>
 		<?php get_template_part( 'woocommerce/right-product', 'page' ); ?>
 
