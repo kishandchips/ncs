@@ -34,10 +34,15 @@ http://facebook.com/kishandchips
 	<!--[if IE]>
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/ie.css" />
 	<![endif]-->
+
+	<!-- LeadForensics -->
+	<script type="text/javascript" src="http://trackercloud.net/js/14438.js"></script>
+	<noscript><img src="http://trackercloud.net/images/track/14438.png?trk_user=14438&trk_tit=jsdisabled&trk_ref=jsdisabled&trk_loc=jsdisabled" height="0px" width="0px" style="display:none;" /></noscript>
+
     <script type="text/javascript">
 		var themeUrl = '<?php bloginfo( 'template_url' ); ?>';
 		var baseUrl = '<?php bloginfo( 'url' ); ?>';
-	</script>	
+	</script>		
 </head>
 
 <body <?php body_class(); ?>>
