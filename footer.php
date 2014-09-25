@@ -54,7 +54,7 @@
 <?php wp_footer(); ?>
 <!-- ClickDesk Live Chat Service for websites -->
 <script type='text/javascript'>
-var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGOTRjdIDDA');
+var _glc =_glc || []; _glc.push('all_ag9zfmNsaWNrZGVza2NoYXRyDwsSBXVzZXJzGIrgvs0FDA');
 var glcpath = (('https:' == document.location.protocol) ? 'https://my.clickdesk.com/clickdesk-ui/browser/' : 
 'http://my.clickdesk.com/clickdesk-ui/browser/');
 var glcp = (('https:' == document.location.protocol) ? 'https://' : 'http://');

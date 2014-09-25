@@ -1705,7 +1705,11 @@ body {
 					background-size: cover;
 					background-repeat: no-repeat;
 					@include borderbox;		
-					left: 0;						
+					left: 0;			
+
+					&.bottom, &.top {
+						background-position: center center;
+					}			
 				}
 
 				//BOX SPECIFIC

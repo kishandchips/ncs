@@ -30,7 +30,7 @@ get_header(); ?>
 		<div id="content" class="span eight <?php if(get_post_type() == 'case_study'): ?>single-case-study<?php endif; ?>">
 			<div class="span four break-on-mobile sidebar">
 				<?php if(has_post_thumbnail()) :?>
-					<?php echo get_the_post_thumbnail($p->ID,array(407, 277, 'bfi_thumb' => true) ); ?>
+					<?php echo get_the_post_thumbnail($p->ID,array(407, 297, 'bfi_thumb' => true) ); ?>
 				<?php endif;?>
 				<?php dynamic_sidebar( 'articles' ); ?>
 			</div>		

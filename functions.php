@@ -43,7 +43,7 @@ function custom_setup_theme() {
 	));	
 
 	add_theme_support( 'post-thumbnails' ); 
-	
+
 	add_theme_support( 'woocommerce' );
 
 	add_post_type_support('page', 'excerpt');
@@ -77,6 +77,9 @@ function custom_scripts() {
 }
 add_action('wp_enqueue_scripts', 'custom_scripts');
 
+
+//Remove WooCommerce's annoying update message
+remove_action( 'admin_notices', 'woothemes_updater_notice' );
 
 //Custom Sidebards
 function custom_widgets_init() {
@@ -514,4 +517,19 @@ function google_analytics_tracking_code(){
 	</script>
  <?php } }
 
-add_action('wp_footer', 'google_analytics_tracking_code', 100);
+
+
+add_filter( 'post_date_column_time' , 'woo_custom_date' );
+/**
+ * woo_custom_post_date_column_time
+ *
+ * @access      public
+ * @since       1.0 
+ * @return      void
+*/
+function woo_custom_date() {
+	
+	$h_time = get_the_time( __( 'd/m/Y', 'woocommerce' )) ;
+	
+	return $h_time;
+}
