@@ -74,24 +74,20 @@ get_header(); ?>
 					<div id="case-studies" class="related clearfix">	
 					<?php $i = 1; ?>
 					<?php foreach( $related as $p ): // variable must NOT be called $post (IMPORTANT) ?>
-						<article class="study span <?php if($i % 6 == 3): ?>five<?php else: ?>two-and-half<?php endif; ?> equal-height break-on-mobile <?php if($i % 6 == 3): ?>wide<?php endif; ?>">
-							<a href="<?php echo get_permalink( $p->ID ); ?>">
-								<?php  ?>
+					<article class="study span one-third equal-height break-on-mobile <?php if($i % 6 == 3): ?>wide<?php endif; ?>">
+						<a href="<?php echo get_permalink( $p->ID ); ?>">
+							<?php  ?>
 
-								<?php 
-									if($i % 6 == 3) {
-										echo get_the_post_thumbnail($p->ID,array(540, 240, 'bfi_thumb' => true) );
-									} else {
-										echo get_the_post_thumbnail($p->ID,array(260, 240, 'bfi_thumb' => true) );
-									}
-								 ?>						
+							<?php 
+								echo get_the_post_thumbnail($p->ID,array(330, 240, 'bfi_thumb' => true) );
+							 ?>						
 
-								<div class="title">
-									<h2 class="entry-title"><?php echo get_the_title($p->ID ); ?></h2>
-								</div>
-								<span class="readmore"><?php _e('Read our Case Study') ?></span>
-							</a>
-						</article>
+							<div class="title">
+								<h2 class="entry-title"><?php echo get_the_title($p->ID ); ?></h2>
+							</div>
+							<span class="readmore"><?php _e('Read our Case Study') ?></span>
+						</a>
+					</article>
 					<?php $i++; ?>
 					<?php endforeach; ?>
 					<?php wp_reset_postdata(); ?>

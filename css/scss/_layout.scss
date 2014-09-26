@@ -2814,7 +2814,7 @@ body {
 		}
 
 		h2 {
-			@include word-break;
+			//@include word-break;
 		}
 
 		a {
@@ -2898,6 +2898,7 @@ body {
 			left: 33px;
 			@include opensans-bold;
 			@include font-size(16);
+			width: 75%;
 		}
 	}
 

@@ -6693,14 +6693,6 @@ body {
     /* line 2810, scss/_layout.scss */
     #case-studies .study.span {
       width: 50%; } }
-  /* line 2816, scss/_layout.scss */
-  #case-studies .study h2 {
-    -ms-word-break: break-all;
-    word-break: break-word;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto; }
   /* line 2820, scss/_layout.scss */
   #case-studies .study a {
     height: 100%;
@@ -6822,18 +6814,19 @@ body {
     font-weight: 400;
     font-weight: 700;
     font-size: 16px;
-    font-size: 1.6rem; }
-/* line 2904, scss/_layout.scss */
+    font-size: 1.6rem;
+    width: 75%; }
+/* line 2905, scss/_layout.scss */
 #case-studies.related {
   padding: 3em; }
-  /* line 2909, scss/_layout.scss */
+  /* line 2910, scss/_layout.scss */
   #case-studies.related .study:nth-child(even) a {
     background: #6a973c;
     background: -webkit-gradient(linear, left top, left bottom, from(#6a973c), to(#86b555)) !important;
     background: -webkit-linear-gradient(#6a973c, #86b555) !important;
     background: -moz-linear-gradient(center top, #6a973c 0%, #86b555 100%) !important;
     background: -moz-gradient(center top, #6a973c 0%, #86b555 100%) !important; }
-    /* line 2912, scss/_layout.scss */
+    /* line 2913, scss/_layout.scss */
     #case-studies.related .study:nth-child(even) a:hover {
       background: #86b555;
       background: -webkit-gradient(linear, left top, left bottom, from(#86b555), to(#6a973c)) !important;
@@ -6841,7 +6834,7 @@ body {
       background: -moz-linear-gradient(center top, #86b555 0%, #6a973c 100%) !important;
       background: -moz-gradient(center top, #86b555 0%, #6a973c 100%) !important; }
 
-/* line 2920, scss/_layout.scss */
+/* line 2921, scss/_layout.scss */
 .case-studies-title {
   width: 100%;
   display: block;
@@ -6857,13 +6850,13 @@ body {
 /****************************/
 /* Single Case Study: ;		*/
 /****************************/
-/* line 2936, scss/_layout.scss */
+/* line 2937, scss/_layout.scss */
 .single-case-study .span.content-inner {
   padding-right: 0; }
-/* line 2940, scss/_layout.scss */
+/* line 2941, scss/_layout.scss */
 .single-case-study .span.sidebar {
   padding-left: 0; }
-/* line 2945, scss/_layout.scss */
+/* line 2946, scss/_layout.scss */
 .single-case-study .case-study-header {
   background: #009795;
   background: -webkit-gradient(linear, left top, left bottom, from(#009795), to(#017c7a)) !important;
@@ -6877,23 +6870,23 @@ body {
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
-  /* line 2951, scss/_layout.scss */
+  /* line 2952, scss/_layout.scss */
   .single-case-study .case-study-header .span {
     padding: 0; }
-  /* line 2955, scss/_layout.scss */
+  /* line 2956, scss/_layout.scss */
   .page-commercial .single-case-study .case-study-header {
     background: #02499e;
     background: -webkit-gradient(linear, left top, left bottom, from(#02499e), to(#1f79e2)) !important;
     background: -webkit-linear-gradient(#02499e, #1f79e2) !important;
     background: -moz-linear-gradient(center top, #02499e 0%, #1f79e2 100%) !important;
     background: -moz-gradient(center top, #02499e 0%, #1f79e2 100%) !important; }
-  /* line 2959, scss/_layout.scss */
+  /* line 2960, scss/_layout.scss */
   .single-case-study .case-study-header .date {
     font-size: 14px;
     font-size: 1.4rem;
     width: 100%;
     display: block; }
-  /* line 2965, scss/_layout.scss */
+  /* line 2966, scss/_layout.scss */
   .single-case-study .case-study-header h1 {
     font-size: 30px;
     font-size: 3rem;
@@ -6901,14 +6894,14 @@ body {
     font-weight: 400;
     font-weight: 300;
     line-height: 1.2; }
-  /* line 2971, scss/_layout.scss */
+  /* line 2972, scss/_layout.scss */
   .single-case-study .case-study-header .sharethis {
     position: absolute;
     bottom: 0; }
-  /* line 2978, scss/_layout.scss */
+  /* line 2979, scss/_layout.scss */
   .single-case-study .case-study-header .title .inner {
     margin: 30px 30px 80px; }
-  /* line 2984, scss/_layout.scss */
+  /* line 2985, scss/_layout.scss */
   .single-case-study .case-study-header .thumbnail {
     min-height: 280px;
     background-repeat: no-repeat;
@@ -6918,11 +6911,11 @@ body {
 /****************************/
 /* Expertise: 				*/
 /****************************/
-/* line 2998, scss/_layout.scss */
+/* line 2999, scss/_layout.scss */
 #expertise {
   font-size: 30px;
   font-size: 3rem; }
-  /* line 3001, scss/_layout.scss */
+  /* line 3002, scss/_layout.scss */
   #expertise .section-title {
     width: 100%;
     text-align: center;
@@ -6930,7 +6923,7 @@ body {
     font-size: 30px;
     font-size: 3rem;
     padding: 3em 0 1.5em; }
-  /* line 3009, scss/_layout.scss */
+  /* line 3010, scss/_layout.scss */
   #expertise .row {
     position: relative;
     background-size: auto 100%;
@@ -6938,13 +6931,13 @@ body {
     background-position: right center;
     overflow: hidden; }
     @media only screen and (max-width: 43.75em) {
-      /* line 3022, scss/_layout.scss */
+      /* line 3023, scss/_layout.scss */
       #expertise .row.no-image {
         padding-bottom: 0%; }
-        /* line 3025, scss/_layout.scss */
+        /* line 3026, scss/_layout.scss */
         #expertise .row.no-image .image {
           display: none; } }
-    /* line 3031, scss/_layout.scss */
+    /* line 3032, scss/_layout.scss */
     #expertise .row .image {
       position: absolute;
       top: 0;
@@ -6955,75 +6948,75 @@ body {
       background-position: center;
       background-repeat: no-repeat; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3031, scss/_layout.scss */
+        /* line 3032, scss/_layout.scss */
         #expertise .row .image {
           position: relative;
           width: 100%;
           height: 250px;
           background-position: center top; } }
-    /* line 3049, scss/_layout.scss */
+    /* line 3050, scss/_layout.scss */
     #expertise .row.accessories {
       background-size: 60% 100%; }
-    /* line 3053, scss/_layout.scss */
+    /* line 3054, scss/_layout.scss */
     #expertise .row.energy-saving {
       background-size: 60% 100%; }
-    /* line 3057, scss/_layout.scss */
+    /* line 3058, scss/_layout.scss */
     #expertise .row.right {
       background-position: left center; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3057, scss/_layout.scss */
+        /* line 3058, scss/_layout.scss */
         #expertise .row.right {
           background-size: contain;
           background-position: left bottom; } }
-      /* line 3065, scss/_layout.scss */
+      /* line 3066, scss/_layout.scss */
       #expertise .row.right .image {
         left: 0; }
-      /* line 3069, scss/_layout.scss */
+      /* line 3070, scss/_layout.scss */
       #expertise .row.right .span {
         float: right; }
-    /* line 3074, scss/_layout.scss */
+    /* line 3075, scss/_layout.scss */
     #expertise .row .span {
       padding: 3em 2em; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3074, scss/_layout.scss */
+        /* line 3075, scss/_layout.scss */
         #expertise .row .span {
           padding: 1em;
           width: 100%; } }
-      /* line 3082, scss/_layout.scss */
+      /* line 3083, scss/_layout.scss */
       #expertise .row .span.ten {
         padding: 1em 2em; }
         @media only screen and (max-width: 43.75em) {
-          /* line 3082, scss/_layout.scss */
+          /* line 3083, scss/_layout.scss */
           #expertise .row .span.ten {
             padding: 1em; } }
 
 /****************************/
 /* Error / 404				*/
 /****************************/
-/* line 3099, scss/_layout.scss */
+/* line 3100, scss/_layout.scss */
 #error {
   background-size: 100% auto; }
-  /* line 3102, scss/_layout.scss */
+  /* line 3103, scss/_layout.scss */
   #error #content {
     border: none; }
-  /* line 3107, scss/_layout.scss */
+  /* line 3108, scss/_layout.scss */
   #error h1 {
     color: #0E76BC;
     font-size: 10em; }
-  /* line 3112, scss/_layout.scss */
+  /* line 3113, scss/_layout.scss */
   #error h2 {
     color: #437496;
     font-size: 2em;
     margin: 0 0 0 8em; }
     @media only screen and (max-width: 43.75em) {
-      /* line 3112, scss/_layout.scss */
+      /* line 3113, scss/_layout.scss */
       #error h2 {
         margin: 0 0 0 3em; } }
     @media only screen and (max-width: 31.25em) {
-      /* line 3112, scss/_layout.scss */
+      /* line 3113, scss/_layout.scss */
       #error h2 {
         margin: 0 0 0 0; } }
-  /* line 3127, scss/_layout.scss */
+  /* line 3128, scss/_layout.scss */
   #error p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -7031,7 +7024,7 @@ body {
     color: #072C44;
     font-size: 1.4em;
     margin-top: 10%; }
-  /* line 3134, scss/_layout.scss */
+  /* line 3135, scss/_layout.scss */
   #error span {
     color: #B7DEE7;
     float: right;
@@ -7040,28 +7033,28 @@ body {
 /****************************/
 /* Press:;					*/
 /****************************/
-/* line 3147, scss/_layout.scss */
+/* line 3148, scss/_layout.scss */
 #press .page-content {
   padding-bottom: 4em; }
-/* line 3152, scss/_layout.scss */
+/* line 3153, scss/_layout.scss */
 #press article.press {
   padding: 2.5em 0;
   width: 100%;
   border-bottom: 1px solid #D6D5CE; }
-  /* line 3158, scss/_layout.scss */
+  /* line 3159, scss/_layout.scss */
   #press article.press:last-child {
     border-bottom: none; }
-  /* line 3162, scss/_layout.scss */
+  /* line 3163, scss/_layout.scss */
   #press article.press .title {
     font-size: 22px;
     font-size: 2.2rem;
     line-height: 1.3; }
   @media only screen and (max-width: 50em) {
-    /* line 3167, scss/_layout.scss */
+    /* line 3168, scss/_layout.scss */
     #press article.press .image, #press article.press .content {
       width: 100%; } }
 
-/* line 3177, scss/_layout.scss */
+/* line 3178, scss/_layout.scss */
 #front-page #content {
   border: none;
   -webkit-box-sizing: border-box;
@@ -7071,15 +7064,15 @@ body {
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
 
-/* line 3185, scss/_layout.scss */
+/* line 3186, scss/_layout.scss */
 #news .post {
   overflow: hidden;
   margin-bottom: 1.5em; }
   @media only screen and (max-width: 50em) {
-    /* line 3189, scss/_layout.scss */
+    /* line 3190, scss/_layout.scss */
     #news .post.span {
       width: 50%; } }
-  /* line 3195, scss/_layout.scss */
+  /* line 3196, scss/_layout.scss */
   #news .post a {
     height: 100%;
     display: block;
@@ -7091,7 +7084,7 @@ body {
     background: -webkit-linear-gradient(#00817f, #006867) !important;
     background: -moz-linear-gradient(center top, #00817f 0%, #006867 100%) !important;
     background: -moz-gradient(center top, #00817f 0%, #006867 100%) !important; }
-  /* line 3202, scss/_layout.scss */
+  /* line 3203, scss/_layout.scss */
   #news .post img {
     display: block;
     -webkit-border-top-left-radius: 10px;
@@ -7101,16 +7094,16 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
     @media only screen and (max-width: 50em) {
-      /* line 3202, scss/_layout.scss */
+      /* line 3203, scss/_layout.scss */
       #news .post img {
         width: 100%; } }
-  /* line 3211, scss/_layout.scss */
+  /* line 3212, scss/_layout.scss */
   #news .post .title {
     padding: 2.8em 1.7em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-weight: 300; }
-    /* line 3215, scss/_layout.scss */
+    /* line 3216, scss/_layout.scss */
     #news .post .title .entry-title {
       margin: 0;
       color: #FFF;
@@ -7118,21 +7111,21 @@ body {
       font-size: 2.8rem;
       line-height: 1.2; }
       @media only screen and (max-width: 62.5em) {
-        /* line 3215, scss/_layout.scss */
+        /* line 3216, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 24px;
           font-size: 2.4rem; } }
       @media only screen and (max-width: 50em) {
-        /* line 3215, scss/_layout.scss */
+        /* line 3216, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 20px;
           font-size: 2rem; } }
 
-/* line 3233, scss/_layout.scss */
+/* line 3234, scss/_layout.scss */
 #quotelist {
   padding: 3em; }
 
-/* line 3239, scss/_layout.scss */
+/* line 3240, scss/_layout.scss */
 #wp-live-chat {
   left: -9000px; }
 

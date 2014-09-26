@@ -469,7 +469,7 @@
 		<?php endif; ?>
 		<?php while( have_rows('rows') ): the_row(); ?>		
 			<div class="row <?php if (get_sub_field('content_alignment')):?>right<?php endif; ?><?php if (get_sub_field('full_width')):?>no-image<?php endif; ?>  <?php the_sub_field('row_class') ?>">
-				<div class="image" <?php if (get_sub_field('background')):?>style="background-image: url('<?php the_sub_field('background'); ?>');"<?php endif; ?>">
+				<div class="image" <?php if (get_sub_field('background')):?>style="background-image: url('<?php the_sub_field('background'); ?>');"<?php endif; ?>>
 				</div>
 				<div class="span <?php if (get_sub_field('full_width')):?>ten<?php else: ?>four<?php endif; ?>" style="<?php if (get_sub_field('content_background_color')):?>background-color: <?php the_sub_field('content_background_color'); ?>;<?php endif; ?><?php if (get_sub_field('content_color')):?>color: <?php the_sub_field('content_color'); ?>;<?php endif; ?>">
 					<?php the_sub_field('content'); ?>
@@ -502,16 +502,12 @@
 				<div id="case-studies" class="related clearfix">	
 				<?php $i = 1; ?>
 				<?php foreach( $related as $p ): // variable must NOT be called $post (IMPORTANT) ?>
-					<article class="study span <?php if($i % 6 == 3): ?>five<?php else: ?>two-and-half<?php endif; ?> equal-height break-on-mobile <?php if($i % 6 == 3): ?>wide<?php endif; ?>">
+					<article class="study span one-third equal-height break-on-mobile <?php if($i % 6 == 3): ?>wide<?php endif; ?>">
 						<a href="<?php echo get_permalink( $p->ID ); ?>">
 							<?php  ?>
 
 							<?php 
-								if($i % 6 == 3) {
-									echo get_the_post_thumbnail($p->ID,array(540, 240, 'bfi_thumb' => true) );
-								} else {
-									echo get_the_post_thumbnail($p->ID,array(260, 240, 'bfi_thumb' => true) );
-								}
+								echo get_the_post_thumbnail($p->ID,array(330, 240, 'bfi_thumb' => true) );
 							 ?>						
 
 							<div class="title">
