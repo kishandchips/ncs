@@ -3198,6 +3198,10 @@ body {
 			display: block;
 			@include border_radius(10px);
 			@include vertical-gradient(#00817F, #006867);	
+
+			.page-business & {
+				@include vertical-gradient(#032E61, #1656A1);
+			}
 		}
 
 		img {

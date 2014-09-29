@@ -7084,7 +7084,14 @@ body {
     background: -webkit-linear-gradient(#00817f, #006867) !important;
     background: -moz-linear-gradient(center top, #00817f 0%, #006867 100%) !important;
     background: -moz-gradient(center top, #00817f 0%, #006867 100%) !important; }
-  /* line 3203, scss/_layout.scss */
+    /* line 3202, scss/_layout.scss */
+    .page-business #news .post a {
+      background: #032e61;
+      background: -webkit-gradient(linear, left top, left bottom, from(#032e61), to(#1656a1)) !important;
+      background: -webkit-linear-gradient(#032e61, #1656a1) !important;
+      background: -moz-linear-gradient(center top, #032e61 0%, #1656a1 100%) !important;
+      background: -moz-gradient(center top, #032e61 0%, #1656a1 100%) !important; }
+  /* line 3207, scss/_layout.scss */
   #news .post img {
     display: block;
     -webkit-border-top-left-radius: 10px;
@@ -7094,16 +7101,16 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
     @media only screen and (max-width: 50em) {
-      /* line 3203, scss/_layout.scss */
+      /* line 3207, scss/_layout.scss */
       #news .post img {
         width: 100%; } }
-  /* line 3212, scss/_layout.scss */
+  /* line 3216, scss/_layout.scss */
   #news .post .title {
     padding: 2.8em 1.7em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-weight: 300; }
-    /* line 3216, scss/_layout.scss */
+    /* line 3220, scss/_layout.scss */
     #news .post .title .entry-title {
       margin: 0;
       color: #FFF;
@@ -7111,21 +7118,21 @@ body {
       font-size: 2.8rem;
       line-height: 1.2; }
       @media only screen and (max-width: 62.5em) {
-        /* line 3216, scss/_layout.scss */
+        /* line 3220, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 24px;
           font-size: 2.4rem; } }
       @media only screen and (max-width: 50em) {
-        /* line 3216, scss/_layout.scss */
+        /* line 3220, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 20px;
           font-size: 2rem; } }
 
-/* line 3234, scss/_layout.scss */
+/* line 3238, scss/_layout.scss */
 #quotelist {
   padding: 3em; }
 
-/* line 3240, scss/_layout.scss */
+/* line 3244, scss/_layout.scss */
 #wp-live-chat {
   left: -9000px; }
 
