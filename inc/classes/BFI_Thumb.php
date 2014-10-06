@@ -598,7 +598,7 @@ class BFI_Thumb_1_3 {
 
 // don't use the default resizer since we want to allow resizing to larger sizes (than the original one)
 // Parts are copied from media.php
-// Crop is always applied (just like timthumb)
+// Crop is always applied (just like timt8humb)
 add_filter('image_resize_dimensions', 'bfi_image_resize_dimensions', 10, 5);
 if ( !function_exists( 'bfi_image_resize_dimensions' ) ) {
 function bfi_image_resize_dimensions($payload, $orig_w, $orig_h, $dest_w, $dest_h, $crop = false) {
@@ -640,6 +640,9 @@ function bfi_image_resize_dimensions($payload, $orig_w, $orig_h, $dest_w, $dest_
 add_filter( 'image_downsize', 'bfi_image_downsize', 1, 3 );
 if ( !function_exists( 'bfi_image_downsize' ) ) {
 function bfi_image_downsize( $out, $id, $size ) {
+    
+    $crop = false;
+
     if ( ! is_array( $size ) ) {
         return false;
     }
@@ -652,12 +655,21 @@ function bfi_image_downsize( $out, $id, $size ) {
 
     $img_url = wp_get_attachment_url( $id );
 
+    if(isset($size[0]) && is_numeric($size[0])) $size['width'] = $size[0];
+
+    if(isset($size[1]) && is_numeric($size[1])) $size['height'] = $size[1];
+
     $params = $size;
-    $params['width'] = $size[0];
-    $params['height'] = $size[1];
+
+    if( isset($size['width']) && isset($size['height']) ) $crop = true;
 
     $resized_img_url = bfi_thumb( $img_url, $params );
-
-    return array( $resized_img_url, $size[0], $size[1], false );
+    
+    if(!$crop) {
+        $data = getimagesize($resized_img_url);
+        $size['width'] = $data[0];
+        $size['height'] = $data[1];
+    }
+    return array( $resized_img_url, $size['width'], $size['height'], false );
 }
 }

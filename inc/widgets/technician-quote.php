@@ -30,7 +30,18 @@ class Technician_Quote extends WP_Widget {
 				            <div class="tech-quote">
                                 
                                 <div class="image">
-                                    <img src="<?php bloginfo('template_directory')?>/images/misc/tech-quote.jpg" alt="">
+                                    <?php if (get_field('image_of_product_list_quote_widget', 'option')): ?>
+                                        <?php
+                                            $image = get_field('image_of_product_list_quote_widget', 'option');
+
+                                            echo wp_get_attachment_image( $image, 'full' );
+
+                                            $img = bfi_thumb( $image[url], array( 'width' => 276, 'height' => 210 ));
+                                            echo "<img src='$img'/>";
+                                         ?>
+                                    <?php else: ?>
+                                        <img src="<?php bloginfo('template_directory')?>/images/misc/tech-quote.jpg" alt="">
+                                    <?php endif; ?>
                                 </div>
                                 <div class="copy">
                                     <div class="quote">
