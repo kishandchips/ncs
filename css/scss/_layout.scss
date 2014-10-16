@@ -68,10 +68,6 @@ body {
 			border-bottom: 1px solid #EBEBEB;
 			padding-bottom: 0.9em;
 
-			@include device-width(6) {
-				display: none;
-			}
-
 			p {
 				float: left;
 				@include font-size(14);
@@ -107,12 +103,36 @@ body {
 					span {
 						@include font-size(20);
 					}
-				}				
+				}	
+
+				@include device-width(5) {
+					@include font-size(11);
+
+					span {
+						@include font-size(20);
+					}
+				}	
+
+				@include device-width(4) {
+					@include font-size(11);
+					text-align: center;
+					width: 100%;
+					display: block;
+
+					span {
+						@include font-size(20);
+						display: block;
+					}
+				}											
 			}
 
 			.buttons {
 				float: right;
 				margin-top:9px;
+
+			@include device-width(6) {
+				display: none;
+			}
 
 				a {
 					@include opensans;
