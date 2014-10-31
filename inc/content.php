@@ -176,7 +176,7 @@
 				</div>
 			</div>
 			<div class="bottom">
-				<h2><?php _e('Since 2004 we have installed…') ?></h2>
+				<h2><?php _e('Since 2004 we have installed and powered:') ?></h2>
 				<div class="span five">
 					<div class="cabling">
 						<span>
@@ -201,7 +201,8 @@
 						<span>
 							<?php the_field('lighting_systems'); ?>
 						</span>
-						<?php _e('Lighting Systems') ?>
+						<?php _e('100w light bulbs'); ?><br>
+						<?php _e('per year'); ?>
 					</div>					
 				</div>
 			</div>
@@ -213,22 +214,23 @@
 				</div>
 			</div>
 			<div class="bottom">
-				<h4><?php _e('Over the years we have provided services for:') ?></h4>
+				<h4>
+					<?php _e('Over the years we have provided services for:'); ?>
+				</h4>
 				<div class="span third">
-					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five break-on-mobile illustration"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num_kent'); ?></div>
-					Astonishing 82% of Kent Schools, colleges and academies.
-					
+					<?php the_field('school_num_kent_description'); ?>					
 				</div>
 				<div class="span third">
-					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
+					<div class="span five break-on-mobile illustration"><img src="<?php bloginfo('template_directory') ?>/images/icons/school.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num'); ?>	</div>
-					Schools, colleges and academies outside of Kent.
+					<?php the_field('school_num_description'); ?>
 				</div>
 				<div class="span third">
-					<div class="span five break-on-mobile"><img src="<?php bloginfo('template_directory') ?>/images/icons/commercial.png" alt=""></div>
+					<div class="span five break-on-mobile illustration"><img src="<?php bloginfo('template_directory') ?>/images/icons/commercial.png" alt=""></div>
 					<div class="span five num"><?php the_field('school_num_commercial'); ?></div>
-					Commercial, council and healthcare offices.
+					<?php the_field('school_num_commercial_description'); ?>
 					
 				</div>
 			</div>

@@ -6177,7 +6177,7 @@ body {
     #about-us .row > .span.quality .bottom {
       background: #F3F3F3;
       text-align: center; }
-      /* line 2220, scss/_layout.scss */
+      /* line 2221, scss/_layout.scss */
       #about-us .row > .span.quality .bottom h4 {
         font-size: 14px;
         font-size: 1.4rem;
@@ -6187,19 +6187,27 @@ body {
         display: block;
         width: 100%;
         margin-bottom: 2em; }
-      /* line 2228, scss/_layout.scss */
+        /* line 2228, scss/_layout.scss */
+        #about-us .row > .span.quality .bottom h4 span {
+          font-weight: normal;
+          line-height: 2em; }
+      /* line 2234, scss/_layout.scss */
       #about-us .row > .span.quality .bottom > .span {
         font-size: 12px;
         font-size: 1.2rem; }
-        /* line 2231, scss/_layout.scss */
+        /* line 2241, scss/_layout.scss */
         #about-us .row > .span.quality .bottom > .span .num {
           font-size: 40px;
           font-size: 4rem;
           font-family: 'Oswald', sans-serif; }
-    /* line 2242, scss/_layout.scss */
+        @media only screen and (max-width: 87.5em) {
+          /* line 2247, scss/_layout.scss */
+          #about-us .row > .span.quality .bottom > .span .illustration, #about-us .row > .span.quality .bottom > .span .num {
+            width: 100%; } }
+    /* line 2257, scss/_layout.scss */
     #about-us .row > .span.support .top {
       background: #EBEBEB; }
-      /* line 2247, scss/_layout.scss */
+      /* line 2262, scss/_layout.scss */
       #about-us .row > .span.support .top .desc:before {
         width: 100%;
         text-align: center;
@@ -6207,13 +6215,13 @@ body {
         font-size: 25px;
         font-size: 2.5rem;
         color: #717171; }
-      /* line 2257, scss/_layout.scss */
+      /* line 2272, scss/_layout.scss */
       #about-us .row > .span.support .top .desc h1 {
         color: #1656A1; }
-    /* line 2264, scss/_layout.scss */
+    /* line 2279, scss/_layout.scss */
     #about-us .row > .span.support .bottom {
       background: #F3F3F3; }
-      /* line 2268, scss/_layout.scss */
+      /* line 2283, scss/_layout.scss */
       #about-us .row > .span.support .bottom .left {
         text-align: right;
         font-size: 25px;
@@ -6222,37 +6230,37 @@ body {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-weight: 700; }
-        /* line 2274, scss/_layout.scss */
+        /* line 2289, scss/_layout.scss */
         #about-us .row > .span.support .bottom .left img {
           float: right;
           margin-left: 10%; }
-        /* line 2279, scss/_layout.scss */
+        /* line 2294, scss/_layout.scss */
         #about-us .row > .span.support .bottom .left span {
           font-family: 'Oswald', sans-serif;
           font-size: 60px;
           font-size: 6rem;
           color: #3091CE; }
-      /* line 2287, scss/_layout.scss */
+      /* line 2302, scss/_layout.scss */
       #about-us .row > .span.support .bottom .right .num {
         font-family: 'Oswald', sans-serif;
         margin: 0 0.5em;
         font-size: 15px;
         font-size: 1.5rem; }
-    /* line 2298, scss/_layout.scss */
+    /* line 2313, scss/_layout.scss */
     #about-us .row > .span.environment .top {
       color: #FFF;
       background: #5B8629; }
-      /* line 2304, scss/_layout.scss */
+      /* line 2319, scss/_layout.scss */
       #about-us .row > .span.environment .top .desc:before {
         width: 100%;
         text-align: center;
         display: block;
         font-size: 25px;
         font-size: 2.5rem; }
-      /* line 2313, scss/_layout.scss */
+      /* line 2328, scss/_layout.scss */
       #about-us .row > .span.environment .top .desc a {
         color: #FFF !important; }
-    /* line 2319, scss/_layout.scss */
+    /* line 2334, scss/_layout.scss */
     #about-us .row > .span.environment .bottom {
       background: #3C6111;
       text-align: center;
@@ -6262,10 +6270,10 @@ body {
       font-weight: 700;
       font-size: 14px;
       font-size: 1.4rem; }
-      /* line 2327, scss/_layout.scss */
+      /* line 2342, scss/_layout.scss */
       #about-us .row > .span.environment .bottom .span {
         padding: 0 2em; }
-      /* line 2332, scss/_layout.scss */
+      /* line 2347, scss/_layout.scss */
       #about-us .row > .span.environment .bottom .image span {
         position: relative;
         top: 50%;
@@ -6280,12 +6288,12 @@ body {
         font-size: 45px;
         font-size: 4.5rem;
         top: 37%; }
-  /* line 2347, scss/_layout.scss */
+  /* line 2362, scss/_layout.scss */
   #about-us .row.this-week {
     background: #FBFBFB;
     border-top: 1px solid #DCDCDC;
     border-bottom: 1px solid #DCDCDC; }
-    /* line 2352, scss/_layout.scss */
+    /* line 2367, scss/_layout.scss */
     #about-us .row.this-week h2 {
       margin: 0 0 1.5em 0;
       display: block;
@@ -6294,7 +6302,7 @@ body {
       color: #1656A1;
       font-size: 25px;
       font-size: 2.5rem; }
-    /* line 2361, scss/_layout.scss */
+    /* line 2376, scss/_layout.scss */
     #about-us .row.this-week .span {
       text-align: center;
       font-family: 'Open Sans', sans-serif;
@@ -6302,10 +6310,10 @@ body {
       font-weight: 700;
       font-size: 14px;
       font-size: 1.4rem; }
-      /* line 2367, scss/_layout.scss */
+      /* line 2382, scss/_layout.scss */
       #about-us .row.this-week .span .image img {
         margin: 0 auto; }
-      /* line 2371, scss/_layout.scss */
+      /* line 2386, scss/_layout.scss */
       #about-us .row.this-week .span .image span {
         font-family: 'Oswald', sans-serif;
         position: relative;
@@ -6321,14 +6329,14 @@ body {
         font-size: 35px;
         font-size: 3.5rem;
         top: 41%; }
-      /* line 2385, scss/_layout.scss */
+      /* line 2400, scss/_layout.scss */
       #about-us .row.this-week .span.support span, #about-us .row.this-week .span.tea span {
         color: #FFF; }
-      /* line 2391, scss/_layout.scss */
+      /* line 2406, scss/_layout.scss */
       #about-us .row.this-week .span.cabling span {
         color: #1656A1; }
 
-/* line 2403, scss/_layout.scss */
+/* line 2418, scss/_layout.scss */
 #meet-the-team .section-title {
   display: block;
   width: 100%;
@@ -6337,23 +6345,23 @@ body {
   font-size: 25px;
   font-size: 2.5rem;
   margin: 2em 0; }
-/* line 2412, scss/_layout.scss */
+/* line 2427, scss/_layout.scss */
 #meet-the-team .row {
   padding: 3em; }
-  /* line 2416, scss/_layout.scss */
+  /* line 2431, scss/_layout.scss */
   #meet-the-team .row:nth-child(odd) {
     background: #EBEBEB; }
-  /* line 2420, scss/_layout.scss */
+  /* line 2435, scss/_layout.scss */
   #meet-the-team .row:nth-child(even) {
     background: #F3F3F3; }
-  /* line 2424, scss/_layout.scss */
+  /* line 2439, scss/_layout.scss */
   #meet-the-team .row .span {
     padding: 0 2em; }
     @media only screen and (max-width: 31.25em) {
-      /* line 2424, scss/_layout.scss */
+      /* line 2439, scss/_layout.scss */
       #meet-the-team .row .span {
         padding: 0; } }
-  /* line 2432, scss/_layout.scss */
+  /* line 2447, scss/_layout.scss */
   #meet-the-team .row img {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -6366,32 +6374,32 @@ body {
     -moz-box-shadow: 0 0 10px #ccc;
     -webkit-box-shadow: 0 0 10px #ccc;
     box-shadow: 0 0 10px #ccc; }
-  /* line 2439, scss/_layout.scss */
+  /* line 2454, scss/_layout.scss */
   #meet-the-team .row h1 {
     font-size: 30px;
     font-size: 3rem; }
 
-/* line 2445, scss/_layout.scss */
+/* line 2460, scss/_layout.scss */
 #quotes {
   padding: 3em 2em; }
-  /* line 2449, scss/_layout.scss */
+  /* line 2464, scss/_layout.scss */
   #quotes h1 {
     font-size: 30px;
     font-size: 3rem; }
-  /* line 2453, scss/_layout.scss */
+  /* line 2468, scss/_layout.scss */
   #quotes .testimonial {
     margin-top: 3em;
     padding-right: 3em; }
-    /* line 2457, scss/_layout.scss */
+    /* line 2472, scss/_layout.scss */
     #quotes .testimonial:nth-child(3n+1) {
       color: #5E9129; }
-    /* line 2461, scss/_layout.scss */
+    /* line 2476, scss/_layout.scss */
     #quotes .testimonial:nth-child(3n+2) {
       color: #4A90E2; }
-    /* line 2465, scss/_layout.scss */
+    /* line 2480, scss/_layout.scss */
     #quotes .testimonial:nth-child(3n+3) {
       color: #00817F; }
-    /* line 2469, scss/_layout.scss */
+    /* line 2484, scss/_layout.scss */
     #quotes .testimonial .quote {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
@@ -6400,30 +6408,30 @@ body {
       font-size: 2rem;
       margin-bottom: 1em; }
       @media only screen and (max-width: 25em) {
-        /* line 2469, scss/_layout.scss */
+        /* line 2484, scss/_layout.scss */
         #quotes .testimonial .quote {
           font-size: 15px;
           font-size: 1.5rem; } }
-      /* line 2478, scss/_layout.scss */
+      /* line 2493, scss/_layout.scss */
       #quotes .testimonial .quote:before {
         display: block;
         width: 100%;
         font-size: 30px;
         font-size: 3rem;
         margin-bottom: 0.3em; }
-    /* line 2488, scss/_layout.scss */
+    /* line 2503, scss/_layout.scss */
     #quotes .testimonial .meta {
       color: #4A4A4A;
       font-size: 14px;
       font-size: 1.4rem; }
-      /* line 2492, scss/_layout.scss */
+      /* line 2507, scss/_layout.scss */
       #quotes .testimonial .meta .author {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
         font-weight: 700;
         width: 100%;
         display: block; }
-      /* line 2499, scss/_layout.scss */
+      /* line 2514, scss/_layout.scss */
       #quotes .testimonial .meta .position {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
@@ -6432,15 +6440,15 @@ body {
 /****************************/
 /* Environmental Policy		*/
 /****************************/
-/* line 2511, scss/_layout.scss */
+/* line 2526, scss/_layout.scss */
 #environmental-policy {
   padding: 3em;
   background: url("../images/backgrounds/leaf_pattern.png"); }
   @media only screen and (max-width: 31.25em) {
-    /* line 2511, scss/_layout.scss */
+    /* line 2526, scss/_layout.scss */
     #environmental-policy {
       padding: 1em; } }
-  /* line 2522, scss/_layout.scss */
+  /* line 2537, scss/_layout.scss */
   #environmental-policy h1.title {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -6448,7 +6456,7 @@ body {
     font-size: 30px;
     font-size: 3rem;
     color: #1656A1; }
-  /* line 2528, scss/_layout.scss */
+  /* line 2543, scss/_layout.scss */
   #environmental-policy .ncs-saved {
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -6457,10 +6465,10 @@ body {
     box-sizing: border-box;
     /* Opera/IE 8+ */
     margin: 8% 8% 0 0; }
-    /* line 2532, scss/_layout.scss */
+    /* line 2547, scss/_layout.scss */
     #environmental-policy .ncs-saved .span {
       margin-bottom: 0; }
-    /* line 2536, scss/_layout.scss */
+    /* line 2551, scss/_layout.scss */
     #environmental-policy .ncs-saved .top {
       background: #EBEBEB;
       -webkit-border-top-left-radius: 4px;
@@ -6470,7 +6478,7 @@ body {
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
       padding: 1em 3em; }
-    /* line 2543, scss/_layout.scss */
+    /* line 2558, scss/_layout.scss */
     #environmental-policy .ncs-saved .bottom {
       background: #F3F3F3;
       -webkit-border-bottom-left-radius: 4px;
@@ -6480,13 +6488,13 @@ body {
       border-bottom-left-radius: 4px;
       border-bottom-right-radius: 4px;
       padding: 1em; }
-      /* line 2549, scss/_layout.scss */
+      /* line 2564, scss/_layout.scss */
       #environmental-policy .ncs-saved .bottom img {
         margin: 0 auto; }
-      /* line 2553, scss/_layout.scss */
+      /* line 2568, scss/_layout.scss */
       #environmental-policy .ncs-saved .bottom .img {
         position: relative; }
-      /* line 2557, scss/_layout.scss */
+      /* line 2572, scss/_layout.scss */
       #environmental-policy .ncs-saved .bottom span {
         position: relative;
         top: 50%;
@@ -6502,29 +6510,29 @@ body {
         font-size: 3.5rem;
         top: 50%;
         font-family: 'Oswald', sans-serif; }
-      /* line 2569, scss/_layout.scss */
+      /* line 2584, scss/_layout.scss */
       #environmental-policy .ncs-saved .bottom p {
         color: #717171;
         font-weight: bold;
         text-align: center; }
-      /* line 2581, scss/_layout.scss */
+      /* line 2596, scss/_layout.scss */
       #environmental-policy .ncs-saved .bottom .paying span {
         color: #EDCC0F; }
-  /* line 2588, scss/_layout.scss */
+  /* line 2603, scss/_layout.scss */
   #environmental-policy .span {
     margin-bottom: 4em; }
     @media only screen and (max-width: 43.75em) {
-      /* line 2588, scss/_layout.scss */
+      /* line 2603, scss/_layout.scss */
       #environmental-policy .span {
         width: 100%; } }
-    /* line 2596, scss/_layout.scss */
+    /* line 2611, scss/_layout.scss */
     #environmental-policy .span .image img {
       display: block; }
-    /* line 2602, scss/_layout.scss */
+    /* line 2617, scss/_layout.scss */
     #environmental-policy .span.image-left .image {
       width: 40%;
       float: left; }
-    /* line 2607, scss/_layout.scss */
+    /* line 2622, scss/_layout.scss */
     #environmental-policy .span.image-left .body {
       width: 60%;
       float: right;
@@ -6534,27 +6542,27 @@ body {
       /* Firefox, other Gecko */
       box-sizing: border-box;
       /* Opera/IE 8+ */ }
-    /* line 2617, scss/_layout.scss */
+    /* line 2632, scss/_layout.scss */
     #environmental-policy .span.image-right .image {
       width: 40%;
       float: right;
       display: block; }
-    /* line 2623, scss/_layout.scss */
+    /* line 2638, scss/_layout.scss */
     #environmental-policy .span.image-right .body {
       width: 60%;
       float: left; }
     @media only screen and (max-width: 43.75em) {
-      /* line 2631, scss/_layout.scss */
+      /* line 2646, scss/_layout.scss */
       #environmental-policy .span.image-left .image, #environmental-policy .span.image-left .body, #environmental-policy .span.image-right .image, #environmental-policy .span.image-right .body {
         width: 100%; } }
-    /* line 2639, scss/_layout.scss */
+    /* line 2654, scss/_layout.scss */
     #environmental-policy .span .body {
       background: #E8E8E8; }
-      /* line 2642, scss/_layout.scss */
+      /* line 2657, scss/_layout.scss */
       #environmental-policy .span .body .copy {
         padding: 4em 2em 2em;
         position: relative; }
-        /* line 2647, scss/_layout.scss */
+        /* line 2662, scss/_layout.scss */
         #environmental-policy .span .body .copy h1 {
           background: #6A973C;
           background: -webkit-gradient(linear, left top, left bottom, from(#6A973C), to(#86B555)) !important;
@@ -6569,7 +6577,7 @@ body {
           left: 0;
           padding: 0.5em 1.5em;
           margin: 0; }
-        /* line 2659, scss/_layout.scss */
+        /* line 2674, scss/_layout.scss */
         #environmental-policy .span .body .copy .author-image {
           -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
           -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -6579,20 +6587,20 @@ body {
           border-radius: 50%;
           border: 4px solid #FFFFFF;
           float: left; }
-        /* line 2666, scss/_layout.scss */
+        /* line 2681, scss/_layout.scss */
         #environmental-policy .span .body .copy .meta {
           color: #4A4A4A;
           font-size: 14px;
           font-size: 1.4rem;
           margin: 7.5em 0 0 13em; }
-          /* line 2671, scss/_layout.scss */
+          /* line 2686, scss/_layout.scss */
           #environmental-policy .span .body .copy .meta .author {
             font-family: 'Open Sans', sans-serif;
             font-weight: 400;
             font-weight: 700;
             width: 100%;
             display: block; }
-          /* line 2678, scss/_layout.scss */
+          /* line 2693, scss/_layout.scss */
           #environmental-policy .span .body .copy .meta .position {
             font-family: 'Open Sans', sans-serif;
             font-weight: 400;
@@ -6602,29 +6610,29 @@ body {
 /* Testimonials				*/
 /****************************/
 @media only screen and (max-width: 50em) {
-  /* line 2695, scss/_layout.scss */
+  /* line 2710, scss/_layout.scss */
   #testimonials .span {
     width: 100%; } }
-/* line 2701, scss/_layout.scss */
+/* line 2716, scss/_layout.scss */
 #testimonials .span.imageless {
   float: left; }
-/* line 2705, scss/_layout.scss */
+/* line 2720, scss/_layout.scss */
 #testimonials .span.image {
   float: right; }
-/* line 2710, scss/_layout.scss */
+/* line 2725, scss/_layout.scss */
 #testimonials .testimonial {
   margin-bottom: 4em;
   padding-right: 3em; }
-  /* line 2714, scss/_layout.scss */
+  /* line 2729, scss/_layout.scss */
   #testimonials .testimonial:nth-child(3n+1) {
     color: #5E9129; }
-  /* line 2718, scss/_layout.scss */
+  /* line 2733, scss/_layout.scss */
   #testimonials .testimonial:nth-child(3n+2) {
     color: #4A90E2; }
-  /* line 2722, scss/_layout.scss */
+  /* line 2737, scss/_layout.scss */
   #testimonials .testimonial:nth-child(3n+3) {
     color: #00817F; }
-  /* line 2726, scss/_layout.scss */
+  /* line 2741, scss/_layout.scss */
   #testimonials .testimonial .quote {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -6633,62 +6641,62 @@ body {
     font-size: 2rem;
     margin-bottom: 1em; }
     @media only screen and (max-width: 25em) {
-      /* line 2726, scss/_layout.scss */
+      /* line 2741, scss/_layout.scss */
       #testimonials .testimonial .quote {
         font-size: 15px;
         font-size: 1.5rem; } }
-    /* line 2735, scss/_layout.scss */
+    /* line 2750, scss/_layout.scss */
     #testimonials .testimonial .quote:before {
       display: block;
       width: 100%;
       font-size: 30px;
       font-size: 3rem;
       margin-bottom: 0.3em; }
-  /* line 2745, scss/_layout.scss */
+  /* line 2760, scss/_layout.scss */
   #testimonials .testimonial .meta {
     color: #4A4A4A;
     font-size: 14px;
     font-size: 1.4rem; }
-    /* line 2749, scss/_layout.scss */
+    /* line 2764, scss/_layout.scss */
     #testimonials .testimonial .meta .author {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
       font-weight: 700;
       width: 100%;
       display: block; }
-    /* line 2756, scss/_layout.scss */
+    /* line 2771, scss/_layout.scss */
     #testimonials .testimonial .meta .position {
       font-family: 'Open Sans', sans-serif;
       font-weight: 400;
       font-weight: 300; }
-  /* line 2761, scss/_layout.scss */
+  /* line 2776, scss/_layout.scss */
   #testimonials .testimonial.box {
     color: #FFF;
     padding-right: 0; }
-    /* line 2767, scss/_layout.scss */
+    /* line 2782, scss/_layout.scss */
     #testimonials .testimonial.box .image img {
       display: block;
       width: 100%;
       height: auto; }
-    /* line 2775, scss/_layout.scss */
+    /* line 2790, scss/_layout.scss */
     #testimonials .testimonial.box .copy {
       position: relative;
       padding: 2em; }
-    /* line 2781, scss/_layout.scss */
+    /* line 2796, scss/_layout.scss */
     #testimonials .testimonial.box:nth-child(odd) .copy {
       background: #5B8E26;
       background: -webkit-gradient(linear, left top, left bottom, from(#5B8E26), to(#86B555)) !important;
       background: -webkit-linear-gradient(#5B8E26, #86B555) !important;
       background: -moz-linear-gradient(center top, #5B8E26 0%, #86B555 100%) !important;
       background: -moz-gradient(center top, #5B8E26 0%, #86B555 100%) !important; }
-    /* line 2788, scss/_layout.scss */
+    /* line 2803, scss/_layout.scss */
     #testimonials .testimonial.box:nth-child(even) .copy {
       background: #006867;
       background: -webkit-gradient(linear, left top, left bottom, from(#006867), to(#00817F)) !important;
       background: -webkit-linear-gradient(#006867, #00817F) !important;
       background: -moz-linear-gradient(center top, #006867 0%, #00817F 100%) !important;
       background: -moz-gradient(center top, #006867 0%, #00817F 100%) !important; }
-    /* line 2793, scss/_layout.scss */
+    /* line 2808, scss/_layout.scss */
     #testimonials .testimonial.box .author-image {
       position: absolute;
       right: 5%;
@@ -6700,22 +6708,22 @@ body {
       -webkit-border-radius: 50%;
       border-radius: 50%;
       border: 4px solid #FFFFFF; }
-    /* line 2802, scss/_layout.scss */
+    /* line 2817, scss/_layout.scss */
     #testimonials .testimonial.box .meta {
       color: #FFF; }
 
 /****************************/
 /* Case Studies;			*/
 /****************************/
-/* line 2826, scss/_layout.scss */
+/* line 2841, scss/_layout.scss */
 #case-studies .study {
   overflow: hidden;
   margin-bottom: 1.5em; }
   @media only screen and (max-width: 50em) {
-    /* line 2830, scss/_layout.scss */
+    /* line 2845, scss/_layout.scss */
     #case-studies .study.span {
       width: 50%; } }
-  /* line 2840, scss/_layout.scss */
+  /* line 2855, scss/_layout.scss */
   #case-studies .study a {
     height: 100%;
     display: block;
@@ -6727,70 +6735,70 @@ body {
     background: -webkit-linear-gradient(#032E61, #1656A1) !important;
     background: -moz-linear-gradient(center top, #032E61 0%, #1656A1 100%) !important;
     background: -moz-gradient(center top, #032E61 0%, #1656A1 100%) !important; }
-    /* line 2846, scss/_layout.scss */
+    /* line 2861, scss/_layout.scss */
     #case-studies .study a:hover {
       background: #1656A1;
       background: -webkit-gradient(linear, left top, left bottom, from(#1656A1), to(#032E61)) !important;
       background: -webkit-linear-gradient(#1656A1, #032E61) !important;
       background: -moz-linear-gradient(center top, #1656A1 0%, #032E61 100%) !important;
       background: -moz-gradient(center top, #1656A1 0%, #032E61 100%) !important; }
-    /* line 2850, scss/_layout.scss */
+    /* line 2865, scss/_layout.scss */
     .page-education #case-studies .study a {
       background: #017C7A;
       background: -webkit-gradient(linear, left top, left bottom, from(#017C7A), to(#009795)) !important;
       background: -webkit-linear-gradient(#017C7A, #009795) !important;
       background: -moz-linear-gradient(center top, #017C7A 0%, #009795 100%) !important;
       background: -moz-gradient(center top, #017C7A 0%, #009795 100%) !important; }
-      /* line 2853, scss/_layout.scss */
+      /* line 2868, scss/_layout.scss */
       .page-education #case-studies .study a:hover {
         background: #009795;
         background: -webkit-gradient(linear, left top, left bottom, from(#009795), to(#017C7A)) !important;
         background: -webkit-linear-gradient(#009795, #017C7A) !important;
         background: -moz-linear-gradient(center top, #009795 0%, #017C7A 100%) !important;
         background: -moz-gradient(center top, #009795 0%, #017C7A 100%) !important; }
-    /* line 2858, scss/_layout.scss */
+    /* line 2873, scss/_layout.scss */
     #case-studies .study a .related #case-studies .study a {
       background: #000;
       background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#fff)) !important;
       background: -webkit-linear-gradient(#000, #fff) !important;
       background: -moz-linear-gradient(center top, #000 0%, #fff 100%) !important;
       background: -moz-gradient(center top, #000 0%, #fff 100%) !important; }
-      /* line 2861, scss/_layout.scss */
+      /* line 2876, scss/_layout.scss */
       #case-studies .study a .related #case-studies .study a:hover {
         background: #009795;
         background: -webkit-gradient(linear, left top, left bottom, from(#009795), to(#017C7A)) !important;
         background: -webkit-linear-gradient(#009795, #017C7A) !important;
         background: -moz-linear-gradient(center top, #009795 0%, #017C7A 100%) !important;
         background: -moz-gradient(center top, #009795 0%, #017C7A 100%) !important; }
-  /* line 2868, scss/_layout.scss */
+  /* line 2883, scss/_layout.scss */
   #case-studies .study:nth-child(6n+2) a, #case-studies .study:nth-child(6n+6) a {
     background: #02499E;
     background: -webkit-gradient(linear, left top, left bottom, from(#02499E), to(#1F79E2)) !important;
     background: -webkit-linear-gradient(#02499E, #1F79E2) !important;
     background: -moz-linear-gradient(center top, #02499E 0%, #1F79E2 100%) !important;
     background: -moz-gradient(center top, #02499E 0%, #1F79E2 100%) !important; }
-    /* line 2871, scss/_layout.scss */
+    /* line 2886, scss/_layout.scss */
     #case-studies .study:nth-child(6n+2) a:hover, #case-studies .study:nth-child(6n+6) a:hover {
       background: #1F79E2;
       background: -webkit-gradient(linear, left top, left bottom, from(#1F79E2), to(#02499E)) !important;
       background: -webkit-linear-gradient(#1F79E2, #02499E) !important;
       background: -moz-linear-gradient(center top, #1F79E2 0%, #02499E 100%) !important;
       background: -moz-gradient(center top, #1F79E2 0%, #02499E 100%) !important; }
-    /* line 2875, scss/_layout.scss */
+    /* line 2890, scss/_layout.scss */
     .page-education #case-studies .study:nth-child(6n+2) a, .page-education #case-studies .study:nth-child(6n+6) a {
       background: #6A973C;
       background: -webkit-gradient(linear, left top, left bottom, from(#6A973C), to(#86B555)) !important;
       background: -webkit-linear-gradient(#6A973C, #86B555) !important;
       background: -moz-linear-gradient(center top, #6A973C 0%, #86B555 100%) !important;
       background: -moz-gradient(center top, #6A973C 0%, #86B555 100%) !important; }
-      /* line 2878, scss/_layout.scss */
+      /* line 2893, scss/_layout.scss */
       .page-education #case-studies .study:nth-child(6n+2) a:hover, .page-education #case-studies .study:nth-child(6n+6) a:hover {
         background: #86B555;
         background: -webkit-gradient(linear, left top, left bottom, from(#86B555), to(#6A973C)) !important;
         background: -webkit-linear-gradient(#86B555, #6A973C) !important;
         background: -moz-linear-gradient(center top, #86B555 0%, #6A973C 100%) !important;
         background: -moz-gradient(center top, #86B555 0%, #6A973C 100%) !important; }
-  /* line 2885, scss/_layout.scss */
+  /* line 2900, scss/_layout.scss */
   #case-studies .study img {
     display: block;
     -webkit-border-top-left-radius: 10px;
@@ -6800,16 +6808,16 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
     @media only screen and (max-width: 50em) {
-      /* line 2885, scss/_layout.scss */
+      /* line 2900, scss/_layout.scss */
       #case-studies .study img {
         width: 100%; } }
-  /* line 2894, scss/_layout.scss */
+  /* line 2909, scss/_layout.scss */
   #case-studies .study .title {
     padding: 2.8em 1.7em 5.5em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-weight: 300; }
-    /* line 2898, scss/_layout.scss */
+    /* line 2913, scss/_layout.scss */
     #case-studies .study .title .entry-title {
       margin: 0;
       color: #FFF;
@@ -6817,16 +6825,16 @@ body {
       font-size: 2.2rem;
       line-height: 1.2; }
       @media only screen and (max-width: 62.5em) {
-        /* line 2898, scss/_layout.scss */
+        /* line 2913, scss/_layout.scss */
         #case-studies .study .title .entry-title {
           font-size: 18px;
           font-size: 1.8rem; } }
       @media only screen and (max-width: 50em) {
-        /* line 2898, scss/_layout.scss */
+        /* line 2913, scss/_layout.scss */
         #case-studies .study .title .entry-title {
           font-size: 16px;
           font-size: 1.6rem; } }
-  /* line 2914, scss/_layout.scss */
+  /* line 2929, scss/_layout.scss */
   #case-studies .study .readmore {
     position: absolute;
     bottom: 15px;
@@ -6838,17 +6846,17 @@ body {
     font-size: 16px;
     font-size: 1.6rem;
     width: 75%; }
-/* line 2925, scss/_layout.scss */
+/* line 2940, scss/_layout.scss */
 #case-studies.related {
   padding: 3em; }
-  /* line 2930, scss/_layout.scss */
+  /* line 2945, scss/_layout.scss */
   #case-studies.related .study:nth-child(even) a {
     background: #6A973C;
     background: -webkit-gradient(linear, left top, left bottom, from(#6A973C), to(#86B555)) !important;
     background: -webkit-linear-gradient(#6A973C, #86B555) !important;
     background: -moz-linear-gradient(center top, #6A973C 0%, #86B555 100%) !important;
     background: -moz-gradient(center top, #6A973C 0%, #86B555 100%) !important; }
-    /* line 2933, scss/_layout.scss */
+    /* line 2948, scss/_layout.scss */
     #case-studies.related .study:nth-child(even) a:hover {
       background: #86B555;
       background: -webkit-gradient(linear, left top, left bottom, from(#86B555), to(#6A973C)) !important;
@@ -6856,7 +6864,7 @@ body {
       background: -moz-linear-gradient(center top, #86B555 0%, #6A973C 100%) !important;
       background: -moz-gradient(center top, #86B555 0%, #6A973C 100%) !important; }
 
-/* line 2941, scss/_layout.scss */
+/* line 2956, scss/_layout.scss */
 .case-studies-title {
   width: 100%;
   display: block;
@@ -6872,13 +6880,13 @@ body {
 /****************************/
 /* Single Case Study: ;		*/
 /****************************/
-/* line 2957, scss/_layout.scss */
+/* line 2972, scss/_layout.scss */
 .single-case-study .span.content-inner {
   padding-right: 0; }
-/* line 2961, scss/_layout.scss */
+/* line 2976, scss/_layout.scss */
 .single-case-study .span.sidebar {
   padding-left: 0; }
-/* line 2966, scss/_layout.scss */
+/* line 2981, scss/_layout.scss */
 .single-case-study .case-study-header {
   background: #009795;
   background: -webkit-gradient(linear, left top, left bottom, from(#009795), to(#017C7A)) !important;
@@ -6892,23 +6900,23 @@ body {
   /* Firefox, other Gecko */
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
-  /* line 2972, scss/_layout.scss */
+  /* line 2987, scss/_layout.scss */
   .single-case-study .case-study-header .span {
     padding: 0; }
-  /* line 2976, scss/_layout.scss */
+  /* line 2991, scss/_layout.scss */
   .page-commercial .single-case-study .case-study-header {
     background: #02499E;
     background: -webkit-gradient(linear, left top, left bottom, from(#02499E), to(#1F79E2)) !important;
     background: -webkit-linear-gradient(#02499E, #1F79E2) !important;
     background: -moz-linear-gradient(center top, #02499E 0%, #1F79E2 100%) !important;
     background: -moz-gradient(center top, #02499E 0%, #1F79E2 100%) !important; }
-  /* line 2980, scss/_layout.scss */
+  /* line 2995, scss/_layout.scss */
   .single-case-study .case-study-header .date {
     font-size: 14px;
     font-size: 1.4rem;
     width: 100%;
     display: block; }
-  /* line 2986, scss/_layout.scss */
+  /* line 3001, scss/_layout.scss */
   .single-case-study .case-study-header h1 {
     font-size: 30px;
     font-size: 3rem;
@@ -6916,14 +6924,14 @@ body {
     font-weight: 400;
     font-weight: 300;
     line-height: 1.2; }
-  /* line 2992, scss/_layout.scss */
+  /* line 3007, scss/_layout.scss */
   .single-case-study .case-study-header .sharethis {
     position: absolute;
     bottom: 0; }
-  /* line 2999, scss/_layout.scss */
+  /* line 3014, scss/_layout.scss */
   .single-case-study .case-study-header .title .inner {
     margin: 30px 30px 80px; }
-  /* line 3005, scss/_layout.scss */
+  /* line 3020, scss/_layout.scss */
   .single-case-study .case-study-header .thumbnail {
     min-height: 280px;
     background-repeat: no-repeat;
@@ -6933,11 +6941,11 @@ body {
 /****************************/
 /* Expertise: 				*/
 /****************************/
-/* line 3019, scss/_layout.scss */
+/* line 3034, scss/_layout.scss */
 #expertise {
   font-size: 30px;
   font-size: 3rem; }
-  /* line 3022, scss/_layout.scss */
+  /* line 3037, scss/_layout.scss */
   #expertise .section-title {
     width: 100%;
     text-align: center;
@@ -6945,7 +6953,7 @@ body {
     font-size: 30px;
     font-size: 3rem;
     padding: 3em 0 1.5em; }
-  /* line 3030, scss/_layout.scss */
+  /* line 3045, scss/_layout.scss */
   #expertise .row {
     position: relative;
     background-size: auto 100%;
@@ -6953,13 +6961,13 @@ body {
     background-position: right center;
     overflow: hidden; }
     @media only screen and (max-width: 43.75em) {
-      /* line 3043, scss/_layout.scss */
+      /* line 3058, scss/_layout.scss */
       #expertise .row.no-image {
         padding-bottom: 0%; }
-        /* line 3046, scss/_layout.scss */
+        /* line 3061, scss/_layout.scss */
         #expertise .row.no-image .image {
           display: none; } }
-    /* line 3052, scss/_layout.scss */
+    /* line 3067, scss/_layout.scss */
     #expertise .row .image {
       position: absolute;
       top: 0;
@@ -6970,75 +6978,75 @@ body {
       background-position: center;
       background-repeat: no-repeat; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3052, scss/_layout.scss */
+        /* line 3067, scss/_layout.scss */
         #expertise .row .image {
           position: relative;
           width: 100%;
           height: 250px;
           background-position: center top; } }
-    /* line 3070, scss/_layout.scss */
+    /* line 3085, scss/_layout.scss */
     #expertise .row.accessories {
       background-size: 60% 100%; }
-    /* line 3074, scss/_layout.scss */
+    /* line 3089, scss/_layout.scss */
     #expertise .row.energy-saving {
       background-size: 60% 100%; }
-    /* line 3078, scss/_layout.scss */
+    /* line 3093, scss/_layout.scss */
     #expertise .row.right {
       background-position: left center; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3078, scss/_layout.scss */
+        /* line 3093, scss/_layout.scss */
         #expertise .row.right {
           background-size: contain;
           background-position: left bottom; } }
-      /* line 3086, scss/_layout.scss */
+      /* line 3101, scss/_layout.scss */
       #expertise .row.right .image {
         left: 0; }
-      /* line 3090, scss/_layout.scss */
+      /* line 3105, scss/_layout.scss */
       #expertise .row.right .span {
         float: right; }
-    /* line 3095, scss/_layout.scss */
+    /* line 3110, scss/_layout.scss */
     #expertise .row .span {
       padding: 3em 2em; }
       @media only screen and (max-width: 43.75em) {
-        /* line 3095, scss/_layout.scss */
+        /* line 3110, scss/_layout.scss */
         #expertise .row .span {
           padding: 1em;
           width: 100%; } }
-      /* line 3103, scss/_layout.scss */
+      /* line 3118, scss/_layout.scss */
       #expertise .row .span.ten {
         padding: 1em 2em; }
         @media only screen and (max-width: 43.75em) {
-          /* line 3103, scss/_layout.scss */
+          /* line 3118, scss/_layout.scss */
           #expertise .row .span.ten {
             padding: 1em; } }
 
 /****************************/
 /* Error / 404				*/
 /****************************/
-/* line 3120, scss/_layout.scss */
+/* line 3135, scss/_layout.scss */
 #error {
   background-size: 100% auto; }
-  /* line 3123, scss/_layout.scss */
+  /* line 3138, scss/_layout.scss */
   #error #content {
     border: none; }
-  /* line 3128, scss/_layout.scss */
+  /* line 3143, scss/_layout.scss */
   #error h1 {
     color: #0E76BC;
     font-size: 10em; }
-  /* line 3133, scss/_layout.scss */
+  /* line 3148, scss/_layout.scss */
   #error h2 {
     color: #437496;
     font-size: 2em;
     margin: 0 0 0 8em; }
     @media only screen and (max-width: 43.75em) {
-      /* line 3133, scss/_layout.scss */
+      /* line 3148, scss/_layout.scss */
       #error h2 {
         margin: 0 0 0 3em; } }
     @media only screen and (max-width: 31.25em) {
-      /* line 3133, scss/_layout.scss */
+      /* line 3148, scss/_layout.scss */
       #error h2 {
         margin: 0 0 0 0; } }
-  /* line 3148, scss/_layout.scss */
+  /* line 3163, scss/_layout.scss */
   #error p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -7046,7 +7054,7 @@ body {
     color: #072C44;
     font-size: 1.4em;
     margin-top: 10%; }
-  /* line 3155, scss/_layout.scss */
+  /* line 3170, scss/_layout.scss */
   #error span {
     color: #B7DEE7;
     float: right;
@@ -7055,28 +7063,28 @@ body {
 /****************************/
 /* Press:;					*/
 /****************************/
-/* line 3168, scss/_layout.scss */
+/* line 3183, scss/_layout.scss */
 #press .page-content {
   padding-bottom: 4em; }
-/* line 3173, scss/_layout.scss */
+/* line 3188, scss/_layout.scss */
 #press article.press {
   padding: 2.5em 0;
   width: 100%;
   border-bottom: 1px solid #D6D5CE; }
-  /* line 3179, scss/_layout.scss */
+  /* line 3194, scss/_layout.scss */
   #press article.press:last-child {
     border-bottom: none; }
-  /* line 3183, scss/_layout.scss */
+  /* line 3198, scss/_layout.scss */
   #press article.press .title {
     font-size: 22px;
     font-size: 2.2rem;
     line-height: 1.3; }
   @media only screen and (max-width: 50em) {
-    /* line 3188, scss/_layout.scss */
+    /* line 3203, scss/_layout.scss */
     #press article.press .image, #press article.press .content {
       width: 100%; } }
 
-/* line 3198, scss/_layout.scss */
+/* line 3213, scss/_layout.scss */
 #front-page #content {
   border: none;
   -webkit-box-sizing: border-box;
@@ -7086,15 +7094,15 @@ body {
   box-sizing: border-box;
   /* Opera/IE 8+ */ }
 
-/* line 3206, scss/_layout.scss */
+/* line 3221, scss/_layout.scss */
 #news .post {
   overflow: hidden;
   margin-bottom: 1.5em; }
   @media only screen and (max-width: 50em) {
-    /* line 3210, scss/_layout.scss */
+    /* line 3225, scss/_layout.scss */
     #news .post.span {
       width: 50%; } }
-  /* line 3216, scss/_layout.scss */
+  /* line 3231, scss/_layout.scss */
   #news .post a {
     height: 100%;
     display: block;
@@ -7106,14 +7114,14 @@ body {
     background: -webkit-linear-gradient(#00817F, #006867) !important;
     background: -moz-linear-gradient(center top, #00817F 0%, #006867 100%) !important;
     background: -moz-gradient(center top, #00817F 0%, #006867 100%) !important; }
-    /* line 3222, scss/_layout.scss */
+    /* line 3237, scss/_layout.scss */
     .page-business #news .post a {
       background: #032E61;
       background: -webkit-gradient(linear, left top, left bottom, from(#032E61), to(#1656A1)) !important;
       background: -webkit-linear-gradient(#032E61, #1656A1) !important;
       background: -moz-linear-gradient(center top, #032E61 0%, #1656A1 100%) !important;
       background: -moz-gradient(center top, #032E61 0%, #1656A1 100%) !important; }
-  /* line 3227, scss/_layout.scss */
+  /* line 3242, scss/_layout.scss */
   #news .post img {
     display: block;
     -webkit-border-top-left-radius: 10px;
@@ -7123,16 +7131,16 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px; }
     @media only screen and (max-width: 50em) {
-      /* line 3227, scss/_layout.scss */
+      /* line 3242, scss/_layout.scss */
       #news .post img {
         width: 100%; } }
-  /* line 3236, scss/_layout.scss */
+  /* line 3251, scss/_layout.scss */
   #news .post .title {
     padding: 2.8em 1.7em;
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-weight: 300; }
-    /* line 3240, scss/_layout.scss */
+    /* line 3255, scss/_layout.scss */
     #news .post .title .entry-title {
       margin: 0;
       color: #FFF;
@@ -7140,21 +7148,21 @@ body {
       font-size: 2.8rem;
       line-height: 1.2; }
       @media only screen and (max-width: 62.5em) {
-        /* line 3240, scss/_layout.scss */
+        /* line 3255, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 24px;
           font-size: 2.4rem; } }
       @media only screen and (max-width: 50em) {
-        /* line 3240, scss/_layout.scss */
+        /* line 3255, scss/_layout.scss */
         #news .post .title .entry-title {
           font-size: 20px;
           font-size: 2rem; } }
 
-/* line 3258, scss/_layout.scss */
+/* line 3273, scss/_layout.scss */
 #quotelist {
   padding: 3em; }
 
-/* line 3264, scss/_layout.scss */
+/* line 3279, scss/_layout.scss */
 #wp-live-chat {
   left: -9000px; }
 

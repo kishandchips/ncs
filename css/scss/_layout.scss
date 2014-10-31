@@ -2217,22 +2217,37 @@ body {
 					background: #F3F3F3;
 					text-align: center;
 					@extend .clearfix;
+
 					h4 {
 						@include font-size(14);
 						@include opensans-bold;
 						display: block;
 						width: 100%;
 						margin-bottom: 2em;
+
+						span {
+							font-weight: normal;
+							line-height: 2em;
+						}
 					}
 
 					>.span {
 						@include font-size(12);
+
+						.illustration {
+
+						}
 						
 						.num {
 							@include font-size(40);
 							@include oswald;
 						}
 
+						@include device-width(14) {
+							.illustration, .num {
+								width: 100%;
+							} 
+						}
 					}
 				}				
 			}
