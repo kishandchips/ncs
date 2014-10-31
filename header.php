@@ -25,7 +25,7 @@ http://facebook.com/kishandchips
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
 	<meta name="format-detection" content="telephone=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 
 	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" />
