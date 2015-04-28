@@ -469,7 +469,7 @@ body {
 			
 			> li {
 				float: left;
-				width: 32.666666%;
+				width: 24.2%;
 				margin-right: 1%;
 				@include transition(none);
 				zoom: 0;
@@ -501,6 +501,10 @@ body {
 					@include device-width(5) {
 						@include font-size(16);
 					}
+
+					@include device-width(4) {
+						@include font-size(13);
+					}					
 			 	}
 
 			 	> ul {
@@ -657,6 +661,47 @@ body {
 						}
 					}						
 				} 
+
+				&.healthcare {
+
+					> a {
+						@include vertical-gradient(#9693C2, #777594);						
+					}
+
+					&:hover, &.current-page-ancestor {
+						> a {
+							@include vertical-gradient(#777594, #9693C2);		
+						}
+						
+					}					
+					
+					> .sub-menu {
+						border-top: 8px solid #777594;
+						background: #777594 url(../images/backgrounds/healthcare-drop-bg.jpg) left top repeat;
+
+						.widget-nav-menu {
+							ul.menu {
+								a {
+									@include vertical-gradient(#9693C2, #777594);									
+
+									&:hover {
+										@include vertical-gradient(#777594, #9693C2);
+									}									
+								}
+							}
+						}
+
+						.menu_thumb {
+							a {
+								@include vertical-gradient(#9693C2, #777594);									
+
+								&:hover {
+									@include vertical-gradient(#777594, #9693C2);
+								}									
+							}
+						}
+					}						
+				} 				
 
 				&.products {
 					> a {
@@ -927,13 +972,17 @@ body {
 		background: #0C305A;
 	}
 
-	.page-commercial &, .page-commercial & .span {
+	.page-business &, .page-business & .span {
 		background: #143A65;
 	}
 
 	.page-education &, .page-education & .span {
 		background: #002928;	
 	}
+
+	.page-healthcare &, .page-healthcare & .span {
+		background: #706C9D;	
+	}		
 
 	.woocommerce-page &, .woocommerce-page & .span {
 		background: #242239; 
@@ -1166,6 +1215,7 @@ body {
 
 	#single, #get-in-touch {
 		@extend .clearfix;
+		width: 100%;
 
 		.sidebar {
 			float:right;
@@ -1275,6 +1325,12 @@ body {
 						background: #004848;
 					}
 				}
+
+				.page-healthcare & {
+					a {
+						background: #706C9D;
+					}
+				}				
 			}			
 		}
 	}
@@ -2870,6 +2926,14 @@ body {
 				}
 			}
 
+			.page-healthcare & {
+				@include vertical-gradient(#9693C2, #777594);
+
+				&:hover {
+					@include vertical-gradient(#777594, #9693C2);	
+				}
+			}			
+
 			& .related & {
 				@include vertical-gradient(#000, #fff);
 
@@ -2894,6 +2958,14 @@ body {
 						@include vertical-gradient(#86B555, #6A973C);	
 					}					
 				}
+
+				.page-healthcare & {
+					@include vertical-gradient(#9693C2, #3B377C);
+
+					&:hover {
+						@include vertical-gradient(#3B377C, #9693C2);	
+					}
+				}			
 			}
 		}
 
@@ -3237,6 +3309,10 @@ body {
 			.page-business & {
 				@include vertical-gradient(#032E61, #1656A1);
 			}
+
+			.page-healthcare & {
+				@include vertical-gradient(#9693C2, #777594);
+			}			
 		}
 
 		img {
