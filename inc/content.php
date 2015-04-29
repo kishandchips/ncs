@@ -12,6 +12,24 @@
 ********************************/
 ?>
 <?php if (is_front_page()): ?>
+	<div class="page-content">
+	<?php if(get_field('introduction')): ?>
+		<div class="span seven break-on-mobile">
+			<?php the_field('introduction') ?>
+		</div>
+	<?php endif; ?>
+	<?php if(get_field('support')): ?>
+		<div class="span three break-on-mobile hide-on-mobile">
+			<aside id="" class="widget_support_widget"> 
+				<div class="support">
+					<?php the_field('support') ?>
+				</div>
+			</aside>
+		</div>
+	<?php endif; ?>
+	</div>
+
+
 	<?php while(has_sub_field("section")): $e++; ?>
 		<section <?php if(get_sub_field('background')): ?>style="background: url('<?php the_sub_field('background'); ?>')"<?php endif; ?>>
 			<div class="section-inner">

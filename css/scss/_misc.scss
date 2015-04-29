@@ -374,10 +374,10 @@ hr {
 				@include vertical-gradient(#5B8E26, #86B555);
 			}
 
-			&:before {
-				@extend [class*="icon-"];
-				@extend .icon-bubble:before;
-			}			
+			// &:before {
+			// 	@extend [class*="icon-"];
+			// 	@extend .icon-bubble:before;
+			// }
 		}
 	}
 
